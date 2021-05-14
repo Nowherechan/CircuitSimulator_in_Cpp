@@ -1,3 +1,14 @@
+/**
+  * animation.cpp
+  * author@刘睿尧
+  * tester@刘睿尧
+  * function:
+  *     a push button without edge and added with simple animations
+  * bug:
+  *     null
+  * TODO:
+  *     null
+  */
 #include "animation_btn.h"
 #include <QDebug>
 #include <QPropertyAnimation>
@@ -126,4 +137,10 @@ void Animation_Btn::mouseReleaseEvent(QMouseEvent *e)
     }
 
     return QPushButton::mouseReleaseEvent(e);
+}
+
+void Animation_Btn::moveEvent(QMoveEvent *event)
+{
+    emit moved();
+    return QPushButton::moveEvent(event);
 }

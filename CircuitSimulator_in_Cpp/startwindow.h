@@ -13,6 +13,7 @@ class StartWindow : public QMainWindow
 
 public:
     StartWindow(QWidget *parent = nullptr);
+    void paintEvent(QPaintEvent *);
     ~StartWindow();
 
 private:

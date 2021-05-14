@@ -1,7 +1,22 @@
+/**
+  * startwindows.cpp
+  * author@刘睿尧
+  * tester@刘睿尧
+  * function:
+  *     the start widget of the program
+  * bug:
+  *     1.text can't move when only change y of the window.
+  *         one solution: put the label into button.
+  * TODO:
+  *     1.Complete four pictures(200x200) and fill them into paths.
+  *     2.Complete the show and hide function.
+  */
 #include "startwindow.h"
 #include "ui_startwindow.h"
 #include <QDebug>
 #include <QString>
+#include <QSound>
+#include <QPainter>
 
 StartWindow::StartWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,11 +24,13 @@ StartWindow::StartWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    //图片路径
     QString pix_Digital, pix_Analog, pix_Title;
-    pix_Digital = ":/src/default_png.png";
-    pix_Analog = ":/src/default_png.png";
-    pix_Title = ":/src/default_png.png";
+    pix_Digital = ":/src/default_png.png";      //数电模式图标路径
+    pix_Analog = ":/src/default_png.png";       //模电模式图片路径
+    pix_Title = ":/src/default_png.png";        //开始界面标题图片路径
 
+    //加载标题图片
     QPixmap pixmap_Title;
     bool ret = pixmap_Title.load(pix_Title);
     if(!ret)
@@ -21,10 +38,75 @@ StartWindow::StartWindow(QWidget *parent)
         qDebug() << "图片加载失败";
         return;
     }
-
-    ui->btn_Digital->changeNormalImg(pix_Digital);
-    ui->btn_Analog->changePressImg(pix_Analog);
     ui->title_Pic->setPixmap(pixmap_Title);
+
+    //音效与字体设置
+    QSound * clickSound = new QSound(":/src/click.wav");
+    QFont font;
+    font.setPointSize(28);
+    font.setBold(true);
+    font.setFamily("黑体");
+
+    //数电按钮设置
+    ui->btn_Digital->changeNormalImg(pix_Digital);
+    ui->label_Digital->setParent(this);
+    ui->label_Digital->setFixedSize(ui->btn_Digital->size());
+    ui->label_Digital->setText("数字<br>电路");
+    ui->label_Digital->setFont(font);
+    ui->label_Digital->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);   //水平以及垂直居中
+    ui->label_Digital->setAttribute(Qt::WA_TransparentForMouseEvents);      //鼠标穿透
+    connect(ui->btn_Digital, &Animation_Btn::moved, ui->label_Digital, [=](){
+        QPoint * p = new QPoint(ui->btn_Digital->x()
+                                + ui->widget_Down->x(),
+                                ui->btn_Digital->y()
+                                + ui->widget_Down->y()
+                                + ui->menubar->geometry().height());
+        ui->label_Digital->move(*p);
+    });
+    connect(ui->btn_Digital, &Animation_Btn::clicked, [=](){
+        ui->btn_Digital->zoom1();
+        ui->btn_Digital->zoom2();
+        clickSound->play();
+        //change scene
+    });
+
+    //模电按钮设置
+    ui->btn_Analog->changePressImg(pix_Analog);
+    ui->label_Analog->setParent(this);
+    ui->label_Analog->setFixedSize(ui->btn_Analog->size());
+    ui->label_Analog->setText("模拟<br>电路");
+    ui->label_Analog->setFont(font);
+    ui->label_Analog->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);   //水平以及垂直居中
+    ui->label_Analog->setAttribute(Qt::WA_TransparentForMouseEvents);      //鼠标穿透
+    connect(ui->btn_Analog, &Animation_Btn::moved, ui->label_Analog, [=](){
+        QPoint * p = new QPoint(ui->btn_Analog->x()
+                                + ui->widget_Down->x(),
+                                ui->btn_Analog->y()
+                                + ui->widget_Down->y()
+                                + ui->menubar->geometry().height());
+        ui->label_Analog->move(*p);
+    });
+    connect(ui->btn_Analog, &Animation_Btn::clicked, [=](){
+        ui->btn_Analog->zoom1();
+        ui->btn_Analog->zoom2();
+        clickSound->play();
+        //change scene
+    });
+}
+
+//绘制背景图片
+void StartWindow::paintEvent(QPaintEvent *)
+{
+    QPainter painter(this);
+    QString pix_Background = ":/src/default_png.png";   //背景图片路径
+    QPixmap pixmap_Background;
+    bool ret = pixmap_Background.load(pix_Background);
+    if(!ret)
+    {
+        qDebug() << "图片加载失败";
+        return;
+    }
+    painter.drawPixmap(0, 0, this->width(), this->height(), pix_Background);
 }
 
 StartWindow::~StartWindow()
