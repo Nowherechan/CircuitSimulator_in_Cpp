@@ -227,12 +227,12 @@
     <property name="title">
      <string>开始</string>
     </property>
-    <addaction name="actionexit"/>
+    <addaction name="actionExit"/>
    </widget>
    <addaction name="menu_Start"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionexit">
+  <action name="actionExit">
    <property name="text">
     <string>退出</string>
    </property>

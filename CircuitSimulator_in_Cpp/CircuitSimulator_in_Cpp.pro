@@ -17,14 +17,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     animation_btn.cpp \
+    circuitwindow.cpp \
     main.cpp \
     startwindow.cpp
 
 HEADERS += \
     animation_btn.h \
+    circuitwindow.h \
     startwindow.h
 
 FORMS += \
+    circuitwindow.ui \
     startwindow.ui
 
 TRANSLATIONS += \

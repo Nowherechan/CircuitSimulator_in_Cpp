@@ -18,14 +18,14 @@ public:
 
     void mousePressEvent(QMouseEvent *e);
     void mouseReleaseEvent(QMouseEvent *e);
-    void moveEvent(QMoveEvent *event);
+    //void moveEvent(QMoveEvent *event);
 
 private:
     QString normalImgPath;
     QString pressImgPath;
 
 signals:
-    void moved();
+    //void moved();
 };
 
 #endif // MYPUSHBUTTON_H

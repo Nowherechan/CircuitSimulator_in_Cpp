@@ -1,6 +1,7 @@
 #ifndef STARTWINDOW_H
 #define STARTWINDOW_H
 
+#include "circuitwindow.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -18,5 +19,6 @@ public:
 
 private:
     Ui::StartWindow *ui;
+    CircuitWindow * circuit_Window = NULL;
 };
 #endif // STARTWINDOW_H
