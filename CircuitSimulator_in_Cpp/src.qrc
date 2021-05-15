@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>src/default_png.png</file>
+        <file>src/click.wav</file>
+    </qresource>
+</RCC>
