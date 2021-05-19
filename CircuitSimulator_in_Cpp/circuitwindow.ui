@@ -39,7 +39,7 @@
    <addaction name="menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
+  <widget class="QToolBar" name="toolBarComponent">
    <property name="windowTitle">
     <string>toolBar</string>
    </property>

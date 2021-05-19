@@ -33,7 +33,7 @@ StartWindow::StartWindow(QWidget *parent)
     QString pix_Digital, pix_Analog, pix_Title;
     pix_Digital = ":/src/btn_basic.png";      //数电模式图标路径
     pix_Analog = ":/src/btn_basic.png";       //模电模式图片路径
-    pix_Title = ":/src/default_png.png";        //开始界面标题图片路径
+    pix_Title = ":/src/title.png";        //开始界面标题图片路径
 
     //加载标题图片
     QPixmap pixmap_Title;

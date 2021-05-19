@@ -7,7 +7,7 @@
   * bug:(when one bug was fixed, marked it with '~')
   *     null
   * TODO:(when one was completed, marked it with '~')
-  *     null
+  *     1.Add components' button
   */
 #include "circuitwindow.h"
 #include "ui_circuitwindow.h"

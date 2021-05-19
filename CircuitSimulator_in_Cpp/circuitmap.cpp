@@ -1,3 +1,14 @@
+/**
+  * circuitmap.cpp
+  * author@刘睿尧
+  * tester@刘睿尧
+  * function:
+  *     a map of circuit.
+  * bug:(when one bug was fixed, marked it with '~')
+  *     null
+  * TODO:(when one was completed, marked it with '~')
+  *     null
+  */
 #include "circuitmap.h"
 #include "ui_circuitmap.h"
 #include <QPainter>

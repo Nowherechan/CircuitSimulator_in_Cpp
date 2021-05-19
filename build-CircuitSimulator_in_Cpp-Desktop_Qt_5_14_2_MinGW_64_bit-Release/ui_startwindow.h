@@ -28,7 +28,7 @@ QT_BEGIN_NAMESPACE
 class Ui_StartWindow
 {
 public:
-    QAction *actionexit;
+    QAction *actionExit;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QSpacerItem *verticalSpacer_2;
@@ -54,8 +54,8 @@ public:
             StartWindow->setObjectName(QString::fromUtf8("StartWindow"));
         StartWindow->resize(800, 600);
         StartWindow->setMinimumSize(QSize(800, 600));
-        actionexit = new QAction(StartWindow);
-        actionexit->setObjectName(QString::fromUtf8("actionexit"));
+        actionExit = new QAction(StartWindow);
+        actionExit->setObjectName(QString::fromUtf8("actionExit"));
         centralwidget = new QWidget(StartWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -152,7 +152,7 @@ public:
         StartWindow->setStatusBar(statusbar);
 
         menubar->addAction(menu_Start->menuAction());
-        menu_Start->addAction(actionexit);
+        menu_Start->addAction(actionExit);
 
         retranslateUi(StartWindow);
 
@@ -162,7 +162,7 @@ public:
     void retranslateUi(QMainWindow *StartWindow)
     {
         StartWindow->setWindowTitle(QCoreApplication::translate("StartWindow", "StartWindow", nullptr));
-        actionexit->setText(QCoreApplication::translate("StartWindow", "\351\200\200\345\207\272", nullptr));
+        actionExit->setText(QCoreApplication::translate("StartWindow", "\351\200\200\345\207\272", nullptr));
         title_Pic->setText(QString());
         btn_Digital->setText(QString());
         label_Digital->setText(QCoreApplication::translate("StartWindow", "TextLabel", nullptr));

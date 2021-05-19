@@ -5,5 +5,6 @@
         <file>src/btn_basic.png</file>
         <file>src/bg_circuit.png</file>
         <file>src/bg_basic.png</file>
+        <file>src/title.png</file>
     </qresource>
 </RCC>

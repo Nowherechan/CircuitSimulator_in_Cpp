@@ -34,7 +34,7 @@ public:
     QMenuBar *menubar;
     QMenu *menu;
     QStatusBar *statusbar;
-    QToolBar *toolBar;
+    QToolBar *toolBarComponent;
 
     void setupUi(QMainWindow *CircuitWindow)
     {
@@ -64,9 +64,9 @@ public:
         statusbar = new QStatusBar(CircuitWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         CircuitWindow->setStatusBar(statusbar);
-        toolBar = new QToolBar(CircuitWindow);
-        toolBar->setObjectName(QString::fromUtf8("toolBar"));
-        CircuitWindow->addToolBar(Qt::RightToolBarArea, toolBar);
+        toolBarComponent = new QToolBar(CircuitWindow);
+        toolBarComponent->setObjectName(QString::fromUtf8("toolBarComponent"));
+        CircuitWindow->addToolBar(Qt::RightToolBarArea, toolBarComponent);
 
         menubar->addAction(menu->menuAction());
         menu->addAction(actionReturn);
@@ -83,7 +83,7 @@ public:
         actionReturn->setText(QCoreApplication::translate("CircuitWindow", "\350\277\224\345\233\236", nullptr));
         actionExit->setText(QCoreApplication::translate("CircuitWindow", "\351\200\200\345\207\272", nullptr));
         menu->setTitle(QCoreApplication::translate("CircuitWindow", "\345\274\200\345\247\213", nullptr));
-        toolBar->setWindowTitle(QCoreApplication::translate("CircuitWindow", "toolBar", nullptr));
+        toolBarComponent->setWindowTitle(QCoreApplication::translate("CircuitWindow", "toolBar", nullptr));
     } // retranslateUi
 
 };

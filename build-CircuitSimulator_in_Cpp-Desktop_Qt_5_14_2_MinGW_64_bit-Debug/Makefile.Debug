@@ -126,7 +126,8 @@ debug/qrc_src.cpp: ../CircuitSimulator_in_Cpp/src.qrc \
 		../CircuitSimulator_in_Cpp/src/click.wav \
 		../CircuitSimulator_in_Cpp/src/btn_basic.png \
 		../CircuitSimulator_in_Cpp/src/bg_circuit.png \
-		../CircuitSimulator_in_Cpp/src/bg_basic.png
+		../CircuitSimulator_in_Cpp/src/bg_basic.png \
+		../CircuitSimulator_in_Cpp/src/title.png
 	D:\Qt\5.14.2\5.14.2\mingw73_64\bin\rcc.exe -name src ..\CircuitSimulator_in_Cpp\src.qrc -o debug\qrc_src.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
