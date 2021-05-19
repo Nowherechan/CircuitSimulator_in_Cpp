@@ -12,7 +12,7 @@
   *         final solution: close() instead of delete.
   * TODO:(when one was completed, marked it with '~')
   *     1.Complete four pictures(200x200) and fill them into paths.
-  *     2.Complete the show and hide function.
+  * ~   2.Complete the show and hide function.
   */
 #include "startwindow.h"
 #include "ui_startwindow.h"
@@ -31,8 +31,8 @@ StartWindow::StartWindow(QWidget *parent)
 
     //图片路径
     QString pix_Digital, pix_Analog, pix_Title;
-    pix_Digital = ":/src/default_png.png";      //数电模式图标路径
-    pix_Analog = ":/src/default_png.png";       //模电模式图片路径
+    pix_Digital = ":/src/btn_basic.png";      //数电模式图标路径
+    pix_Analog = ":/src/btn_basic.png";       //模电模式图片路径
     pix_Title = ":/src/default_png.png";        //开始界面标题图片路径
 
     //加载标题图片
@@ -61,7 +61,7 @@ StartWindow::StartWindow(QWidget *parent)
     ui->btn_Digital->changeNormalImg(pix_Digital);
     ui->label_Digital->setParent(ui->btn_Digital);
     ui->label_Digital->setFixedSize(ui->btn_Digital->size());
-    ui->label_Digital->setText("数字<br>电路");
+    ui->label_Digital->setText("<font color=#2265A9>数字<br>电路</font>");
     ui->label_Digital->setFont(font);
     ui->label_Digital->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);   //水平以及垂直居中
     ui->label_Digital->setAttribute(Qt::WA_TransparentForMouseEvents);      //鼠标穿透
@@ -94,10 +94,10 @@ StartWindow::StartWindow(QWidget *parent)
     });
 
     //模电按钮设置
-    ui->btn_Analog->changePressImg(pix_Analog);
+    ui->btn_Analog->changeNormalImg(pix_Analog);
     ui->label_Analog->setParent(ui->btn_Analog);
     ui->label_Analog->setFixedSize(ui->btn_Analog->size());
-    ui->label_Analog->setText("模拟<br>电路");
+    ui->label_Analog->setText("<font color=#2265A9>模拟<br>电路</font>");
     ui->label_Analog->setFont(font);
     ui->label_Analog->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);   //水平以及垂直居中
     ui->label_Analog->setAttribute(Qt::WA_TransparentForMouseEvents);      //鼠标穿透
@@ -134,7 +134,7 @@ StartWindow::StartWindow(QWidget *parent)
 void StartWindow::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
-    QString pix_Background = ":/src/default_png.png";   //背景图片路径
+    QString pix_Background = ":/src/bg_basic.png";   //背景图片路径
     QPixmap pixmap_Background;
     bool ret = pixmap_Background.load(pix_Background);
     if(!ret)

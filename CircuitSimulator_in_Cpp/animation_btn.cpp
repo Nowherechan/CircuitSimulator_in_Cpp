@@ -53,9 +53,18 @@ Animation_Btn::Animation_Btn(QWidget* parent) : QPushButton(parent)
     this->setIconSize(QSize(pix.width(), pix.height()));
 }
 
+//Warning: Don't use this function when btn is pressed.
 void Animation_Btn::changeNormalImg(QString newNormalImg)
 {
     normalImgPath = newNormalImg;
+    QPixmap pix;
+    bool ret = pix.load(normalImgPath);
+    if(!ret)
+    {
+        qDebug() << "图片加载失败";
+        return;
+    }
+    this->setIcon(pix);
 }
 
 void Animation_Btn::changePressImg(QString newPressImg)

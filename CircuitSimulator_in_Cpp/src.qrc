@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>src/default_png.png</file>
         <file>src/click.wav</file>
+        <file>src/btn_basic.png</file>
+        <file>src/bg_circuit.png</file>
+        <file>src/bg_basic.png</file>
     </qresource>
 </RCC>

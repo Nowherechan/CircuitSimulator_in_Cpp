@@ -15,6 +15,7 @@ class CircuitWindow : public QMainWindow
 
 public:
     explicit CircuitWindow(QWidget *parent = nullptr, circuit_Mod mod = Digital);
+    void paintEvent(QPaintEvent *);
     ~CircuitWindow();
 
 private:

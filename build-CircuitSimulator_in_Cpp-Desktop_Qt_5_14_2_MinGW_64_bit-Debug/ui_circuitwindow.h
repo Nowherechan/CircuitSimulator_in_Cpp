@@ -19,6 +19,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
+#include "circuitmap.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -29,7 +30,7 @@ public:
     QAction *actionExit;
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout;
-    QWidget *widget;
+    CircuitMap *widget;
     QMenuBar *menubar;
     QMenu *menu;
     QStatusBar *statusbar;
@@ -48,7 +49,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayout = new QHBoxLayout(centralwidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        widget = new QWidget(centralwidget);
+        widget = new CircuitMap(centralwidget);
         widget->setObjectName(QString::fromUtf8("widget"));
 
         horizontalLayout->addWidget(widget);
