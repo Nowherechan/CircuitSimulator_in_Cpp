@@ -150,3 +150,11 @@ istream& operator>>(istream& is, Matrix& m)
     }
     return is;
 }
+
+void Matrix::insert(int row, int col, double num)
+{
+    if (row > rows_num || col > cols_num) {
+        cout << "ERROR !" << endl;
+    }
+    p[row - 1][col - 1] = num;
+}

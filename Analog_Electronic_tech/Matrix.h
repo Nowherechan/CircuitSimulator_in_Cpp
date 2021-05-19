@@ -23,6 +23,8 @@ public:
     static Matrix Solve(const Matrix&, const Matrix&);//求解线性方程组Ax=b
     void Show() const;
     friend std::istream& operator>>(std::istream&, Matrix&);
+    void insert(int row, int col, double num);
+
 };
 
 

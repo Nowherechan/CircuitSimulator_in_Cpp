@@ -9,7 +9,9 @@ int main() {
     cin >> b;
     A.Show();
     b.Show();
-    Matrix x = Matrix::Solve(A, b);
-    x.Show();
+    b.insert(2, 1, 666);
+    b.Show();
+    //Matrix x = Matrix::Solve(A, b);
+    //x.Show();
     return 0;
 }
