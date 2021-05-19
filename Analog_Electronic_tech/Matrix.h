@@ -21,7 +21,8 @@ public:
     Matrix& operator-=(const Matrix&);//-=
     Matrix& operator*=(const Matrix&);//*=
     static Matrix Solve(const Matrix&, const Matrix&);//求解线性方程组Ax=b
-
+    void Show() const;
+    friend std::istream& operator>>(std::istream&, Matrix&);
 };
 
 
