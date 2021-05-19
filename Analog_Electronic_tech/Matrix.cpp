@@ -79,3 +79,74 @@ Matrix& Matrix::operator-=(const Matrix &m)
     }
     return *this;
 }
+
+Matrix& Matrix::operator*=(const Matrix &m)
+{
+    Matrix temp(rows_num, m.cols_num);
+    for (int i = 0; i < temp.rows_num; i++) {
+        for (int j = 0; j < temp.rows_num; i++) {
+            for (int k = 0; k < cols_num; k++) {
+                temp.p[i][j] += (p[i][k] * m.p[k][j]);
+            }
+        }
+    }
+    *this = temp;
+    return *this;
+}
+
+Matrix Matrix::Solve(const Matrix &A, const Matrix &b)//解方程Ax=b
+{
+    for (int i = 0; i < A.rows_num; i++) {
+        if (A.p[i][i] == 0) {
+            cout << "ERROR !" << endl;
+        }
+        for (int j = i + 1; j < A.rows_num; j++) {
+            for (int k = i + 1; k < A.cols_num; k++) {
+                A.p[j][k] -= A.p[i][k] * (A.p[j][i] / A.p[i][i]);
+                if (abs(A.p[j][k]) < EPS)
+                    A.p[j][k] = 0;
+            }
+            b.p[j][0] -= b.p[i][0] * (A.p[j][i] / A.p[i][i]);
+            if (abs(A.p[j][0]) < EPS)
+                A.p[j][0] = 0;
+            A.p[j][i] = 0;
+        }
+    }
+
+    Matrix x(b.rows_num, 1);
+    x.p[x.rows_num - 1][0] = b.p[x.rows_num - 1][0] / A.p[x.rows_num -1][x.rows_num - 1];
+    if (abs(x.p[x.rows_num -1][0]) < EPS)
+        x.p[x.rows_num - 1][0] = 0;
+    for (int i = x.rows_num - 2; i >= 0; i--) {
+        double sum = 0;
+        for (int j = i + 1; j < x.rows_num; j++) {
+            sum += A.p[i][j] * x.p[j][0];
+        }
+        x.p[i][0] = (b.p[i][0] - sum) / A.p[i][i];
+        if (abs(x.p[i][0]) < EPS)
+            x.p[i][0] = 0;
+    }
+
+    return x;
+}
+
+void Matrix::Show() const
+{
+    for (int i = 0; i < rows_num; i++) {
+        for (int j = 0; j < cols_num; j++) {
+            cout << p[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+istream& operator>>(istream& is, Matrix& m)
+{
+    for (int i = 0; i < m.rows_num; i++) {
+        for (int j = 0; j < m.cols_num; j++) {
+            is >> m.p[i][j];
+        }
+    }
+    return is;
+}
