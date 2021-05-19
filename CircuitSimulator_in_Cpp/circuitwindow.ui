@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="CircuitMap" name="widget" native="true"/>
+     <widget class="CircuitMap" name="Map" native="true"/>
     </item>
    </layout>
   </widget>
