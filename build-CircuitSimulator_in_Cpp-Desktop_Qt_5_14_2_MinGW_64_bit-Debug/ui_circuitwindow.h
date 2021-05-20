@@ -30,7 +30,7 @@ public:
     QAction *actionExit;
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout;
-    CircuitMap *widget;
+    CircuitMap *Map;
     QMenuBar *menubar;
     QMenu *menu;
     QStatusBar *statusbar;
@@ -49,10 +49,10 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayout = new QHBoxLayout(centralwidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        widget = new CircuitMap(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
+        Map = new CircuitMap(centralwidget);
+        Map->setObjectName(QString::fromUtf8("Map"));
 
-        horizontalLayout->addWidget(widget);
+        horizontalLayout->addWidget(Map);
 
         CircuitWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(CircuitWindow);

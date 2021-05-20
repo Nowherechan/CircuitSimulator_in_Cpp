@@ -8,6 +8,7 @@
   *     null
   * TODO:(when one was completed, marked it with '~')
   *     1.Add components' button
+  *     2.Connect oscillograph.(QtChart or QWT or QCustomerPlot)
   */
 #include "circuitwindow.h"
 #include "ui_circuitwindow.h"
@@ -30,6 +31,8 @@ CircuitWindow::CircuitWindow(QWidget *parent, circuit_Mod mod) :
     connect(ui->actionReturn, &QAction::triggered, [=](){
         emit turn_Back();
     });
+
+    //工具栏添加元件
 }
 
 CircuitWindow::~CircuitWindow()

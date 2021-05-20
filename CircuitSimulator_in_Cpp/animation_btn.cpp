@@ -77,7 +77,7 @@ void Animation_Btn::zoom1()
     //创建动态对象
     QPropertyAnimation * animation = new QPropertyAnimation(this, "geometry");
     //设置动画时间间隔
-    animation->setDuration(200);
+    animation->setDuration(100);
     //起始位置
     animation->setStartValue(QRect(this->x(), this->y(), this->width(), this->height()));
     //结束位置
@@ -93,7 +93,7 @@ void Animation_Btn::zoom2()
     //创建动态对象
     QPropertyAnimation * animation = new QPropertyAnimation(this, "geometry");
     //设置动画时间间隔
-    animation->setDuration(200);
+    animation->setDuration(100);
     //起始位置
     animation->setStartValue(QRect(this->x(), this->y() + 10, this->width(), this->height()));
     //结束位置

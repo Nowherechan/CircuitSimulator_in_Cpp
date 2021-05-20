@@ -2,6 +2,7 @@
 #define CIRCUITMAP_H
 
 #include <QWidget>
+#include <QPixmap>
 
 namespace Ui {
 class CircuitMap;
@@ -16,8 +17,13 @@ public:
     void paintEvent(QPaintEvent *);
     ~CircuitMap();
 
+protected:
+    void drawDots_Map();
+
 private:
     Ui::CircuitMap *ui;
+    int zoom;
+    QPixmap map;
 };
 
 #endif // CIRCUITMAP_H

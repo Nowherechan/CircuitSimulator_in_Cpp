@@ -11,7 +11,7 @@
   * ~   2.segmentation-faults happen when use this->show() after delete the subscene.
   *         final solution: close() instead of delete.
   * TODO:(when one was completed, marked it with '~')
-  *     1.Complete four pictures(200x200) and fill them into paths.
+  * ~   1.Complete four pictures(200x200) and fill them into paths.
   * ~   2.Complete the show and hide function.
   */
 #include "startwindow.h"
