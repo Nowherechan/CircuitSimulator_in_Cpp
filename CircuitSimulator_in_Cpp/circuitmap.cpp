@@ -7,7 +7,7 @@
   * bug:(when one bug was fixed, marked it with '~')
   *     null
   * TODO:(when one was completed, marked it with '~')
-  *     1.Finish the show-all button.
+  *     1.Finish the show-all and clear-all button.
   *     2.Complete the actions of components, like put-on , delete and move.
   *     3.Matrix of the can-put points.
   */
@@ -17,14 +17,68 @@
 #include <QDebug>
 #include <QGraphicsView>
 #include <QSlider>
+#include <QGraphicsScene>
+#include <QGridLayout>
+#include <QPushButton>
+#include <cmath>
 
-//画可放元件的点阵
-void CircuitMap::drawDots_Map()
+//电路背景图参数
+const int MAP_WIDTH = 1600;
+const int MAP_HEIGHT = 900;
+const QColor DOTS_COLOR = QColor("#B0B0B0");
+const QString BG_COLOR_STRING = "#A0A0A0";
+const QString BTN_COLOR_STRING = "#80C0E0";
+const QColor MAP_COLOR = QColor("#FFFFFF");
+const QColor LINE_COLOR = QColor("#101010");
+
+//画可放元件的点阵图
+QPixmap CircuitMap::draw_Dots_Map()
 {
-    QPainter painter(this);
-    QPen pen(QColor(200, 200, 200));
-    pen.setWidth(2);
+    //创建背景图
+    QPixmap pix(MAP_WIDTH, MAP_HEIGHT);
+    pix.fill(MAP_COLOR);
+
+    //QPainter设置
+    QPainter painter(&pix);
+    QPen pen(DOTS_COLOR);
+    pen.setWidth(1);
     painter.setPen(pen);
+    QPen pen_bigger(DOTS_COLOR);
+    pen_bigger.setWidth(3);
+
+    //绘制点阵
+    for(int i = 0; i <= MAP_WIDTH; i += 10)
+    {
+        for(int j = 0; j <= MAP_HEIGHT; j += 10)
+        {
+            if(i%100 == 0 && j%100 == 0)
+                painter.setPen(pen_bigger);
+            painter.drawPoint(QPoint(i, j));
+            if(i%100 == 0 && j%100 == 0)
+                painter.setPen(pen);
+        }
+    }
+
+    //绘制map边缘
+    pen.setColor(LINE_COLOR);
+    painter.setPen(pen);
+    painter.drawLine(0, 0, 0, MAP_HEIGHT-1);
+    painter.drawLine(0, 0, MAP_WIDTH-1, 0);
+    painter.drawLine(0, MAP_HEIGHT-1, MAP_WIDTH-1, MAP_HEIGHT-1);
+    painter.drawLine(MAP_WIDTH-1, 0, MAP_WIDTH-1, MAP_HEIGHT-1);
+
+    //pix.save("C:\\Users\\13445\\Desktop\\pix.png");
+
+    return pix;
+}
+
+//放缩函数
+void CircuitMap::zoomCircuit(int value)
+{
+    double s;
+    s = pow(1.02, value - zoom);
+    ui->map_Circuit->scale(s, s);
+    zoom = value;
 }
 
 CircuitMap::CircuitMap(QWidget *parent) :
@@ -34,6 +88,7 @@ CircuitMap::CircuitMap(QWidget *parent) :
     ui->setupUi(this);
 
     //设置滑动条与数值框
+    zoom = 50;
     ui->slider_Zoom->setRange(10, 100);
     ui->slider_Zoom->setSingleStep(10);
     ui->slider_Zoom->setTickInterval(30);
@@ -47,12 +102,33 @@ CircuitMap::CircuitMap(QWidget *parent) :
         v = (v + 5) / 10 * 10;
         ui->spinBox_Zoom->setValue(v);
         ui->slider_Zoom->setValue(v);
-        zoom = v;
+        zoomCircuit(v);
     });
     connect(ui->spinBox_Zoom, &QSpinBox::textChanged, ui->slider_Zoom, [=](){
         int v = ui->spinBox_Zoom->value();
         ui->slider_Zoom->setValue(v);
-        zoom = v;
+        zoomCircuit(v);
+    });
+
+    //创建画图区域
+    ui->map_Circuit->setStyleSheet("padding:0px;border:0px;background:" + BG_COLOR_STRING); //去除边缘并设置底色
+    QPixmap pix_Map = draw_Dots_Map();
+    ui->map_Circuit->setMap(pix_Map);
+    QGraphicsScene * scene = new QGraphicsScene(ui->map_Circuit);
+    scene->setSceneRect(-MAP_WIDTH*5/8, -MAP_HEIGHT*5/8, MAP_WIDTH*5/4, MAP_HEIGHT*5/4);
+    ui->map_Circuit->setScene(scene);
+    //ui->map_Circuit->setCacheMode(QGraphicsView::CacheBackground);                        //缓存背景加速渲染，但导致边缘有重影
+
+    //显示全部按钮
+    ui->btn_All->setStyleSheet("padding:10px;border:2px;background:" + BTN_COLOR_STRING);
+    connect(ui->btn_All, &QPushButton::clicked, [=](){
+        ui->spinBox_Zoom->setValue(10);
+    });
+
+    //清除元件按钮
+    ui->btn_Clear->setStyleSheet("padding:10px;border:2px;background:" + BTN_COLOR_STRING);
+    connect(ui->btn_Clear, &QPushButton::clicked, [=](){
+        //功能待填充
     });
 }
 

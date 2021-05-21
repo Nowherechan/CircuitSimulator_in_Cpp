@@ -14,11 +14,12 @@ class CircuitMap : public QWidget
 
 public:
     explicit CircuitMap(QWidget *parent = nullptr);
+    void zoomCircuit(int value);
     void paintEvent(QPaintEvent *);
     ~CircuitMap();
 
 protected:
-    void drawDots_Map();
+    QPixmap draw_Dots_Map();
 
 private:
     Ui::CircuitMap *ui;

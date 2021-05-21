@@ -20,17 +20,20 @@ SOURCES += \
     circuitmap.cpp \
     circuitwindow.cpp \
     main.cpp \
+    qgraphicsview_map.cpp \
     startwindow.cpp
 
 HEADERS += \
     animation_btn.h \
     circuitmap.h \
     circuitwindow.h \
+    qgraphicsview_map.h \
     startwindow.h
 
 FORMS += \
     circuitmap.ui \
     circuitwindow.ui \
+    qgraphicsview_map.ui \
     startwindow.ui
 
 TRANSLATIONS += \

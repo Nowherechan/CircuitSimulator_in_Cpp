@@ -78,10 +78,12 @@ StartWindow::StartWindow(QWidget *parent)
         ui->btn_Digital->zoom2();
         clickSound->play();
         ui->btn_Digital->setDisabled(true);
+        ui->btn_Analog->setDisabled(true);
         //界面切换
         QTimer::singleShot(200, this, [=](){
             this->hide();
             ui->btn_Digital->setDisabled(false);
+            ui->btn_Analog->setDisabled(false);
             circuit_Window = new CircuitWindow(nullptr, Digital);
             circuit_Window->show();
             connect(circuit_Window, &CircuitWindow::turn_Back, [=](){
@@ -113,10 +115,12 @@ StartWindow::StartWindow(QWidget *parent)
         ui->btn_Analog->zoom1();
         ui->btn_Analog->zoom2();
         clickSound->play();
+        ui->btn_Digital->setDisabled(true);
         ui->btn_Analog->setDisabled(true);
         //界面切换
         QTimer::singleShot(200, this, [=](){
             this->hide();
+            ui->btn_Digital->setDisabled(false);
             ui->btn_Analog->setDisabled(false);
             circuit_Window = new CircuitWindow(nullptr, Analog);
             circuit_Window->show();

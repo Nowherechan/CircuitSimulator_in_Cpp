@@ -2,9 +2,11 @@ debug/animation_btn.o
 debug/circuitmap.o
 debug/circuitwindow.o
 debug/main.o
+debug/qgraphicsview_map.o
 debug/startwindow.o
 debug/qrc_src.o
 debug/moc_animation_btn.o
 debug/moc_circuitmap.o
 debug/moc_circuitwindow.o
+debug/moc_qgraphicsview_map.o
 debug/moc_startwindow.o

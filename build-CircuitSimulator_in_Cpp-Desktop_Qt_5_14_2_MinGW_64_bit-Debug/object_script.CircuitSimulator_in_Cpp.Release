@@ -2,9 +2,11 @@ release/animation_btn.o
 release/circuitmap.o
 release/circuitwindow.o
 release/main.o
+release/qgraphicsview_map.o
 release/startwindow.o
 release/qrc_src.o
 release/moc_animation_btn.o
 release/moc_circuitmap.o
 release/moc_circuitwindow.o
+release/moc_qgraphicsview_map.o
 release/moc_startwindow.o
