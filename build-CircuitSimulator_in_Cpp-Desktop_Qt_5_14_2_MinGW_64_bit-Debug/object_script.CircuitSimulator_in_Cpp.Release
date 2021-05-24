@@ -1,6 +1,10 @@
 release/animation_btn.o
 release/circuitmap.o
 release/circuitwindow.o
+release/andlogicgate.o
+release/baselogicgate.o
+release/nonlogicgate.o
+release/orlogicgate.o
 release/main.o
 release/qgraphicsview_map.o
 release/startwindow.o

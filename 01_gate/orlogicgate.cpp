@@ -1,3 +1,15 @@
+/**
+  * baselogicgate.cpp
+  * author@王梦泽&尤曼绮
+  * tester@刘睿尧
+  * function:
+  *     an or logic gate
+  * bug:(when one bug was fixed, marked it with '~')
+  * ~   1. Function boundingRect() return wrong QRectF(0,0,50,50)
+  *         Fix: Turn it into QRectF(0,0,100,100).
+  * TODO:(when one was completed, marked it with '~')
+  *     null
+  */
 #include "orlogicgate.h"
 
 orLogicGate::orLogicGate()
@@ -8,6 +20,7 @@ orLogicGate::orLogicGate()
     setFlags(QGraphicsItem::ItemIsFocusable|QGraphicsItem::ItemIsMovable);
 }
 
+<<<<<<< Updated upstream
  QRectF orLogicGate::boundingRect() const
  {
      return QRectF(0,0,100,100);
@@ -16,6 +29,12 @@ orLogicGate::orLogicGate()
  int orLogicGate::getN(int n){
      return n;
  }
+=======
+QRectF orLogicGate::boundingRect() const
+{
+    return QRectF(0,0,100,100);
+}
+>>>>>>> Stashed changes
 
 void orLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
@@ -24,12 +43,12 @@ void orLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
 
     //画主体
     painter->drawRect(QRect(baseX + lineWidth,
-                           baseY,
-                           width,
-                           height));
+                            baseY,
+                            width,
+                            height));
     painter->drawText(baseX + 40,
-                     baseY + 40,
-                     "≥1");
+                      baseY + 40,
+                      "≥1");
     painter->setPen(QPen(QColor(0,0,0)));
 
     //画输入引脚
@@ -37,10 +56,11 @@ void orLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
     {
     case 2:
     painter->drawLine(baseX,
-                     baseY + 20,
-                     baseX + lineWidth,
-                     baseY + 20);
+                      baseY + 20,
+                      baseX + lineWidth,
+                      baseY + 20);
     painter->drawLine(baseX,
+<<<<<<< Updated upstream
                      baseY + 80,
                      baseX + lineWidth,
                      baseY + 80);
@@ -192,9 +212,14 @@ void orLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
     default:
         break;
     }
+=======
+                      baseY + 80,
+                      baseX + lineWidth,
+                      baseY + 80);
+>>>>>>> Stashed changes
     //画输出引脚
     painter->drawLine(baseX + lineWidth + width,
-                     baseY + height/2,
-                     baseX + lineWidth + width + lineWidth,
-                     baseY + height/2);
+                      baseY + height/2,
+                      baseX + lineWidth + width + lineWidth,
+                      baseY + height/2);
 }

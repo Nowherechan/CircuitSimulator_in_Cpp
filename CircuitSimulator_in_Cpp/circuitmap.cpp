@@ -10,9 +10,13 @@
   *     1.Finish the show-all and clear-all button.
   *     2.Complete the actions of components, like put-on , delete and move.
   *     3.Matrix of the can-put points.
+  *     4.Function select().
   */
 #include "circuitmap.h"
 #include "ui_circuitmap.h"
+#include "logical-gate/andlogicgate.h"
+#include "logical-gate/orlogicgate.h"
+#include "logical-gate/nonlogicgate.h"
 #include <QPainter>
 #include <QDebug>
 #include <QGraphicsView>
@@ -30,6 +34,7 @@ const QString BG_COLOR_STRING = "#A0A0A0";
 const QString BTN_COLOR_STRING = "#80C0E0";
 const QColor MAP_COLOR = QColor("#FFFFFF");
 const QColor LINE_COLOR = QColor("#101010");
+const int INITIAL_ZOOM = 50;
 
 //画可放元件的点阵图
 QPixmap CircuitMap::draw_Dots_Map()
@@ -78,6 +83,7 @@ void CircuitMap::zoomCircuit(int value)
     double s;
     s = pow(1.02, value - zoom);
     ui->map_Circuit->scale(s, s);
+    //ui->map_Circuit->updateSceneRect(ui->map_Circuit->sceneRect());
     zoom = value;
 }
 
@@ -88,15 +94,15 @@ CircuitMap::CircuitMap(QWidget *parent) :
     ui->setupUi(this);
 
     //设置滑动条与数值框
-    zoom = 50;
+    zoom = INITIAL_ZOOM;
     ui->slider_Zoom->setRange(10, 100);
     ui->slider_Zoom->setSingleStep(10);
     ui->slider_Zoom->setTickInterval(30);
     ui->slider_Zoom->setTickPosition(QSlider::TicksAbove);
-    ui->slider_Zoom->setValue(50);
+    ui->slider_Zoom->setValue(INITIAL_ZOOM);
     ui->spinBox_Zoom->setRange(10, 100);
     ui->spinBox_Zoom->setSingleStep(10);
-    ui->spinBox_Zoom->setValue(50);
+    ui->spinBox_Zoom->setValue(INITIAL_ZOOM);
     connect(ui->slider_Zoom, &QSlider::valueChanged, ui->spinBox_Zoom, [=](){
         int v = ui->slider_Zoom->value();
         v = (v + 5) / 10 * 10;
@@ -114,10 +120,11 @@ CircuitMap::CircuitMap(QWidget *parent) :
     ui->map_Circuit->setStyleSheet("padding:0px;border:0px;background:" + BG_COLOR_STRING); //去除边缘并设置底色
     QPixmap pix_Map = draw_Dots_Map();
     ui->map_Circuit->setMap(pix_Map);
-    QGraphicsScene * scene = new QGraphicsScene(ui->map_Circuit);
+    scene = new QGraphicsScene(ui->map_Circuit);
     scene->setSceneRect(-MAP_WIDTH*5/8, -MAP_HEIGHT*5/8, MAP_WIDTH*5/4, MAP_HEIGHT*5/4);
     ui->map_Circuit->setScene(scene);
     //ui->map_Circuit->setCacheMode(QGraphicsView::CacheBackground);                        //缓存背景加速渲染，但导致边缘有重影
+    //ui->map_Circuit->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);            //改变渲染方式
 
     //显示全部按钮
     ui->btn_All->setStyleSheet("padding:10px;border:2px;background:" + BTN_COLOR_STRING);
@@ -130,6 +137,57 @@ CircuitMap::CircuitMap(QWidget *parent) :
     connect(ui->btn_Clear, &QPushButton::clicked, [=](){
         //功能待填充
     });
+}
+
+//添加元件图片
+andLogicGate* CircuitMap::addGateAnd()
+{
+    andLogicGate *test1 = new andLogicGate();
+    scene->addItem(test1);
+    return test1;
+}
+
+orLogicGate* CircuitMap::addGateOr()
+{
+    orLogicGate *test2 = new orLogicGate();
+    scene->addItem(test2);
+    return test2;
+}
+
+nonLogicGate* CircuitMap::addGateNon()
+{
+    nonLogicGate *test3 = new nonLogicGate();
+    scene->addItem(test3);
+    return test3;
+}
+
+//元件选择
+void CircuitMap::select(CircuitWindow::component_Selected c)
+{
+    //功能待填充
+    switch (c) {
+    case CircuitWindow::Select:
+        //待填充
+        break;
+
+    case CircuitWindow::And :
+        //待填充
+        addGateAnd();
+        break;
+
+    case CircuitWindow::Or :
+        //待填充
+        addGateOr();
+        break;
+
+    case CircuitWindow::Non :
+        //待填充
+        addGateNon();
+        break;
+
+    default :
+        break;
+    }
 }
 
 CircuitMap::~CircuitMap()

@@ -22,8 +22,19 @@ Widget::Widget(QWidget *parent)
     scene=new QGraphicsScene;
     ui->graphicsView->setScene(scene);
 
+<<<<<<< Updated upstream
    andOrNotLogicGate *item=new andOrNotLogicGate;
     scene->addItem(item);
+=======
+    nonLogicGate *item=new nonLogicGate;
+    orLogicGate * item2 = new orLogicGate;
+    andLogicGate * item3 = new andLogicGate;
+    scene->addItem(item);
+    scene->addItem(item2);
+    scene->addItem(item3);
+
+
+>>>>>>> Stashed changes
 }
 
 Widget::~Widget()

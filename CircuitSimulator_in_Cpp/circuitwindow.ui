@@ -40,6 +40,12 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBarComponent">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
@@ -49,6 +55,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionSelect"/>
   </widget>
   <action name="actionReturn">
    <property name="text">
@@ -60,6 +67,81 @@
     <string>退出</string>
    </property>
   </action>
+  <action name="actionAnd">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/src/logical-gate/component_and.png</normaloff>:/src/logical-gate/component_and.png</iconset>
+   </property>
+   <property name="text">
+    <string>与门</string>
+   </property>
+   <property name="toolTip">
+    <string>添加与门</string>
+   </property>
+   <property name="shortcut">
+    <string>A</string>
+   </property>
+  </action>
+  <action name="actionOr">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/src/logical-gate/component_or.png</normaloff>:/src/logical-gate/component_or.png</iconset>
+   </property>
+   <property name="text">
+    <string>或门</string>
+   </property>
+   <property name="toolTip">
+    <string>添加或门</string>
+   </property>
+   <property name="shortcut">
+    <string>O</string>
+   </property>
+  </action>
+  <action name="actionNon">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/src/logical-gate/component_non.png</normaloff>:/src/logical-gate/component_non.png</iconset>
+   </property>
+   <property name="text">
+    <string>非门</string>
+   </property>
+   <property name="toolTip">
+    <string>添加非门</string>
+   </property>
+   <property name="shortcut">
+    <string>N</string>
+   </property>
+  </action>
+  <action name="actionSelect">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/src/mouse.png</normaloff>:/src/mouse.png</iconset>
+   </property>
+   <property name="text">
+    <string>选择</string>
+   </property>
+   <property name="toolTip">
+    <string>选择元件</string>
+   </property>
+   <property name="shortcut">
+    <string>S</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -69,6 +151,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="src.qrc"/>
+ </resources>
  <connections/>
 </ui>

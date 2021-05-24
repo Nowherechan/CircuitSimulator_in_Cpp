@@ -1,3 +1,14 @@
+/**
+  * baselogicgate.cpp
+  * author@王梦泽&尤曼绮
+  * tester@刘睿尧
+  * function:
+  *     an and logic gate
+  * bug:(when one bug was fixed, marked it with '~')
+  *     null
+  * TODO:(when one was completed, marked it with '~')
+  *     null
+  */
 #include "andlogicgate.h"
 #include"baselogicgate.h"
 
@@ -9,10 +20,10 @@ andLogicGate::andLogicGate()
     setFlags(QGraphicsItem::ItemIsFocusable|QGraphicsItem::ItemIsMovable);
 }
 
- QRectF andLogicGate::boundingRect() const
- {
-     return QRectF(0,0,100,100);
- }
+QRectF andLogicGate::boundingRect() const
+{
+    return QRectF(0,0,100,100);
+}
 
  int andLogicGate::getN(int n){
      return n;
@@ -31,12 +42,12 @@ void andLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
 
     //画主体
     painter->drawRect(QRect(baseX + lineWidth,
-                           baseY,
-                           width,
-                           height));
+                            baseY,
+                            width,
+                            height));
     painter->drawText(baseX + 40,
-                     baseY + 40,
-                     "&");
+                      baseY + 40,
+                      "&");
     painter->setPen(QPen(QColor(0,0,0)));
 
     //画输入引脚
@@ -44,10 +55,11 @@ void andLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
     {
     case 2:
     painter->drawLine(baseX,
-                     baseY + 20,
-                     baseX + lineWidth,
-                     baseY + 20);
+                      baseY + 20,
+                      baseX + lineWidth,
+                      baseY + 20);
     painter->drawLine(baseX,
+<<<<<<< Updated upstream
                      baseY + 80,
                      baseX + lineWidth,
                      baseY + 80);
@@ -199,9 +211,14 @@ void andLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
     default:
         break;
     }
+=======
+                      baseY + 80,
+                      baseX + lineWidth,
+                      baseY + 80);
+>>>>>>> Stashed changes
     //画输出引脚
     painter->drawLine(baseX + lineWidth + width,
-                     baseY + height/2,
-                     baseX + lineWidth + width + lineWidth,
-                     baseY + height/2);
+                      baseY + height/2,
+                      baseX + lineWidth + width + lineWidth,
+                      baseY + height/2);
 }

@@ -19,6 +19,10 @@ SOURCES += \
     animation_btn.cpp \
     circuitmap.cpp \
     circuitwindow.cpp \
+    logical-gate/andlogicgate.cpp \
+    logical-gate/baselogicgate.cpp \
+    logical-gate/nonlogicgate.cpp \
+    logical-gate/orlogicgate.cpp \
     main.cpp \
     qgraphicsview_map.cpp \
     startwindow.cpp
@@ -27,6 +31,10 @@ HEADERS += \
     animation_btn.h \
     circuitmap.h \
     circuitwindow.h \
+    logical-gate/andlogicgate.h \
+    logical-gate/baselogicgate.h \
+    logical-gate/nonlogicgate.h \
+    logical-gate/orlogicgate.h \
     qgraphicsview_map.h \
     startwindow.h
 

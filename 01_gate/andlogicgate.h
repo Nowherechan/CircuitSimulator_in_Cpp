@@ -17,7 +17,7 @@ public:
     int getN(int n);
 
 private:
-     QPoint position;
+    QPoint position;
 };
 
 #endif // ANDLOGICGATE_H

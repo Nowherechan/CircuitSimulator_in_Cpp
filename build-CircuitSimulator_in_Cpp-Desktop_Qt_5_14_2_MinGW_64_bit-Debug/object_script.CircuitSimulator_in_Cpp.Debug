@@ -1,6 +1,10 @@
 debug/animation_btn.o
 debug/circuitmap.o
 debug/circuitwindow.o
+debug/andlogicgate.o
+debug/baselogicgate.o
+debug/nonlogicgate.o
+debug/orlogicgate.o
 debug/main.o
 debug/qgraphicsview_map.o
 debug/startwindow.o

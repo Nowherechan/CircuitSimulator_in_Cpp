@@ -84,7 +84,7 @@ StartWindow::StartWindow(QWidget *parent)
             this->hide();
             ui->btn_Digital->setDisabled(false);
             ui->btn_Analog->setDisabled(false);
-            circuit_Window = new CircuitWindow(nullptr, Digital);
+            circuit_Window = new CircuitWindow(nullptr, CircuitWindow::Digital);
             circuit_Window->show();
             connect(circuit_Window, &CircuitWindow::turn_Back, [=](){
                 circuit_Window->close();
@@ -122,7 +122,7 @@ StartWindow::StartWindow(QWidget *parent)
             this->hide();
             ui->btn_Digital->setDisabled(false);
             ui->btn_Analog->setDisabled(false);
-            circuit_Window = new CircuitWindow(nullptr, Analog);
+            circuit_Window = new CircuitWindow(nullptr, CircuitWindow::Analog);
             circuit_Window->show();
             connect(circuit_Window, &CircuitWindow::turn_Back, [&](){
                 circuit_Window->close();

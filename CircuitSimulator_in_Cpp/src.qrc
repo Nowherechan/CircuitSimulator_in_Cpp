@@ -6,5 +6,9 @@
         <file>src/bg_circuit.png</file>
         <file>src/bg_basic.png</file>
         <file>src/title.png</file>
+        <file>src/logical-gate/component_and.png</file>
+        <file>src/logical-gate/component_non.png</file>
+        <file>src/logical-gate/component_or.png</file>
+        <file>src/mouse.png</file>
     </qresource>
 </RCC>
