@@ -94,8 +94,12 @@ Matrix& Matrix::operator*=(const Matrix &m)
     return *this;
 }
 
-Matrix Matrix::Solve(const Matrix &A, const Matrix &b)//解方程Ax=b
+Matrix Matrix::Solve(const Matrix &vA, const Matrix &vb)//解方程Ax=b
 {
+    Matrix A(vA.rows_num, vA.cols_num);
+    Matrix b(vb.rows_num, vb.cols_num);
+    A = vA;
+    b = vb;
     for (int i = 0; i < A.rows_num; i++) {
         if (A.p[i][i] == 0) {
             cout << "ERROR !" << endl;
