@@ -1,20 +1,15 @@
-#ifndef ORLOGICGATE_H
-#define ORLOGICGATE_H
-
+#ifndef XORLOGICGATE_H
+#define XORLOGICGATE_H
 #include"baselogicgate.h"
-
 #include <QGraphicsItem>
 
-class orLogicGate:public baselogicgate
+class xnorLogicGate:public baselogicgate
 {
 public:
-    orLogicGate();
+    xnorLogicGate();
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
-
-    int n;
-    int getN(int n);
 
 private:
      QPoint position;

@@ -17,18 +17,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     andlogicgate.cpp \
+    andornotlogicgate.cpp \
     baselogicgate.cpp \
     main.cpp \
+    nandlogicgate.cpp \
     nonlogicgate.cpp \
+    norlogicgate.cpp \
     orlogicgate.cpp \
-    widget.cpp
+    widget.cpp \
+    xnorlogicgate.cpp \
+    xorlogicgate.cpp
 
 HEADERS += \
     andlogicgate.h \
+    andornotlogicgate.h \
     baselogicgate.h \
+    nandlogicgate.h \
     nonlogicgate.h \
+    norlogicgate.h \
     orlogicgate.h \
-    widget.h
+    widget.h \
+    xnorlogicgate.h \
+    xorlogicgate.h
 
 FORMS += \
     widget.ui

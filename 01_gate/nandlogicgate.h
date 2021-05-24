@@ -1,23 +1,20 @@
-#ifndef ORLOGICGATE_H
-#define ORLOGICGATE_H
-
+#ifndef NANDLOGICGATE_H
+#define NANDLOGICGATE_H
 #include"baselogicgate.h"
-
 #include <QGraphicsItem>
 
-class orLogicGate:public baselogicgate
+class nandLogicGate:public baselogicgate
 {
 public:
-    orLogicGate();
-
+    nandLogicGate();
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
 
-    int n;
+    //引脚数
+    int n = 3;
     int getN(int n);
-
 private:
      QPoint position;
 };
 
-#endif // ANDLOGICGATE_H
+#endif // NANDLOGICGATE_H

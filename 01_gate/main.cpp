@@ -1,6 +1,15 @@
 #include "widget.h"
+#include"baselogicgate.h"
+#include"andlogicgate.h"
+#include"orlogicgate.h"
+#include"nonlogicgate.h"
 
 #include <QApplication>
+
+/////////////////////////////
+//baselogicgate *andlog = new andLogicGate;
+//baselogicgate *orlog = new orLogicGate;
+//baselogicgate *nonlog = new nonLogicGate;
 
 int main(int argc, char *argv[])
 {
