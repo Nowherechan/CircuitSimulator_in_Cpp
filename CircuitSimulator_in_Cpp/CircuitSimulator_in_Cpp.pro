@@ -20,9 +20,14 @@ SOURCES += \
     circuitmap.cpp \
     circuitwindow.cpp \
     logical-gate/andlogicgate.cpp \
+    logical-gate/andornotlogicgate.cpp \
     logical-gate/baselogicgate.cpp \
+    logical-gate/nandlogicgate.cpp \
     logical-gate/nonlogicgate.cpp \
+    logical-gate/norlogicgate.cpp \
     logical-gate/orlogicgate.cpp \
+    logical-gate/xnorlogicgate.cpp \
+    logical-gate/xorlogicgate.cpp \
     main.cpp \
     qgraphicsview_map.cpp \
     startwindow.cpp
@@ -32,9 +37,14 @@ HEADERS += \
     circuitmap.h \
     circuitwindow.h \
     logical-gate/andlogicgate.h \
+    logical-gate/andornotlogicgate.h \
     logical-gate/baselogicgate.h \
+    logical-gate/nandlogicgate.h \
     logical-gate/nonlogicgate.h \
+    logical-gate/norlogicgate.h \
     logical-gate/orlogicgate.h \
+    logical-gate/xnorlogicgate.h \
+    logical-gate/xorlogicgate.h \
     qgraphicsview_map.h \
     startwindow.h
 

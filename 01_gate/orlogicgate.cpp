@@ -1,5 +1,5 @@
 /**
-  * baselogicgate.cpp
+  * orlogicgate.cpp
   * author@王梦泽&尤曼绮
   * tester@刘睿尧
   * function:
@@ -20,21 +20,14 @@ orLogicGate::orLogicGate()
     setFlags(QGraphicsItem::ItemIsFocusable|QGraphicsItem::ItemIsMovable);
 }
 
-<<<<<<< Updated upstream
- QRectF orLogicGate::boundingRect() const
- {
-     return QRectF(0,0,100,100);
- }
-
- int orLogicGate::getN(int n){
-     return n;
- }
-=======
 QRectF orLogicGate::boundingRect() const
 {
     return QRectF(0,0,100,100);
 }
->>>>>>> Stashed changes
+
+int orLogicGate::getN(int n){
+    return n;
+}
 
 void orLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
@@ -55,168 +48,163 @@ void orLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
     switch(n)
     {
     case 2:
-    painter->drawLine(baseX,
-                      baseY + 20,
-                      baseX + lineWidth,
-                      baseY + 20);
-    painter->drawLine(baseX,
-<<<<<<< Updated upstream
-                     baseY + 80,
-                     baseX + lineWidth,
-                     baseY + 80);
+        painter->drawLine(baseX,
+                          baseY + 20,
+                          baseX + lineWidth,
+                          baseY + 20);
+        painter->drawLine(baseX,
+                          baseY + 80,
+                          baseX + lineWidth,
+                          baseY + 80);
         break;
     case 3:
-    painter->drawLine(baseX,
-                     baseY + height/4,
-                     baseX + lineWidth,
-                     baseY + height/4);
-    painter->drawLine(baseX,
-                     baseY + height/2,
-                     baseX + lineWidth,
-                     baseY + height/2);
-    painter->drawLine(baseX,
-                     baseY + height*3/4,
-                     baseX + lineWidth,
-                     baseY + height*3/4);
-     break;
+        painter->drawLine(baseX,
+                          baseY + height/4,
+                          baseX + lineWidth,
+                          baseY + height/4);
+        painter->drawLine(baseX,
+                          baseY + height/2,
+                          baseX + lineWidth,
+                          baseY + height/2);
+        painter->drawLine(baseX,
+                          baseY + height*3/4,
+                          baseX + lineWidth,
+                          baseY + height*3/4);
+        break;
     case 4:
-    painter->drawLine(baseX,
-                     baseY + height/5,
-                     baseX + lineWidth,
-                     baseY + height/5);
-    painter->drawLine(baseX,
-                     baseY + height*2/5,
-                     baseX + lineWidth,
-                     baseY + height*2/5);
-    painter->drawLine(baseX,
-                     baseY + height*3/5,
-                     baseX + lineWidth,
-                     baseY + height*3/5);
-    painter->drawLine(baseX,
-                     baseY + height*4/5,
-                     baseX + lineWidth,
-                     baseY + height*4/5);
-     break;
+        painter->drawLine(baseX,
+                          baseY + height/5,
+                          baseX + lineWidth,
+                          baseY + height/5);
+        painter->drawLine(baseX,
+                          baseY + height*2/5,
+                          baseX + lineWidth,
+                          baseY + height*2/5);
+        painter->drawLine(baseX,
+                          baseY + height*3/5,
+                          baseX + lineWidth,
+                          baseY + height*3/5);
+        painter->drawLine(baseX,
+                          baseY + height*4/5,
+                          baseX + lineWidth,
+                          baseY + height*4/5);
+        break;
     case 5:
-    painter->drawLine(baseX,
-                     baseY + (height-4)/6,
-                     baseX + lineWidth,
-                     baseY + (height-4)/6);
-    painter->drawLine(baseX,
-                     baseY + (height-4)/3,
-                     baseX + lineWidth,
-                     baseY + (height-4)/3);
-    painter->drawLine(baseX,
-                     baseY + (height-4)/2,
-                     baseX + lineWidth,
-                     baseY + (height-4)/2);
-    painter->drawLine(baseX,
-                     baseY + (height-4)*2/3,
-                     baseX + lineWidth,
-                     baseY + (height-4)*2/3);
-    painter->drawLine(baseX,
-                     baseY + (height-4)*5/6,
-                     baseX + lineWidth,
-                     baseY + (height-4)*5/6);
-     break;
+        painter->drawLine(baseX,
+                          baseY + (height-4)/6,
+                          baseX + lineWidth,
+                          baseY + (height-4)/6);
+        painter->drawLine(baseX,
+                          baseY + (height-4)/3,
+                          baseX + lineWidth,
+                          baseY + (height-4)/3);
+        painter->drawLine(baseX,
+                          baseY + (height-4)/2,
+                          baseX + lineWidth,
+                          baseY + (height-4)/2);
+        painter->drawLine(baseX,
+                          baseY + (height-4)*2/3,
+                          baseX + lineWidth,
+                          baseY + (height-4)*2/3);
+        painter->drawLine(baseX,
+                          baseY + (height-4)*5/6,
+                          baseX + lineWidth,
+                          baseY + (height-4)*5/6);
+        break;
     case 6:
-    painter->drawLine(baseX,
-                     baseY + (height-2)/7,
-                     baseX + lineWidth,
-                     baseY + (height-2)/7);
-    painter->drawLine(baseX,
-                     baseY + (height-2)*2/7,
-                     baseX + lineWidth,
-                     baseY + (height-2)*2/7);
-    painter->drawLine(baseX,
-                     baseY + (height-2)*3/7,
-                     baseX + lineWidth,
-                     baseY + (height-2)*3/7);
-    painter->drawLine(baseX,
-                     baseY + (height-2)*4/7,
-                     baseX + lineWidth,
-                     baseY + (height-2)*4/7);
-    painter->drawLine(baseX,
-                     baseY + (height-2)*5/7,
-                     baseX + lineWidth,
-                     baseY + (height-2)*5/7);
-    painter->drawLine(baseX,
-                     baseY + (height-2)*6/7,
-                     baseX + lineWidth,
-                     baseY + (height-2)*6/7);
-     break;
+        painter->drawLine(baseX,
+                          baseY + (height-2)/7,
+                          baseX + lineWidth,
+                          baseY + (height-2)/7);
+        painter->drawLine(baseX,
+                          baseY + (height-2)*2/7,
+                          baseX + lineWidth,
+                          baseY + (height-2)*2/7);
+        painter->drawLine(baseX,
+                          baseY + (height-2)*3/7,
+                          baseX + lineWidth,
+                          baseY + (height-2)*3/7);
+        painter->drawLine(baseX,
+                          baseY + (height-2)*4/7,
+                          baseX + lineWidth,
+                          baseY + (height-2)*4/7);
+        painter->drawLine(baseX,
+                          baseY + (height-2)*5/7,
+                          baseX + lineWidth,
+                          baseY + (height-2)*5/7);
+        painter->drawLine(baseX,
+                          baseY + (height-2)*6/7,
+                          baseX + lineWidth,
+                          baseY + (height-2)*6/7);
+        break;
     case 7:
-    painter->drawLine(baseX,
-                     baseY + height/8,
-                     baseX + lineWidth,
-                     baseY + height/8);
-    painter->drawLine(baseX,
-                     baseY + height/4,
-                     baseX + lineWidth,
-                     baseY + height/4);
-    painter->drawLine(baseX,
-                     baseY + height*3/8,
-                     baseX + lineWidth,
-                     baseY + height*3/8);
-    painter->drawLine(baseX,
-                     baseY +  height/2,
-                     baseX + lineWidth,
-                     baseY +  height/2);
-    painter->drawLine(baseX,
-                     baseY +  height*5/8,
-                     baseX + lineWidth,
-                     baseY +  height*5/8);
-    painter->drawLine(baseX,
-                     baseY +  height*6/8,
-                     baseX + lineWidth,
-                     baseY +  height*6/8);
-    painter->drawLine(baseX,
-                     baseY +  height*7/8,
-                     baseX + lineWidth,
-                     baseY +  height*7/8);
-     break;
+        painter->drawLine(baseX,
+                          baseY + height/8,
+                          baseX + lineWidth,
+                          baseY + height/8);
+        painter->drawLine(baseX,
+                          baseY + height/4,
+                          baseX + lineWidth,
+                          baseY + height/4);
+        painter->drawLine(baseX,
+                          baseY + height*3/8,
+                          baseX + lineWidth,
+                          baseY + height*3/8);
+        painter->drawLine(baseX,
+                          baseY +  height/2,
+                          baseX + lineWidth,
+                          baseY +  height/2);
+        painter->drawLine(baseX,
+                          baseY +  height*5/8,
+                          baseX + lineWidth,
+                          baseY +  height*5/8);
+        painter->drawLine(baseX,
+                          baseY +  height*6/8,
+                          baseX + lineWidth,
+                          baseY +  height*6/8);
+        painter->drawLine(baseX,
+                          baseY +  height*7/8,
+                          baseX + lineWidth,
+                          baseY +  height*7/8);
+        break;
     case 8:
-    painter->drawLine(baseX,
-                     baseY +  (height-1)/9,
-                     baseX + lineWidth,
-                     baseY +  (height-1)/9);
-    painter->drawLine(baseX,
-                     baseY +  (height-1)*2/9,
-                     baseX + lineWidth,
-                     baseY +  (height-1)*2/9);
-    painter->drawLine(baseX,
-                     baseY +  (height-1)*3/9,
-                     baseX + lineWidth,
-                     baseY +  (height-1)*3/9);
-    painter->drawLine(baseX,
-                     baseY +  (height-1)*4/9,
-                     baseX + lineWidth,
-                     baseY +  (height-1)*4/9);
-    painter->drawLine(baseX,
-                     baseY +  (height-1)*5/9,
-                     baseX + lineWidth,
-                     baseY +  (height-1)*5/9);
-    painter->drawLine(baseX,
-                     baseY +  (height-1)*6/9,
-                     baseX + lineWidth,
-                     baseY +  (height-1)*6/9);
-    painter->drawLine(baseX,
-                     baseY +  (height-1)*7/9,
-                     baseX + lineWidth,
-                     baseY +  (height-1)*7/9);
-    painter->drawLine(baseX,
-                     baseY +  (height-1)*8/9,
-                     baseX + lineWidth,
-                     baseY +  (height-1)*8/9);
-     break;
+        painter->drawLine(baseX,
+                          baseY +  (height-1)/9,
+                          baseX + lineWidth,
+                          baseY +  (height-1)/9);
+        painter->drawLine(baseX,
+                          baseY +  (height-1)*2/9,
+                          baseX + lineWidth,
+                          baseY +  (height-1)*2/9);
+        painter->drawLine(baseX,
+                          baseY +  (height-1)*3/9,
+                          baseX + lineWidth,
+                          baseY +  (height-1)*3/9);
+        painter->drawLine(baseX,
+                          baseY +  (height-1)*4/9,
+                          baseX + lineWidth,
+                          baseY +  (height-1)*4/9);
+        painter->drawLine(baseX,
+                          baseY +  (height-1)*5/9,
+                          baseX + lineWidth,
+                          baseY +  (height-1)*5/9);
+        painter->drawLine(baseX,
+                          baseY +  (height-1)*6/9,
+                          baseX + lineWidth,
+                          baseY +  (height-1)*6/9);
+        painter->drawLine(baseX,
+                          baseY +  (height-1)*7/9,
+                          baseX + lineWidth,
+                          baseY +  (height-1)*7/9);
+        painter->drawLine(baseX,
+                          baseY +  (height-1)*8/9,
+                          baseX + lineWidth,
+                          baseY +  (height-1)*8/9);
+        break;
     default:
         break;
     }
-=======
-                      baseY + 80,
-                      baseX + lineWidth,
-                      baseY + 80);
->>>>>>> Stashed changes
+
     //画输出引脚
     painter->drawLine(baseX + lineWidth + width,
                       baseY + height/2,

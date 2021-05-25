@@ -13,6 +13,9 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
 
+    int n;
+    int getN(int n);
+
 private:
     QPoint position;
 };

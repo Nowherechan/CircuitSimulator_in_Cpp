@@ -1,5 +1,5 @@
 /**
-  * baselogicgate.cpp
+  * nonlogicgate.cpp
   * author@王梦泽&尤曼绮
   * tester@刘睿尧
   * function:

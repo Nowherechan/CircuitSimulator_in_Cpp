@@ -1,0 +1,12 @@
+release/andlogicgate.o
+release/andornotlogicgate.o
+release/baselogicgate.o
+release/main.o
+release/nandlogicgate.o
+release/nonlogicgate.o
+release/norlogicgate.o
+release/orlogicgate.o
+release/widget.o
+release/xnorlogicgate.o
+release/xorlogicgate.o
+release/moc_widget.o
