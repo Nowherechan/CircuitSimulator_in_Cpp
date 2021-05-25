@@ -3,6 +3,11 @@
 
 CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o: ../Circuit.cpp
 CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o: ../Circuit.h
+CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o: ../pch.h
+
+CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o: ../Element.cpp
+CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o: ../Element.h
+CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o: ../pch.h
 
 CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o: ../Matrix.cpp
 CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o: ../Matrix.h

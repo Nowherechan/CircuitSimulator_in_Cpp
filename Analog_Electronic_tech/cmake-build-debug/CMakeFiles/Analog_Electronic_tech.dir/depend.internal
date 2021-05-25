@@ -4,6 +4,11 @@
 CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o
  /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.cpp
  /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.h
+ /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/pch.h
+CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o
+ /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.cpp
+ /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.h
+ /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/pch.h
 CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o
  /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Matrix.cpp
  /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Matrix.h
