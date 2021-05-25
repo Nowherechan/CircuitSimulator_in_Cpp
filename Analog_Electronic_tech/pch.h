@@ -6,6 +6,6 @@
 #define ANALOG_ELECTRONIC_TECH_PCH_H
 #include <cmath>
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib>
 
 #endif //ANALOG_ELECTRONIC_TECH_PCH_H

@@ -1,4 +1,4 @@
-"D:\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -DCMAKE_C_COMPILER=C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/g++.exe -G "CodeBlocks - MinGW Makefiles" D:\CppBigAssignment\CircuitSimulator_in_Cpp\Analog_Electronic_tech
+/home/z/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.7142.21/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug
+-- Build files have been written to: /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug

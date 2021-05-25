@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
@@ -20,6 +19,7 @@
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "qgraphicsview_map.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -27,14 +27,15 @@ class Ui_CircuitMap
 {
 public:
     QVBoxLayout *verticalLayout;
-    QGraphicsView *graphicsView;
+    QGraphicsView_Map *map_Circuit;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
+    QPushButton *btn_Clear;
+    QSpacerItem *horizontalSpacer;
     QLabel *label_Zoom;
     QSpinBox *spinBox_Zoom;
     QSlider *slider_Zoom;
-    QSpacerItem *horizontalSpacer;
-    QPushButton *btn_Biggest;
+    QPushButton *btn_All;
 
     void setupUi(QWidget *CircuitMap)
     {
@@ -44,15 +45,30 @@ public:
         CircuitMap->setMinimumSize(QSize(800, 600));
         verticalLayout = new QVBoxLayout(CircuitMap);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        graphicsView = new QGraphicsView(CircuitMap);
-        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        map_Circuit = new QGraphicsView_Map(CircuitMap);
+        map_Circuit->setObjectName(QString::fromUtf8("map_Circuit"));
+        QBrush brush(QColor(0, 0, 0, 255));
+        brush.setStyle(Qt::NoBrush);
+        map_Circuit->setBackgroundBrush(brush);
+        QBrush brush1(QColor(0, 0, 0, 255));
+        brush1.setStyle(Qt::NoBrush);
+        map_Circuit->setForegroundBrush(brush1);
 
-        verticalLayout->addWidget(graphicsView);
+        verticalLayout->addWidget(map_Circuit);
 
         widget = new QWidget(CircuitMap);
         widget->setObjectName(QString::fromUtf8("widget"));
         horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        btn_Clear = new QPushButton(widget);
+        btn_Clear->setObjectName(QString::fromUtf8("btn_Clear"));
+
+        horizontalLayout->addWidget(btn_Clear);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
         label_Zoom = new QLabel(widget);
         label_Zoom->setObjectName(QString::fromUtf8("label_Zoom"));
 
@@ -75,14 +91,10 @@ public:
 
         horizontalLayout->addWidget(slider_Zoom);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        btn_All = new QPushButton(widget);
+        btn_All->setObjectName(QString::fromUtf8("btn_All"));
 
-        horizontalLayout->addItem(horizontalSpacer);
-
-        btn_Biggest = new QPushButton(widget);
-        btn_Biggest->setObjectName(QString::fromUtf8("btn_Biggest"));
-
-        horizontalLayout->addWidget(btn_Biggest);
+        horizontalLayout->addWidget(btn_All);
 
 
         verticalLayout->addWidget(widget);
@@ -96,8 +108,9 @@ public:
     void retranslateUi(QWidget *CircuitMap)
     {
         CircuitMap->setWindowTitle(QCoreApplication::translate("CircuitMap", "Form", nullptr));
+        btn_Clear->setText(QCoreApplication::translate("CircuitMap", "\346\270\205\351\231\244\345\205\203\344\273\266", nullptr));
         label_Zoom->setText(QCoreApplication::translate("CircuitMap", "\346\224\276\347\274\251", nullptr));
-        btn_Biggest->setText(QCoreApplication::translate("CircuitMap", "\346\230\276\347\244\272\345\205\250\351\203\250", nullptr));
+        btn_All->setText(QCoreApplication::translate("CircuitMap", "\346\230\276\347\244\272\345\205\250\351\203\250", nullptr));
     } // retranslateUi
 
 };

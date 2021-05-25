@@ -1,3 +1,1 @@
-"D:\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Analog_Electronic_tech.dir/objects.a
-C:\gcc\x86_64-8.1.0-release-win32-seh-rt_v6-rev0\mingw64\bin\ar.exe cr CMakeFiles\Analog_Electronic_tech.dir/objects.a @CMakeFiles\Analog_Electronic_tech.dir\objects1.rsp
-C:\gcc\x86_64-8.1.0-release-win32-seh-rt_v6-rev0\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Analog_Electronic_tech.dir/objects.a -Wl,--no-whole-archive  -o Analog_Electronic_tech.exe -Wl,--out-implib,libAnalog_Electronic_tech.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Analog_Electronic_tech.dir\linklibs.rsp
+/usr/bin/c++ -g CMakeFiles/Analog_Electronic_tech.dir/main.cpp.o CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o -o Analog_Electronic_tech 

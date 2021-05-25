@@ -1,0 +1,12 @@
+debug/andlogicgate.o
+debug/andornotlogicgate.o
+debug/baselogicgate.o
+debug/main.o
+debug/nandlogicgate.o
+debug/nonlogicgate.o
+debug/norlogicgate.o
+debug/orlogicgate.o
+debug/widget.o
+debug/xnorlogicgate.o
+debug/xorlogicgate.o
+debug/moc_widget.o

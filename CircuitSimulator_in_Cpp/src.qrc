@@ -6,5 +6,14 @@
         <file>src/bg_circuit.png</file>
         <file>src/bg_basic.png</file>
         <file>src/title.png</file>
+        <file>src/logical-gate/component_and.png</file>
+        <file>src/logical-gate/component_non.png</file>
+        <file>src/logical-gate/component_or.png</file>
+        <file>src/mouse.png</file>
+        <file>src/logical-gate/component_andornot.png</file>
+        <file>src/logical-gate/component_nand.png</file>
+        <file>src/logical-gate/component_nor.png</file>
+        <file>src/logical-gate/component_xnor.png</file>
+        <file>src/logical-gate/component_xor.png</file>
     </qresource>
 </RCC>

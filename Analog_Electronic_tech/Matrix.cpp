@@ -94,8 +94,12 @@ Matrix& Matrix::operator*=(const Matrix &m)
     return *this;
 }
 
-Matrix Matrix::Solve(const Matrix &A, const Matrix &b)//解方程Ax=b
+Matrix Matrix::Solve(const Matrix &vA, const Matrix &vb)//解方程Ax=b
 {
+    Matrix A(vA.rows_num, vA.cols_num);
+    Matrix b(vb.rows_num, vb.cols_num);
+    A = vA;
+    b = vb;
     for (int i = 0; i < A.rows_num; i++) {
         if (A.p[i][i] == 0) {
             cout << "ERROR !" << endl;
@@ -151,10 +155,47 @@ istream& operator>>(istream& is, Matrix& m)
     return is;
 }
 
-void Matrix::insert(int row, int col, double num)
+void Matrix::insert_num(int row, int col, double num)
 {
     if (row > rows_num || col > cols_num) {
         cout << "ERROR !" << endl;
     }
     p[row - 1][col - 1] = num;
+}
+
+double  Matrix::get_num(int row, int col)
+{
+    if (row > rows_num || col > cols_num) {
+        cout << "ERROR !" << endl;
+    }
+    return p[row - 1][col - 1];
+}
+
+void Matrix::add_Row()
+{
+
+    Matrix temp = Matrix(rows_num + 1, cols_num);
+    for (int r = 1; r <= rows_num; r++)
+        for (int c = 1; c <= cols_num; c++) {
+            temp.insert_num(r, c, get_num(r, c));
+        }
+    for (int c = 1; c <= cols_num; c++) {
+        temp.insert_num(rows_num + 1, c, 0);
+    }
+    *this = temp;
+
+}
+
+void Matrix::add_Col()
+{
+    Matrix temp = Matrix(rows_num, cols_num + 1);
+    for (int r = 1; r <= rows_num; r++)
+        for (int c = 1; c <= cols_num; c++) {
+            temp.insert_num(r, c, get_num(r, c));
+        }
+    for (int r = 1; r <= rows_num; r++) {
+        temp.insert_num(r, cols_num + 1, 0);
+    }
+    *this = temp;
+
 }

@@ -3,8 +3,6 @@
 
 #include <QMainWindow>
 
-enum circuit_Mod{Digital, Analog};
-
 namespace Ui {
 class CircuitWindow;
 }
@@ -14,6 +12,8 @@ class CircuitWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    enum circuit_Mod{Digital, Analog};
+    enum component_Selected{Select, And, Or, Non, Nand, Nor, AndOrNot, Xor, Xnor};  //Add more when add components.
     explicit CircuitWindow(QWidget *parent = nullptr, circuit_Mod mod = Digital);
     void paintEvent(QPaintEvent *);
     ~CircuitWindow();
@@ -24,6 +24,7 @@ private:
 
 signals:
     void turn_Back();
+    void select(component_Selected c);
 };
 
 #endif // CIRCUITWINDOW_H

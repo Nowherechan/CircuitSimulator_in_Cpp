@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_CircuitWindow_t {
-    QByteArrayData data[3];
-    char stringdata0[25];
+    QByteArrayData data[6];
+    char stringdata0[53];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,10 +34,14 @@ static const qt_meta_stringdata_CircuitWindow_t qt_meta_stringdata_CircuitWindow
     {
 QT_MOC_LITERAL(0, 0, 13), // "CircuitWindow"
 QT_MOC_LITERAL(1, 14, 9), // "turn_Back"
-QT_MOC_LITERAL(2, 24, 0) // ""
+QT_MOC_LITERAL(2, 24, 0), // ""
+QT_MOC_LITERAL(3, 25, 6), // "select"
+QT_MOC_LITERAL(4, 32, 18), // "component_Selected"
+QT_MOC_LITERAL(5, 51, 1) // "c"
 
     },
-    "CircuitWindow\0turn_Back\0"
+    "CircuitWindow\0turn_Back\0\0select\0"
+    "component_Selected\0c"
 };
 #undef QT_MOC_LITERAL
 
@@ -47,18 +51,20 @@ static const uint qt_meta_data_CircuitWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x06 /* Public */,
+       1,    0,   24,    2, 0x06 /* Public */,
+       3,    1,   25,    2, 0x06 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 4,    5,
 
        0        // eod
 };
@@ -70,6 +76,7 @@ void CircuitWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->turn_Back(); break;
+        case 1: _t->select((*reinterpret_cast< component_Selected(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -81,8 +88,14 @@ void CircuitWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
                 return;
             }
         }
+        {
+            using _t = void (CircuitWindow::*)(component_Selected );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&CircuitWindow::select)) {
+                *result = 1;
+                return;
+            }
+        }
     }
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject CircuitWindow::staticMetaObject = { {
@@ -114,13 +127,13 @@ int CircuitWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
@@ -129,6 +142,13 @@ int CircuitWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void CircuitWindow::turn_Back()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void CircuitWindow::select(component_Selected _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

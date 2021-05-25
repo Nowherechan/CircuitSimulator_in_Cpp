@@ -14,6 +14,9 @@
 #include "ui_circuitwindow.h"
 #include <QPainter>
 #include <QDebug>
+#include <QAction>
+#include <QList>
+#include <QListIterator>
 
 CircuitWindow::CircuitWindow(QWidget *parent, circuit_Mod mod) :
     QMainWindow(parent),
@@ -32,7 +35,90 @@ CircuitWindow::CircuitWindow(QWidget *parent, circuit_Mod mod) :
         emit turn_Back();
     });
 
-    //工具栏添加元件
+    //单选设置
+    connect(this, &CircuitWindow::select, [=](){
+        QList<QAction *> actlist = ui->toolBarComponent->actions();
+        foreach(QAction* i, actlist) {
+            i->setChecked(false);
+        }
+    });
+
+    //工具栏按钮设置
+    ui->actionSelect->setChecked(true);
+    connect(ui->actionSelect, &QAction::triggered, [=](){
+        emit select(Select);
+        ui->actionSelect->setChecked(true);
+        ui->Map->select(Select);
+    });
+
+    //分模式运行
+    switch (mod) {
+    case Digital:
+        //工具栏添加元件
+        ui->toolBarComponent->addAction(ui->actionAnd);
+        connect(ui->actionAnd, &QAction::triggered, [=](){
+            emit select(And);
+            ui->actionAnd->setChecked(true);
+            ui->Map->select(And);
+        });
+
+        ui->toolBarComponent->addAction(ui->actionOr);
+        connect(ui->actionOr, &QAction::triggered, [=](){
+            emit select(Or);
+            ui->actionOr->setChecked(true);
+            ui->Map->select(Or);
+        });
+
+        ui->toolBarComponent->addAction(ui->actionNon);
+        connect(ui->actionNon, &QAction::triggered, [=](){
+            emit select(Non);
+            ui->actionNon->setChecked(true);
+            ui->Map->select(Non);
+        });
+
+        ui->toolBarComponent->addAction(ui->actionNand);
+        connect(ui->actionNand, &QAction::triggered, [=](){
+            emit select(Nand);
+            ui->actionNand->setChecked(true);
+            ui->Map->select(Nand);
+        });
+
+        ui->toolBarComponent->addAction(ui->actionNor);
+        connect(ui->actionNor, &QAction::triggered, [=](){
+            emit select(Nor);
+            ui->actionNor->setChecked(true);
+            ui->Map->select(Nor);
+        });
+
+        ui->toolBarComponent->addAction(ui->actionAndOrNot);
+        connect(ui->actionAndOrNot, &QAction::triggered, [=](){
+            emit select(AndOrNot);
+            ui->actionAndOrNot->setChecked(true);
+            ui->Map->select(AndOrNot);
+        });
+
+        ui->toolBarComponent->addAction(ui->actionXor);
+        connect(ui->actionXor, &QAction::triggered, [=](){
+            emit select(Xor);
+            ui->actionXor->setChecked(true);
+            ui->Map->select(Xor);
+        });
+
+        ui->toolBarComponent->addAction(ui->actionXnor);
+        connect(ui->actionXnor, &QAction::triggered, [=](){
+            emit select(Xnor);
+            ui->actionXnor->setChecked(true);
+            ui->Map->select(Xnor);
+        });
+        break;
+
+    case Analog:
+        //工具栏添加元件
+        break;
+
+    default:
+        break;
+    }
 }
 
 CircuitWindow::~CircuitWindow()
