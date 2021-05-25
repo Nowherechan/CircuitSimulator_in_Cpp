@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.cpp">
+			<Option target="Analog_Electronic_tech"/>
+		</Unit>
+		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.h">
+			<Option target="Analog_Electronic_tech"/>
+		</Unit>
+		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.cpp">
+			<Option target="Analog_Electronic_tech"/>
+		</Unit>
+		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.h">
+			<Option target="Analog_Electronic_tech"/>
+		</Unit>
 		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Matrix.cpp">
 			<Option target="Analog_Electronic_tech"/>
 		</Unit>

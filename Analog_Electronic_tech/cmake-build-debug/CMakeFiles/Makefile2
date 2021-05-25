@@ -93,12 +93,12 @@ clean: CMakeFiles/Analog_Electronic_tech.dir/clean
 CMakeFiles/Analog_Electronic_tech.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Analog_Electronic_tech.dir/build.make CMakeFiles/Analog_Electronic_tech.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Analog_Electronic_tech.dir/build.make CMakeFiles/Analog_Electronic_tech.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Analog_Electronic_tech"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target Analog_Electronic_tech"
 .PHONY : CMakeFiles/Analog_Electronic_tech.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Analog_Electronic_tech.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Analog_Electronic_tech.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Analog_Electronic_tech.dir/rule

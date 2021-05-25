@@ -142,6 +142,60 @@ Analog_Electronic_tech/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Analog_Electronic_tech.dir/build.make CMakeFiles/Analog_Electronic_tech.dir/build
 .PHONY : Analog_Electronic_tech/fast
 
+Circuit.o: Circuit.cpp.o
+
+.PHONY : Circuit.o
+
+# target to build an object file
+Circuit.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Analog_Electronic_tech.dir/build.make CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o
+.PHONY : Circuit.cpp.o
+
+Circuit.i: Circuit.cpp.i
+
+.PHONY : Circuit.i
+
+# target to preprocess a source file
+Circuit.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Analog_Electronic_tech.dir/build.make CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.i
+.PHONY : Circuit.cpp.i
+
+Circuit.s: Circuit.cpp.s
+
+.PHONY : Circuit.s
+
+# target to generate assembly for a file
+Circuit.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Analog_Electronic_tech.dir/build.make CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.s
+.PHONY : Circuit.cpp.s
+
+Element.o: Element.cpp.o
+
+.PHONY : Element.o
+
+# target to build an object file
+Element.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Analog_Electronic_tech.dir/build.make CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o
+.PHONY : Element.cpp.o
+
+Element.i: Element.cpp.i
+
+.PHONY : Element.i
+
+# target to preprocess a source file
+Element.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Analog_Electronic_tech.dir/build.make CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.i
+.PHONY : Element.cpp.i
+
+Element.s: Element.cpp.s
+
+.PHONY : Element.s
+
+# target to generate assembly for a file
+Element.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Analog_Electronic_tech.dir/build.make CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.s
+.PHONY : Element.cpp.s
+
 Matrix.o: Matrix.cpp.o
 
 .PHONY : Matrix.o
@@ -205,6 +259,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Analog_Electronic_tech"
+	@echo "... Circuit.o"
+	@echo "... Circuit.i"
+	@echo "... Circuit.s"
+	@echo "... Element.o"
+	@echo "... Element.i"
+	@echo "... Element.s"
 	@echo "... Matrix.o"
 	@echo "... Matrix.i"
 	@echo "... Matrix.s"

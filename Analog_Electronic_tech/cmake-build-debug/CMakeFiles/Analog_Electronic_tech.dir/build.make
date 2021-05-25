@@ -102,19 +102,49 @@ CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Matrix.cpp -o CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.s
 
+CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o: CMakeFiles/Analog_Electronic_tech.dir/flags.make
+CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o: ../Circuit.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o -c /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.cpp
+
+CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.cpp > CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.i
+
+CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.cpp -o CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.s
+
+CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o: CMakeFiles/Analog_Electronic_tech.dir/flags.make
+CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o: ../Element.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o -c /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.cpp
+
+CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.cpp > CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.i
+
+CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.cpp -o CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.s
+
 # Object files for target Analog_Electronic_tech
 Analog_Electronic_tech_OBJECTS = \
 "CMakeFiles/Analog_Electronic_tech.dir/main.cpp.o" \
-"CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o"
+"CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o" \
+"CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o" \
+"CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o"
 
 # External object files for target Analog_Electronic_tech
 Analog_Electronic_tech_EXTERNAL_OBJECTS =
 
 Analog_Electronic_tech: CMakeFiles/Analog_Electronic_tech.dir/main.cpp.o
 Analog_Electronic_tech: CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o
+Analog_Electronic_tech: CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o
+Analog_Electronic_tech: CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o
 Analog_Electronic_tech: CMakeFiles/Analog_Electronic_tech.dir/build.make
 Analog_Electronic_tech: CMakeFiles/Analog_Electronic_tech.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Analog_Electronic_tech"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Analog_Electronic_tech"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Analog_Electronic_tech.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

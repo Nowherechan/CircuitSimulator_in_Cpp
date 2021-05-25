@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/Analog_Electronic_tech.dir/main.cpp.o CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o -o Analog_Electronic_tech 
+/usr/bin/c++ -g CMakeFiles/Analog_Electronic_tech.dir/main.cpp.o CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o -o Analog_Electronic_tech 
