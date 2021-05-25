@@ -7,7 +7,7 @@
   * bug:(when one bug was fixed, marked it with '~')
   *     null
   * TODO:(when one was completed, marked it with '~')
-  *     1.Finish the show-all and clear-all button.
+  * ~   1.Finish the show-all and clear-all button.
   *     2.Complete the actions of components, like put-on , delete and move.
   *     3.Matrix of the can-put points.
   *     4.Function select().
@@ -140,7 +140,11 @@ CircuitMap::CircuitMap(QWidget *parent) :
     //清除元件按钮
     ui->btn_Clear->setStyleSheet("padding:10px;border:2px;background:" + BTN_COLOR_STRING);
     connect(ui->btn_Clear, &QPushButton::clicked, [=](){
-        //功能待填充
+        QList<QGraphicsItem *> itemList = scene->items();
+        for(auto i = 0; i < itemList.size(); i++) {
+            scene->removeItem(itemList[i]);
+            delete itemList[i];
+        }
     });
 }
 

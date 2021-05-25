@@ -3,10 +3,10 @@
 #include"baselogicgate.h"
 #include <QGraphicsItem>
 
-class XorLogicGate:public baselogicgate
+class xorLogicGate:public baselogicgate
 {
 public:
-    XorLogicGate();
+    xorLogicGate();
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
@@ -15,4 +15,4 @@ private:
      QPoint position;
 };
 
-#endif // ANDLOGICGATE_H
+#endif // XORLOGICGATE_H

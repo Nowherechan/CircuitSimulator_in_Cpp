@@ -13,11 +13,11 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
 
-    int n;
+    int n = 2;
     int getN(int n);
 
 private:
     QPoint position;
 };
 
-#endif // ANDLOGICGATE_H
+#endif // ORLOGICGATE_H

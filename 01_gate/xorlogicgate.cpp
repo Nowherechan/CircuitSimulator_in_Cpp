@@ -11,7 +11,7 @@
   */
 #include "xorlogicgate.h"
 
-XorLogicGate::XorLogicGate()
+xorLogicGate::xorLogicGate()
 {
     position.setX(0);
     position.setY(0);
@@ -19,12 +19,12 @@ XorLogicGate::XorLogicGate()
     setFlags(QGraphicsItem::ItemIsFocusable|QGraphicsItem::ItemIsMovable);
 }
 
-QRectF XorLogicGate::boundingRect() const
+QRectF xorLogicGate::boundingRect() const
 {
     return QRectF(0,0,100,100);
 }
 
-void XorLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void xorLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     int baseX = position.x();
     int baseY = position.y();
