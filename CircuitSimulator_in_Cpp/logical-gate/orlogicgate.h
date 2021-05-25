@@ -20,4 +20,4 @@ private:
     QPoint position;
 };
 
-#endif // ANDLOGICGATE_H
+#endif // ORLOGICGATE_H

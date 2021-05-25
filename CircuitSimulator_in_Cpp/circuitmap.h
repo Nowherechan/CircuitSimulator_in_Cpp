@@ -5,6 +5,11 @@
 #include "logical-gate/andlogicgate.h"
 #include "logical-gate/orlogicgate.h"
 #include "logical-gate/nonlogicgate.h"
+#include "logical-gate/nandlogicgate.h"
+#include "logical-gate/norlogicgate.h"
+#include "logical-gate/andornotlogicgate.h"
+#include "logical-gate/xorlogicgate.h"
+#include "logical-gate/xnorlogicgate.h"
 #include <QWidget>
 #include <QPixmap>
 #include <QGraphicsScene>
@@ -29,6 +34,11 @@ protected:
     andLogicGate* addGateAnd();
     orLogicGate* addGateOr();
     nonLogicGate* addGateNon();
+    nandLogicGate* addGateNand();
+    norLogicGate* addGateNor();
+    andOrNotLogicGate* addGateAndOrNor();
+    xorLogicGate* addGateXor();
+    xnorLogicGate* addGateXnor();
 
 private:
     Ui::CircuitMap *ui;

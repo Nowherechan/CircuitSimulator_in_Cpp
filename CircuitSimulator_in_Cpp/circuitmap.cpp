@@ -17,6 +17,11 @@
 #include "logical-gate/andlogicgate.h"
 #include "logical-gate/orlogicgate.h"
 #include "logical-gate/nonlogicgate.h"
+#include "logical-gate/nandlogicgate.h"
+#include "logical-gate/norlogicgate.h"
+#include "logical-gate/andornotlogicgate.h"
+#include "logical-gate/xorlogicgate.h"
+#include "logical-gate/xnorlogicgate.h"
 #include <QPainter>
 #include <QDebug>
 #include <QGraphicsView>
@@ -139,29 +144,64 @@ CircuitMap::CircuitMap(QWidget *parent) :
     });
 }
 
-//添加元件图片
+//添加元件图片方法
 andLogicGate* CircuitMap::addGateAnd()
 {
-    andLogicGate *test1 = new andLogicGate();
-    scene->addItem(test1);
-    return test1;
+    andLogicGate *g = new andLogicGate();
+    scene->addItem(g);
+    return g;
 }
 
 orLogicGate* CircuitMap::addGateOr()
 {
-    orLogicGate *test2 = new orLogicGate();
-    scene->addItem(test2);
-    return test2;
+    orLogicGate *g = new orLogicGate();
+    scene->addItem(g);
+    return g;
 }
 
 nonLogicGate* CircuitMap::addGateNon()
 {
-    nonLogicGate *test3 = new nonLogicGate();
-    scene->addItem(test3);
-    return test3;
+    nonLogicGate *g = new nonLogicGate();
+    scene->addItem(g);
+    return g;
 }
 
-//元件选择
+nandLogicGate* CircuitMap::addGateNand()
+{
+    nandLogicGate *g = new nandLogicGate();
+    scene->addItem(g);
+    return g;
+}
+
+norLogicGate* CircuitMap::addGateNor()
+{
+    norLogicGate *g = new norLogicGate();
+    scene->addItem(g);
+    return g;
+}
+
+andOrNotLogicGate* CircuitMap::addGateAndOrNor()
+{
+    andOrNotLogicGate *g = new andOrNotLogicGate();
+    scene->addItem(g);
+    return g;
+}
+
+xorLogicGate* CircuitMap::addGateXor()
+{
+    xorLogicGate *g = new xorLogicGate();
+    scene->addItem(g);
+    return g;
+}
+
+xnorLogicGate* CircuitMap::addGateXnor()
+{
+    xnorLogicGate *g = new xnorLogicGate();
+    scene->addItem(g);
+    return g;
+}
+
+//当前选项
 void CircuitMap::select(CircuitWindow::component_Selected c)
 {
     //功能待填充
@@ -183,6 +223,31 @@ void CircuitMap::select(CircuitWindow::component_Selected c)
     case CircuitWindow::Non :
         //待填充
         addGateNon();
+        break;
+
+    case CircuitWindow::Nand :
+        //待填充
+        addGateNand();
+        break;
+
+    case CircuitWindow::Nor :
+        //待填充
+        addGateNor();
+        break;
+
+    case CircuitWindow::AndOrNot :
+        //待填充
+        addGateAndOrNor();
+        break;
+
+    case CircuitWindow::Xor :
+        //待填充
+        addGateXor();
+        break;
+
+    case CircuitWindow::Xnor :
+        //待填充
+        addGateXnor();
         break;
 
     default :

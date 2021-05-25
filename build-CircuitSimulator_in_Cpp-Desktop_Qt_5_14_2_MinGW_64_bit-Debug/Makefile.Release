@@ -171,9 +171,14 @@ release/qrc_src.cpp: ../CircuitSimulator_in_Cpp/src.qrc \
 		../CircuitSimulator_in_Cpp/src/bg_basic.png \
 		../CircuitSimulator_in_Cpp/src/mouse.png \
 		../CircuitSimulator_in_Cpp/src/title.png \
+		../CircuitSimulator_in_Cpp/src/logical-gate/component_nand.png \
 		../CircuitSimulator_in_Cpp/src/logical-gate/component_non.png \
+		../CircuitSimulator_in_Cpp/src/logical-gate/component_nor.png \
 		../CircuitSimulator_in_Cpp/src/logical-gate/component_and.png \
-		../CircuitSimulator_in_Cpp/src/logical-gate/component_or.png
+		../CircuitSimulator_in_Cpp/src/logical-gate/component_xnor.png \
+		../CircuitSimulator_in_Cpp/src/logical-gate/component_or.png \
+		../CircuitSimulator_in_Cpp/src/logical-gate/component_andornot.png \
+		../CircuitSimulator_in_Cpp/src/logical-gate/component_xor.png
 	D:\Qt\5.14.2\5.14.2\mingw73_64\bin\rcc.exe -name src ..\CircuitSimulator_in_Cpp\src.qrc -o release\qrc_src.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h

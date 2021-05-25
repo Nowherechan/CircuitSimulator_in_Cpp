@@ -1,5 +1,5 @@
-#ifndef NANDLOGICGATE_H
-#define NANDLOGICGATE_H
+#ifndef NORLOGICGATE_H
+#define NORLOGICGATE_H
 #include"baselogicgate.h"
 #include <QGraphicsItem>
 
@@ -17,5 +17,5 @@ private:
      QPoint position;
 };
 
-#endif // NANDLOGICGATE_H
+#endif // NORLOGICGATE_H
 

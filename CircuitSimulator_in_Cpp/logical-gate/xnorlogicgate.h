@@ -1,5 +1,5 @@
-#ifndef XORLOGICGATE_H
-#define XORLOGICGATE_H
+#ifndef XNORLOGICGATE_H
+#define XNORLOGICGATE_H
 #include"baselogicgate.h"
 #include <QGraphicsItem>
 
@@ -15,4 +15,4 @@ private:
      QPoint position;
 };
 
-#endif // ANDLOGICGATE_H
+#endif // XNORLOGICGATE_H
