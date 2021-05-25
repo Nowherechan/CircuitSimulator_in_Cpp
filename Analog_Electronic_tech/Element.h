@@ -8,8 +8,9 @@
 
 class Element {
 private:
-    
 
+public:
+    
 };
 
 
