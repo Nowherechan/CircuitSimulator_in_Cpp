@@ -26,17 +26,17 @@ public:
     void dfs_gen_Nodes(Element e);  // 搜索相同Node的導線
     void generate_Nodes();          // Must have been sorted !
     void match_Nodes();             // 爲除導線外的其他元件匹配 Node
-    void add_R(Element e);
-    void add_I(Element e);
-    void add_V(Element e);
-    void modify_W(Element e);
-    void modify_R(Element e);
-    void modify_I_S(Element e);
-    void modify_V_S(Element e);
+    void add_R(Element &e);
+    void add_I(Element &e);
+    void add_V(Element &e);
+    void modify_W(Element &e);
+    void modify_R(Element &e);
+    void modify_I_S(Element &e);
+    void modify_V_S(Element &e);
 
     void build_A_and_b();
     void Solve_and_Modify();        // 算出待求數值
-    Ele_List* get_List();           // 返回數據
+    //Ele_List* get_List();           // 返回數據
 
 };
 

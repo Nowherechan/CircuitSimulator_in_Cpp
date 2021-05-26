@@ -85,7 +85,7 @@ void Circuit::match_Nodes()
     }
 }
 
-void Circuit::add_R(Element e)
+void Circuit::add_R(Element &e)
 {
     if (e.get_Node_Num1() != 0 && e.get_Node_Num2() != 0) {
         A->insert_num(e.get_Node_Num1(), e.get_Node_Num2(),A->get_num(e.get_Node_Num1(), e.get_Node_Num2()) + (-1 / e.get_R()));
@@ -97,7 +97,7 @@ void Circuit::add_R(Element e)
         A->insert_num(e.get_Node_Num2(), e.get_Node_Num2(), A->get_num(e.get_Node_Num2(), e.get_Node_Num2()) + e.get_R());
 }
 
-void Circuit::add_I(Element e)
+void Circuit::add_I(Element &e)
 {
     if (e.get_Node_Num1() != 0)
         b->insert_num(e.get_Node_Num1(), 1, (0 - e.get_I_1to2()));
@@ -105,7 +105,7 @@ void Circuit::add_I(Element e)
         b->insert_num(e.get_Node_Num2(), 1, e.get_I_1to2());
 }
 
-void Circuit::add_V(Element e)//NOT_YET
+void Circuit::add_V(Element &e)//NOT_YET
 {
     A->add_Row();
     A->add_Col();
@@ -138,28 +138,28 @@ void Circuit::build_A_and_b()
     }
 }
 
-void Circuit::modify_W(Element e)
+void Circuit::modify_W(Element &e)
 {
     e.modify_V_pin1(x->get_num(e.get_Node_Num1(), 1));
     e.modify_V_pin2(x->get_num(e.get_Node_Num2(), 1));
     e.modify_I_1to2(0);     //-------------------------------------Wait to solve
 }
 
-void Circuit::modify_R(Element e)
+void Circuit::modify_R(Element &e)
 {
     e.modify_V_pin1(x->get_num(e.get_Node_Num1(), 1));
     e.modify_V_pin2(x->get_num(e.get_Node_Num2(), 1));
     e.modify_I_1to2((e.get_V_pin1() - e.get_V_pin2()) / e.get_R());
 }
 
-void Circuit::modify_V_S(Element e)
+void Circuit::modify_V_S(Element &e)
 {
     e.modify_V_pin1(x->get_num(e.get_Node_Num1(), 1));
     e.modify_V_pin2(x->get_num(e.get_Node_Num2(), 1));
     e.modify_I_1to2(0);     //-------------------------------------Wait to solve
 }
 
-void Circuit::modify_I_S(Element e)
+void Circuit::modify_I_S(Element &e)
 {
     e.modify_V_pin1(x->get_num(e.get_Node_Num1(), 1));
     e.modify_V_pin2(x->get_num(e.get_Node_Num2(), 1));
@@ -185,7 +185,9 @@ void Circuit::Solve_and_Modify()
     }
 }
 
+/*
 Ele_List* Circuit::get_List()
 {
 
 }
+ */
