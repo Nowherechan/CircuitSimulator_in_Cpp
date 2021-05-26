@@ -98,13 +98,13 @@ void Circuit::add_R(Element e)
         A->insert_num(e.get_Node_Num2(), e.get_Node_Num2(), A->get_num(e.get_Node_Num2(), e.get_Node_Num2()) + e.get_R());
 }
 
-void Circuit::add_I(Element e)
+void Circuit::add_I(Element e)//NOT_YET
 {
     b->insert_num(e.get_Node_Num1(), 1, (0 - e.get_I_1to2()));
     b->insert_num(e.get_Node_Num2(), 1, e.get_I_1to2());
 }
 
-void Circuit::add_V(Element e)
+void Circuit::add_V(Element e)//NOT_YET
 {
     A->add_Row();
     A->add_Col();
