@@ -15,20 +15,27 @@
 #include "nonlogicgate.h"
 #include <QPainter>
 
-baselogicgate::baselogicgate()
+baselogicgate::baselogicgate(int iniN)
 {
+    n = iniN;
 }
 
-//baselogicgate *andlog = new andLogicGate;
-//baselogicgate *orlog = new orLogicGate;
-//baselogicgate *nonlog = new nonLogicGate;
-//void baselogicgate::getPaint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget){
-//    int getPaint(int paintNum);
+int baselogicgate::getN()
+{
+    return n;
+}
 
-//    switch(paintNum)
-//    {
+void baselogicgate::setN(int newN)
+{
+    this->n = newN;
+}
 
+QVector< QPair<int, int> > baselogicgate::getInputPin()
+{
+    return inputPinPosition;
+}
 
-
-//    }
-//}
+QVector< QPair<int, int> > baselogicgate::getOutputPin()
+{
+    return outputPinPosition;
+}

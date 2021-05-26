@@ -11,7 +11,7 @@ public:
     QRectF boundingRect() const;
 
     //引脚数
-    int n = 3;
+    int n = 2;
     int getN(int n);
 private:
      QPoint position;

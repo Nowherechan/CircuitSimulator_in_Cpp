@@ -8,5 +8,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
+#include <algorithm>
 
 #endif //ANALOG_ELECTRONIC_TECH_PCH_H

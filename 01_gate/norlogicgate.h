@@ -1,5 +1,5 @@
-#ifndef NANDLOGICGATE_H
-#define NANDLOGICGATE_H
+#ifndef NORLOGICGATE_H
+#define NORLOGICGATE_H
 #include"baselogicgate.h"
 #include <QGraphicsItem>
 
@@ -11,11 +11,11 @@ public:
     QRectF boundingRect() const;
 
     //引脚数
-    int n = 3;
+    int n = 2;
     int getN(int n);
 private:
      QPoint position;
 };
 
-#endif // NANDLOGICGATE_H
+#endif // NORLOGICGATE_H
 
