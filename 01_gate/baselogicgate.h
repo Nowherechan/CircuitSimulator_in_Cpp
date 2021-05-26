@@ -6,14 +6,14 @@
 class baselogicgate:public QGraphicsItem,public QPainter
 {
 public:
-    baselogicgate(int iniN = 2);
+    baselogicgate(int iniN = 2);   //iniN代表输入的引脚数
 
     //获得引脚数
     int getN();
     //设置引脚数 —— 由子类重载
     void setN(int newN);
     //获得引脚坐标
-    QVector< QPair<int, int> > getInputPin();
+    QVector< QPair<int, int> > getInputPin();   //getInputPin是得到引脚坐标的函数 ，pair是坐标对
     QVector< QPair<int, int> > getOutputPin();
     //进行运算，更新状态并返回输出 —— 由子类重载
     volatile QVector<bool> flash(QVector<bool> input);

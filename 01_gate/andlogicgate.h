@@ -3,7 +3,6 @@
 #include"baselogicgate.h"
 
 #include <QGraphicsItem>
-
 class andLogicGate:public baselogicgate
 {
 public:

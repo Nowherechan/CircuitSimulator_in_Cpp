@@ -14,6 +14,7 @@
   */
 #include "circuitmap.h"
 #include "ui_circuitmap.h"
+#include "wire.h"
 #include "logical-gate/andlogicgate.h"
 #include "logical-gate/orlogicgate.h"
 #include "logical-gate/nonlogicgate.h"
@@ -30,16 +31,6 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <cmath>
-
-//电路背景图参数
-const int MAP_WIDTH = 1600;
-const int MAP_HEIGHT = 900;
-const QColor DOTS_COLOR = QColor("#B0B0B0");
-const QString BG_COLOR_STRING = "#A0A0A0";
-const QString BTN_COLOR_STRING = "#80C0E0";
-const QColor MAP_COLOR = QColor("#FFFFFF");
-const QColor LINE_COLOR = QColor("#101010");
-const int INITIAL_ZOOM = 50;
 
 //画可放元件的点阵图
 QPixmap CircuitMap::draw_Dots_Map()
@@ -126,7 +117,7 @@ CircuitMap::CircuitMap(QWidget *parent) :
     QPixmap pix_Map = draw_Dots_Map();
     ui->map_Circuit->setMap(pix_Map);
     scene = new QGraphicsScene(ui->map_Circuit);
-    scene->setSceneRect(-MAP_WIDTH*5/8, -MAP_HEIGHT*5/8, MAP_WIDTH*5/4, MAP_HEIGHT*5/4);
+    scene->setSceneRect(-MAP_WIDTH/8, -MAP_HEIGHT/8, MAP_WIDTH*5/4, MAP_HEIGHT*5/4);
     ui->map_Circuit->setScene(scene);
     //ui->map_Circuit->setCacheMode(QGraphicsView::CacheBackground);                        //缓存背景加速渲染，但导致边缘有重影
     //ui->map_Circuit->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);            //改变渲染方式
@@ -149,10 +140,22 @@ CircuitMap::CircuitMap(QWidget *parent) :
 }
 
 //添加元件图片方法
+
+Wire* CircuitMap::addWire(QPoint A, QPoint B)
+{
+    Wire *w = new Wire(A, B);
+    scene->addItem(w);
+    return w;
+}
+
 andLogicGate* CircuitMap::addGateAnd()
 {
     andLogicGate *g = new andLogicGate();
     scene->addItem(g);
+    /*connect(g, &baselogicgate::deleteIt, this, [=](){
+        scene->removeItem(g);
+        delete g;
+    });*/
     return g;
 }
 
@@ -160,6 +163,10 @@ orLogicGate* CircuitMap::addGateOr()
 {
     orLogicGate *g = new orLogicGate();
     scene->addItem(g);
+    /*connect(g, &baselogicgate::deleteIt, this, [=](){
+        scene->removeItem(g);
+        delete g;
+    });*/
     return g;
 }
 
@@ -167,6 +174,10 @@ nonLogicGate* CircuitMap::addGateNon()
 {
     nonLogicGate *g = new nonLogicGate();
     scene->addItem(g);
+    /*connect(g, &baselogicgate::deleteIt, this, [=](){
+        scene->removeItem(g);
+        delete g;
+    });*/
     return g;
 }
 
@@ -174,6 +185,10 @@ nandLogicGate* CircuitMap::addGateNand()
 {
     nandLogicGate *g = new nandLogicGate();
     scene->addItem(g);
+    /*connect(g, &baselogicgate::deleteIt, this, [=](){
+        scene->removeItem(g);
+        delete g;
+    });*/
     return g;
 }
 
@@ -181,6 +196,10 @@ norLogicGate* CircuitMap::addGateNor()
 {
     norLogicGate *g = new norLogicGate();
     scene->addItem(g);
+    /*connect(g, &baselogicgate::deleteIt, this, [=](){
+        scene->removeItem(g);
+        delete g;
+    });*/
     return g;
 }
 
@@ -188,6 +207,10 @@ andOrNotLogicGate* CircuitMap::addGateAndOrNor()
 {
     andOrNotLogicGate *g = new andOrNotLogicGate();
     scene->addItem(g);
+    /*connect(g, &baselogicgate::deleteIt, this, [=](){
+        scene->removeItem(g);
+        delete g;
+    });*/
     return g;
 }
 
@@ -195,6 +218,10 @@ xorLogicGate* CircuitMap::addGateXor()
 {
     xorLogicGate *g = new xorLogicGate();
     scene->addItem(g);
+    /*connect(g, &baselogicgate::deleteIt, this, [=](){
+        scene->removeItem(g);
+        delete g;
+    });*/
     return g;
 }
 
@@ -202,6 +229,10 @@ xnorLogicGate* CircuitMap::addGateXnor()
 {
     xnorLogicGate *g = new xnorLogicGate();
     scene->addItem(g);
+    /*connect(g, &baselogicgate::deleteIt, this, [=](){
+        scene->removeItem(g);
+        delete g;
+    });*/
     return g;
 }
 
@@ -212,6 +243,11 @@ void CircuitMap::select(CircuitWindow::component_Selected c)
     switch (c) {
     case CircuitWindow::Select:
         //待填充
+        break;
+
+    case CircuitWindow::Wire:
+        //
+        addWire(QPoint(100, 100), QPoint(200, 200));
         break;
 
     case CircuitWindow::And :
