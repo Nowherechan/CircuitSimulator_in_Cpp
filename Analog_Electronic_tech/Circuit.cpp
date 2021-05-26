@@ -88,10 +88,14 @@ void Circuit::match_Nodes()
 
 void Circuit::add_R(Element e)
 {
-    A->insert_num(e.get_Node_Num1(), e.get_Node_Num2(), (-1/e.get_R()));
-    A->insert_num(e.get_Node_Num2(), e.get_Node_Num1(), (-1/e.get_R()));
-    A->insert_num(e.get_Node_Num1(), e.get_Node_Num1(), (1/e.get_R()));
-    A->insert_num(e.get_Node_Num2(), e.get_Node_Num2(), (1/e.get_R()));
+    if (e.get_Node_Num1() != 0 && e.get_Node_Num2() != 0) {
+        A->insert_num(e.get_Node_Num1(), e.get_Node_Num2(),A->get_num(e.get_Node_Num1(), e.get_Node_Num2()) + (-1 / e.get_R()));
+        A->insert_num(e.get_Node_Num2(), e.get_Node_Num1(),A->get_num(e.get_Node_Num2(), e.get_Node_Num1()) + (-1 / e.get_R()));
+    }
+    if (e.get_Node_Num1() != 0)
+        A->insert_num(e.get_Node_Num1(), e.get_Node_Num1(), A->get_num(e.get_Node_Num1(), e.get_Node_Num1()) + e.get_R());
+    if (e.get_Node_Num2() != 0)
+        A->insert_num(e.get_Node_Num2(), e.get_Node_Num2(), A->get_num(e.get_Node_Num2(), e.get_Node_Num2()) + e.get_R());
 }
 
 void Circuit::add_I(Element e)
@@ -102,7 +106,10 @@ void Circuit::add_I(Element e)
 
 void Circuit::add_V(Element e)
 {
-
+    A->add_Row();
+    A->add_Col();
+    b->add_Col();
+    A->insert_num()
 }
 
 void Circuit::build_A_and_b()
