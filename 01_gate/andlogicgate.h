@@ -3,11 +3,10 @@
 #include"baselogicgate.h"
 
 #include <QGraphicsItem>
-
 class andLogicGate:public baselogicgate
 {
 public:
-    andLogicGate(int iniN = 2);
+signals: andLogicGate(int iniN = 2);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;

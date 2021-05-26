@@ -21,8 +21,10 @@ void andLogicGate::setN(int newN)
         n = 5;
     else
         n = newN;
+    fillPosition();
 }
 
+//填充引脚坐标信息 将引脚
 void andLogicGate::fillPosition()
 {
     int baseX = position.x();
@@ -84,7 +86,6 @@ andLogicGate::andLogicGate(int iniN)
     setFocus();
     setFlags(QGraphicsItem::ItemIsFocusable|QGraphicsItem::ItemIsMovable);
     setN(iniN);
-    fillPosition();
     nowInput.clear();
     nowOutput.clear();
     for(int i = 0; i < n; i++)

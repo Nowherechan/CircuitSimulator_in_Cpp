@@ -7,7 +7,7 @@
 #include<QGraphicsScene>
 #include"orlogicgate.h"
 #include"nonlogicgate.h"
-#include"nandlogicgate.h"
+#include "nandlogicgate.h"
 #include "norlogicgate.h"
 #include "xorlogicgate.h"
 #include "xnorlogicgate.h"
@@ -22,19 +22,13 @@ Widget::Widget(QWidget *parent)
     scene=new QGraphicsScene;
     ui->graphicsView->setScene(scene);
 
-<<<<<<< Updated upstream
-   andOrNotLogicGate *item=new andOrNotLogicGate;
-    scene->addItem(item);
-=======
-    nonLogicGate *item=new nonLogicGate;
-    orLogicGate * item2 = new orLogicGate;
-    andLogicGate * item3 = new andLogicGate;
-    scene->addItem(item);
-    scene->addItem(item2);
-    scene->addItem(item3);
+    andLogicGate *item=new andLogicGate;
+    //orLogicGate * item2 = new orLogicGate;
+    // xorLogicGate * item3 = new xorLogicGate;
+    //scene->addItem(item);
+    //scene->addItem(item2);
+    // scene->addItem(item3);
 
-
->>>>>>> Stashed changes
 }
 
 Widget::~Widget()
