@@ -128,13 +128,10 @@ void Circuit::build_A_and_b()
         if (List[i].get_Type() == 0) continue;
         else {
             switch (List[i].get_Type()) {
-
                 case 1:
                     add_R(List[i]);
-
                 case 2:
                     add_V(List[i]);
-
                 case 3:
                     add_I(List[i]);
             }
@@ -142,8 +139,12 @@ void Circuit::build_A_and_b()
     }
 }
 
-void Circuit::solve()
+void Circuit::Solve_and_Modify()
 {
+    *x = Matrix::Solve(*A, *b);         // Solve
+    for (int i = 0; i < (int)List.size(); i++) {
+        
+    }
 
 }
 
