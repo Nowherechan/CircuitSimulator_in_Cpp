@@ -144,7 +144,7 @@ void Circuit::build_A_and_b()
 
 void Circuit::solve()
 {
-    
+
 }
 
 Ele_List* Circuit::get_List()
