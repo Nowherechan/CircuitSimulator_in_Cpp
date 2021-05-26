@@ -48,7 +48,6 @@ void Circuit::dfs_gen_Nodes(Element e)
             dfs_gen_Nodes(List[i]);
 
         }
-
     }
 
     Amount_of_Nodes++;
@@ -188,5 +187,5 @@ void Circuit::Solve_and_Modify()
 
 Ele_List* Circuit::get_List()
 {
-    
+
 }
