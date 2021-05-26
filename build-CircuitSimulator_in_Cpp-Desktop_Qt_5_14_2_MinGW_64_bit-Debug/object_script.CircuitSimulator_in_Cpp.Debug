@@ -1,9 +1,16 @@
+debug/baseelement.o
+debug/currentsource.o
+debug/resistance.o
+debug/switchclose.o
+debug/switchopen.o
+debug/voltagesource.o
 debug/animation_btn.o
 debug/circuitmap.o
 debug/circuitwindow.o
 debug/andlogicgate.o
 debug/andornotlogicgate.o
 debug/baselogicgate.o
+debug/highlevel.o
 debug/nandlogicgate.o
 debug/nonlogicgate.o
 debug/norlogicgate.o
@@ -20,4 +27,3 @@ debug/moc_circuitmap.o
 debug/moc_circuitwindow.o
 debug/moc_qgraphicsview_map.o
 debug/moc_startwindow.o
-debug/moc_wire.o

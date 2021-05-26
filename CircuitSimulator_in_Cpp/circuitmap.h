@@ -3,6 +3,7 @@
 
 #include "circuitwindow.h"
 #include "wire.h"
+#include "logical-gate/highlevel.h"
 #include "logical-gate/andlogicgate.h"
 #include "logical-gate/orlogicgate.h"
 #include "logical-gate/nonlogicgate.h"
@@ -36,13 +37,14 @@ public:
 
     explicit CircuitMap(QWidget *parent = nullptr);
     void zoomCircuit(int value);
-    void paintEvent(QPaintEvent *);
+    void paintEvent(QPaintEvent *) override;
     void select(CircuitWindow::component_Selected c);
     ~CircuitMap();
 
 protected:
     QPixmap draw_Dots_Map();
-    Wire* addWire(QPoint A, QPoint B);
+    Wire* addWire(QPointF A, QPointF B);
+    highLevel* addHighLevel();
     andLogicGate* addGateAnd();
     orLogicGate* addGateOr();
     nonLogicGate* addGateNon();
@@ -51,12 +53,17 @@ protected:
     andOrNotLogicGate* addGateAndOrNor();
     xorLogicGate* addGateXor();
     xnorLogicGate* addGateXnor();
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
 private:
+    CircuitWindow::component_Selected mod;
     Ui::CircuitMap *ui;
     int zoom;
     QPixmap map;
     QGraphicsScene * scene;
+    QGraphicsItem * w;
 };
 
 #endif // CIRCUITMAP_H

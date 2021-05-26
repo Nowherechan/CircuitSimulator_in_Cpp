@@ -252,6 +252,24 @@
     <string>W</string>
    </property>
   </action>
+  <action name="actionHighLevel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/src/logical-gate/component_hightlevel.png</normaloff>:/src/logical-gate/component_hightlevel.png</iconset>
+   </property>
+   <property name="text">
+    <string>高电平</string>
+   </property>
+   <property name="toolTip">
+    <string>添加高电平输入</string>
+   </property>
+   <property name="shortcut">
+    <string>H</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>

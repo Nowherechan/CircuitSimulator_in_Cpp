@@ -62,6 +62,13 @@ CircuitWindow::CircuitWindow(QWidget *parent, circuit_Mod mod) :
     switch (mod) {
     case Digital:
         //工具栏添加元件
+        ui->toolBarComponent->addAction(ui->actionHighLevel);
+        connect(ui->actionHighLevel, &QAction::triggered, [=](){
+            emit select(HighLevel);
+            ui->actionHighLevel->setChecked(true);
+            ui->Map->select(HighLevel);
+        });
+
         ui->toolBarComponent->addAction(ui->actionAnd);
         connect(ui->actionAnd, &QAction::triggered, [=](){
             emit select(And);

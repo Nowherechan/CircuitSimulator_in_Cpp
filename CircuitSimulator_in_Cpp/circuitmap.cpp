@@ -15,6 +15,7 @@
 #include "circuitmap.h"
 #include "ui_circuitmap.h"
 #include "wire.h"
+#include "logical-gate/highlevel.h"
 #include "logical-gate/andlogicgate.h"
 #include "logical-gate/orlogicgate.h"
 #include "logical-gate/nonlogicgate.h"
@@ -31,6 +32,7 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <cmath>
+#include <QMouseEvent>
 
 //画可放元件的点阵图
 QPixmap CircuitMap::draw_Dots_Map()
@@ -42,10 +44,11 @@ QPixmap CircuitMap::draw_Dots_Map()
     //QPainter设置
     QPainter painter(&pix);
     QPen pen(DOTS_COLOR);
-    pen.setWidth(1);
+    pen.setWidth(2);
     painter.setPen(pen);
     QPen pen_bigger(DOTS_COLOR);
-    pen_bigger.setWidth(3);
+    pen_bigger.setWidth(4);
+    //painter.setRenderHint(QPainter::HighQualityAntialiasing);//抗锯齿能力
 
     //绘制点阵
     for(int i = 0; i <= MAP_WIDTH; i += 10)
@@ -140,22 +143,29 @@ CircuitMap::CircuitMap(QWidget *parent) :
 }
 
 //添加元件图片方法
-
-Wire* CircuitMap::addWire(QPoint A, QPoint B)
+Wire* CircuitMap::addWire(QPointF A, QPointF B)
 {
-    Wire *w = new Wire(A, B);
+    QLineF l(A, B);
+    Wire *w = new Wire();
+    w->setLine(l);
     scene->addItem(w);
+    w->setFocus();
     return w;
+}
+
+highLevel* CircuitMap::addHighLevel()
+{
+    highLevel *h = new highLevel();
+    scene->addItem(h);
+    h->setFocus();
+    return h;
 }
 
 andLogicGate* CircuitMap::addGateAnd()
 {
     andLogicGate *g = new andLogicGate();
     scene->addItem(g);
-    /*connect(g, &baselogicgate::deleteIt, this, [=](){
-        scene->removeItem(g);
-        delete g;
-    });*/
+    g->setFocus();
     return g;
 }
 
@@ -163,10 +173,7 @@ orLogicGate* CircuitMap::addGateOr()
 {
     orLogicGate *g = new orLogicGate();
     scene->addItem(g);
-    /*connect(g, &baselogicgate::deleteIt, this, [=](){
-        scene->removeItem(g);
-        delete g;
-    });*/
+    g->setFocus();
     return g;
 }
 
@@ -174,10 +181,7 @@ nonLogicGate* CircuitMap::addGateNon()
 {
     nonLogicGate *g = new nonLogicGate();
     scene->addItem(g);
-    /*connect(g, &baselogicgate::deleteIt, this, [=](){
-        scene->removeItem(g);
-        delete g;
-    });*/
+    g->setFocus();
     return g;
 }
 
@@ -185,10 +189,7 @@ nandLogicGate* CircuitMap::addGateNand()
 {
     nandLogicGate *g = new nandLogicGate();
     scene->addItem(g);
-    /*connect(g, &baselogicgate::deleteIt, this, [=](){
-        scene->removeItem(g);
-        delete g;
-    });*/
+    g->setFocus();
     return g;
 }
 
@@ -196,10 +197,7 @@ norLogicGate* CircuitMap::addGateNor()
 {
     norLogicGate *g = new norLogicGate();
     scene->addItem(g);
-    /*connect(g, &baselogicgate::deleteIt, this, [=](){
-        scene->removeItem(g);
-        delete g;
-    });*/
+    g->setFocus();
     return g;
 }
 
@@ -207,10 +205,7 @@ andOrNotLogicGate* CircuitMap::addGateAndOrNor()
 {
     andOrNotLogicGate *g = new andOrNotLogicGate();
     scene->addItem(g);
-    /*connect(g, &baselogicgate::deleteIt, this, [=](){
-        scene->removeItem(g);
-        delete g;
-    });*/
+    g->setFocus();
     return g;
 }
 
@@ -218,10 +213,7 @@ xorLogicGate* CircuitMap::addGateXor()
 {
     xorLogicGate *g = new xorLogicGate();
     scene->addItem(g);
-    /*connect(g, &baselogicgate::deleteIt, this, [=](){
-        scene->removeItem(g);
-        delete g;
-    });*/
+    g->setFocus();
     return g;
 }
 
@@ -229,69 +221,77 @@ xnorLogicGate* CircuitMap::addGateXnor()
 {
     xnorLogicGate *g = new xnorLogicGate();
     scene->addItem(g);
-    /*connect(g, &baselogicgate::deleteIt, this, [=](){
-        scene->removeItem(g);
-        delete g;
-    });*/
+    g->setFocus();
     return g;
 }
 
 //当前选项
 void CircuitMap::select(CircuitWindow::component_Selected c)
 {
-    //功能待填充
+    //测试函数
     switch (c) {
-    case CircuitWindow::Select:
-        //待填充
+    case CircuitWindow::Select :
+        //
         break;
 
-    case CircuitWindow::Wire:
-        //
-        addWire(QPoint(100, 100), QPoint(200, 200));
+    case CircuitWindow::Wire :
+        //addWire(QPoint(100, 100), QPoint(200, 200));
+        break;
+
+    case CircuitWindow::HighLevel :
+        //addHighLevel();
         break;
 
     case CircuitWindow::And :
-        //待填充
-        addGateAnd();
+        //addGateAnd();
         break;
 
     case CircuitWindow::Or :
-        //待填充
-        addGateOr();
+        //addGateOr();
         break;
 
     case CircuitWindow::Non :
-        //待填充
-        addGateNon();
+        //addGateNon();
         break;
 
     case CircuitWindow::Nand :
-        //待填充
-        addGateNand();
+        //addGateNand();
         break;
 
     case CircuitWindow::Nor :
-        //待填充
-        addGateNor();
+        //addGateNor();
         break;
 
     case CircuitWindow::AndOrNot :
-        //待填充
-        addGateAndOrNor();
+        //addGateAndOrNor();
         break;
 
     case CircuitWindow::Xor :
-        //待填充
-        addGateXor();
+        //addGateXor();
         break;
 
     case CircuitWindow::Xnor :
-        //待填充
-        addGateXnor();
+        //addGateXnor();
         break;
 
     default :
         break;
+    }
+
+    mod = c;
+    if(mod == CircuitWindow::Select)
+    {
+        QList<QGraphicsItem *> itemList = scene->items();
+        for(auto i = 0; i < itemList.size(); i++) {
+            itemList[i]->setFlag(QGraphicsItem::ItemIsMovable);
+        }
+    }
+    else
+    {
+        QList<QGraphicsItem *> itemList = scene->items();
+        for(auto i = 0; i < itemList.size(); i++) {
+            itemList[i]->setFlag(QGraphicsItem::ItemIsMovable, false);
+        }
     }
 }
 
@@ -313,4 +313,42 @@ void CircuitMap::paintEvent(QPaintEvent *)
         return;
     }
     painter.drawPixmap(0, 0, this->width(), this->height(), pix_Background);
+}
+
+void CircuitMap::mousePressEvent(QMouseEvent *event)
+{
+    QWidget::mousePressEvent(event);
+
+    if(mod == CircuitWindow::Wire)
+    {
+        connect(ui->map_Circuit, &QGraphicsView_Map::mousePressed, [=](QPoint p1){
+            w = addWire(p1, p1);
+            w->setFlag(QGraphicsItem::ItemIsMovable, false);
+        });
+        connect(ui->map_Circuit, &QGraphicsView_Map::mouseMoved, [=](QPoint p2){
+            if(nullptr != w)
+            {
+                QLineF l = ((Wire*)w)->line();
+                l.setP2(p2);
+                ((Wire *)w)->setLine(l);
+            }
+        });
+    }
+}
+
+void CircuitMap::mouseMoveEvent(QMouseEvent *event)
+{
+    QWidget::mouseMoveEvent(event);
+}
+
+void CircuitMap::mouseReleaseEvent(QMouseEvent *event)
+{
+    QWidget::mouseReleaseEvent(event);
+    ui->map_Circuit->disconnect();
+    w = nullptr;
+
+    if(mod != CircuitWindow::Wire && mod != CircuitWindow::Select)
+    {
+
+    }
 }

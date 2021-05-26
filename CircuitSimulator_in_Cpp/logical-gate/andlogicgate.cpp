@@ -83,7 +83,7 @@ andLogicGate::andLogicGate(int iniN)
     position.setX(0);
     position.setY(0);
     setFocus();
-    setFlags(QGraphicsItem::ItemIsFocusable|QGraphicsItem::ItemIsMovable|QGraphicsItem::ItemIsSelectable);
+    setFlags(QGraphicsItem::ItemIsFocusable|QGraphicsItem::ItemIsMovable);
     setN(iniN);
     nowInput.clear();
     nowOutput.clear();
