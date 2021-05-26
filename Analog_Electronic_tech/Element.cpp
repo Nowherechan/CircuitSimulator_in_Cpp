@@ -27,6 +27,10 @@ int Element::get_ID() const { return ID; }
 
 int Element::get_Type() const { return Type; }
 
+int Element::get_Node_Num1() const { return Node_Num1; }
+
+int Element::get_Node_Num2() const { return Node_Num2; }
+
 pin Element::get_pin1() { return pin1; }
 
 pin Element::get_pin2() { return pin2; }
@@ -44,4 +48,8 @@ void Element::modify_I_1to2(double in) { I_1to2 = in; }
 void Element::modify_V_pin1(double in) { V_pin1 = in; }
 
 void Element::modify_V_pin2(double in) { V_pin2 = in; }
+
+void Element::modify_Node_1(int in) { Node_Num1 = in; }
+
+void Element::modify_Node_2(int in) { Node_Num2 = in; }
 

@@ -7,5 +7,6 @@
 #include <cmath>
 #include <iostream>
 #include <cstdlib>
+#include <vector>
 
 #endif //ANALOG_ELECTRONIC_TECH_PCH_H
