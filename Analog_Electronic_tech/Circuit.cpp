@@ -98,10 +98,12 @@ void Circuit::add_R(Element e)
         A->insert_num(e.get_Node_Num2(), e.get_Node_Num2(), A->get_num(e.get_Node_Num2(), e.get_Node_Num2()) + e.get_R());
 }
 
-void Circuit::add_I(Element e)//NOT_YET
+void Circuit::add_I(Element e)
 {
-    b->insert_num(e.get_Node_Num1(), 1, (0 - e.get_I_1to2()));
-    b->insert_num(e.get_Node_Num2(), 1, e.get_I_1to2());
+    if (e.get_Node_Num1() != 0)
+        b->insert_num(e.get_Node_Num1(), 1, (0 - e.get_I_1to2()));
+    if (e.get_Node_Num2())
+        b->insert_num(e.get_Node_Num2(), 1, e.get_I_1to2());
 }
 
 void Circuit::add_V(Element e)//NOT_YET
@@ -109,22 +111,40 @@ void Circuit::add_V(Element e)//NOT_YET
     A->add_Row();
     A->add_Col();
     b->add_Col();
-    A->insert_num()
+    double V_pin2_upto_pin1 = e.get_V_pin2() - e.get_V_pin1();
+    if (e.get_Node_Num2() != 0) {
+        A->insert_num(A->get_rows_num(), e.get_Node_Num2(), 1);       // Should the 1 be added ?
+        A->insert_num(e.get_Node_Num2(), A->get_cols_num(), -1);
+    }
+    if (e.get_Node_Num1() != 0) {
+        A->insert_num(A->get_rows_num(), e.get_Node_Num1(), -1);
+        A->insert_num(e.get_Node_Num1(), A->get_cols_num(), 1);
+    }
 }
 
 void Circuit::build_A_and_b()
 {
-    for (int i = 0; List[i].get_Type() != 0; i++) {
+    for (int i = 0; i < (int)List.size(); i++) {
         if (List[i].get_Type() == 0) continue;
         else {
+            switch (List[i].get_Type()) {
 
+                case 1:
+                    add_R(List[i]);
+
+                case 2:
+                    add_V(List[i]);
+
+                case 3:
+                    add_I(List[i]);
+            }
         }
     }
 }
 
 void Circuit::solve()
 {
-
+    
 }
 
 Ele_List* Circuit::get_List()

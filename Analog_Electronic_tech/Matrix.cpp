@@ -171,6 +171,10 @@ double  Matrix::get_num(int row, int col)
     return p[row - 1][col - 1];
 }
 
+int Matrix::get_rows_num() const { return rows_num; }
+
+int Matrix::get_cols_num() const { return cols_num; }
+
 void Matrix::add_Row()
 {
 
