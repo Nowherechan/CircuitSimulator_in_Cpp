@@ -6,7 +6,7 @@
 class andLogicGate:public baselogicgate
 {
 public:
-signals: andLogicGate(int iniN = 2);
+    andLogicGate(int iniN = 2);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
