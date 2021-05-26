@@ -21,6 +21,7 @@ void andLogicGate::setN(int newN)
         n = 5;
     else
         n = newN;
+    fillPosition();
 }
 
 void andLogicGate::fillPosition()
@@ -82,9 +83,8 @@ andLogicGate::andLogicGate(int iniN)
     position.setX(0);
     position.setY(0);
     setFocus();
-    setFlags(QGraphicsItem::ItemIsFocusable|QGraphicsItem::ItemIsMovable);
+    setFlags(QGraphicsItem::ItemIsFocusable|QGraphicsItem::ItemIsMovable|QGraphicsItem::ItemIsSelectable);
     setN(iniN);
-    fillPosition();
     nowInput.clear();
     nowOutput.clear();
     for(int i = 0; i < n; i++)

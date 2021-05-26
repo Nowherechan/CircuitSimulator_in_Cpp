@@ -2,6 +2,7 @@
 #define CIRCUITMAP_H
 
 #include "circuitwindow.h"
+#include "wire.h"
 #include "logical-gate/andlogicgate.h"
 #include "logical-gate/orlogicgate.h"
 #include "logical-gate/nonlogicgate.h"
@@ -23,6 +24,16 @@ class CircuitMap : public QWidget
     Q_OBJECT
 
 public:
+    //电路背景图参数
+    static const int MAP_WIDTH = 1600;
+    static const int MAP_HEIGHT = 900;
+    const QColor DOTS_COLOR = QColor("#B0B0B0");
+    const QString BG_COLOR_STRING = "#A0A0A0";
+    const QString BTN_COLOR_STRING = "#80C0E0";
+    const QColor MAP_COLOR = QColor("#FFFFFF");
+    const QColor LINE_COLOR = QColor("#101010");
+    static const int INITIAL_ZOOM = 50;
+
     explicit CircuitMap(QWidget *parent = nullptr);
     void zoomCircuit(int value);
     void paintEvent(QPaintEvent *);
@@ -31,6 +42,7 @@ public:
 
 protected:
     QPixmap draw_Dots_Map();
+    Wire* addWire(QPoint A, QPoint B);
     andLogicGate* addGateAnd();
     orLogicGate* addGateOr();
     nonLogicGate* addGateNon();

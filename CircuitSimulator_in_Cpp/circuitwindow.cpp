@@ -51,6 +51,13 @@ CircuitWindow::CircuitWindow(QWidget *parent, circuit_Mod mod) :
         ui->Map->select(Select);
     });
 
+    ui->actionWire->setChecked(false);
+    connect(ui->actionWire, &QAction::triggered, [=](){
+        emit select(Wire);
+        ui->actionWire->setChecked(true);
+        ui->Map->select(Wire);
+    });
+
     //分模式运行
     switch (mod) {
     case Digital:

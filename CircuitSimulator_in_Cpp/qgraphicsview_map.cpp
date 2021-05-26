@@ -24,7 +24,7 @@ void QGraphicsView_Map::setMap(QPixmap newMap)
     map = newMap;
 }
 
-void QGraphicsView_Map::drawBackground(QPainter *painter, const QRectF &rect)
+void QGraphicsView_Map::drawBackground(QPainter *painter, const QRectF &)
 {
     painter->drawPixmap(int(sceneRect().left() + sceneRect().width()/10),
                         int(sceneRect().top() + sceneRect().height()/10), map);

@@ -30,7 +30,8 @@ SOURCES += \
     logical-gate/xorlogicgate.cpp \
     main.cpp \
     qgraphicsview_map.cpp \
-    startwindow.cpp
+    startwindow.cpp \
+    wire.cpp
 
 HEADERS += \
     animation_btn.h \
@@ -46,7 +47,8 @@ HEADERS += \
     logical-gate/xnorlogicgate.h \
     logical-gate/xorlogicgate.h \
     qgraphicsview_map.h \
-    startwindow.h
+    startwindow.h \
+    wire.h
 
 FORMS += \
     circuitmap.ui \

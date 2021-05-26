@@ -56,6 +56,8 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionSelect"/>
+   <addaction name="actionWire"/>
+   <addaction name="separator"/>
   </widget>
   <action name="actionReturn">
    <property name="text">
@@ -230,6 +232,24 @@
    </property>
    <property name="shortcut">
     <string>Shift+A</string>
+   </property>
+  </action>
+  <action name="actionWire">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="src.qrc">
+     <normaloff>:/src/wire.png</normaloff>:/src/wire.png</iconset>
+   </property>
+   <property name="text">
+    <string>导线</string>
+   </property>
+   <property name="toolTip">
+    <string>添加导线</string>
+   </property>
+   <property name="shortcut">
+    <string>W</string>
    </property>
   </action>
  </widget>

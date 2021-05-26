@@ -17,6 +17,8 @@ public:
     QVector< QPair<int, int> > getOutputPin();
     //进行运算，更新状态并返回输出 —— 由子类重载
     volatile QVector<bool> flash(QVector<bool> input);
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
 
 protected:
     const int lineWidth = 15;
