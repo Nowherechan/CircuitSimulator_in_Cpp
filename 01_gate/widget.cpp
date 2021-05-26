@@ -12,6 +12,7 @@
 #include "xorlogicgate.h"
 #include "xnorlogicgate.h"
 #include"andornotlogicgate.h"
+#include"highlevel.h"
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -22,10 +23,10 @@ Widget::Widget(QWidget *parent)
     scene=new QGraphicsScene;
     ui->graphicsView->setScene(scene);
 
-    andLogicGate *item=new andLogicGate;
+    highLevel *item=new highLevel;
     //orLogicGate * item2 = new orLogicGate;
     // xorLogicGate * item3 = new xorLogicGate;
-    //scene->addItem(item);
+    scene->addItem(item);
     //scene->addItem(item2);
     // scene->addItem(item3);
 

@@ -24,7 +24,7 @@ void andLogicGate::setN(int newN)
     fillPosition();
 }
 
-//填充引脚坐标信息 将引脚
+//填充引脚坐标信息
 void andLogicGate::fillPosition()
 {
     int baseX = position.x();
