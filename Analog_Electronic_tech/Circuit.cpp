@@ -139,16 +139,54 @@ void Circuit::build_A_and_b()
     }
 }
 
+void Circuit::modify_W(Element e)
+{
+    e.modify_V_pin1(x->get_num(e.get_Node_Num1(), 1));
+    e.modify_V_pin2(x->get_num(e.get_Node_Num2(), 1));
+    e.modify_I_1to2(0);     //-------------------------------------Wait to solve
+}
+
+void Circuit::modify_R(Element e)
+{
+    e.modify_V_pin1(x->get_num(e.get_Node_Num1(), 1));
+    e.modify_V_pin2(x->get_num(e.get_Node_Num2(), 1));
+    e.modify_I_1to2((e.get_V_pin1() - e.get_V_pin2()) / e.get_R());
+}
+
+void Circuit::modify_V_S(Element e)
+{
+    e.modify_V_pin1(x->get_num(e.get_Node_Num1(), 1));
+    e.modify_V_pin2(x->get_num(e.get_Node_Num2(), 1));
+    e.modify_I_1to2(0);     //-------------------------------------Wait to solve
+}
+
+void Circuit::modify_I_S(Element e)
+{
+    e.modify_V_pin1(x->get_num(e.get_Node_Num1(), 1));
+    e.modify_V_pin2(x->get_num(e.get_Node_Num2(), 1));
+}
+
 void Circuit::Solve_and_Modify()
 {
     *x = Matrix::Solve(*A, *b);         // Solve
     for (int i = 0; i < (int)List.size(); i++) {
-        
+        if (List[i].get_Type() == 0) continue;
+        else {
+            switch (List[i].get_Type()) {
+                case 0:
+                    modify_W(List[i]);
+                case 1:
+                    modify_R(List[i]);
+                case 2:
+                    modify_V_S(List[i]);
+                case 3:
+                    modify_I_S(List[i]);
+            }
+        }
     }
-
 }
 
 Ele_List* Circuit::get_List()
 {
-
+    
 }

@@ -29,8 +29,13 @@ public:
     void add_R(Element e);
     void add_I(Element e);
     void add_V(Element e);
+    void modify_W(Element e);
+    void modify_R(Element e);
+    void modify_I_S(Element e);
+    void modify_V_S(Element e);
+
     void build_A_and_b();
-    void Solve_and_Modify();                   // 算出待求數值
+    void Solve_and_Modify();        // 算出待求數值
     Ele_List* get_List();           // 返回數據
 
 };
