@@ -37,6 +37,8 @@ public:
     QAction *actionAndOrNot;
     QAction *actionXor;
     QAction *actionXnor;
+    QAction *actionWire;
+    QAction *actionHighLevel;
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout;
     CircuitMap *Map;
@@ -109,6 +111,18 @@ public:
         QIcon icon8;
         icon8.addFile(QString::fromUtf8(":/src/logical-gate/component_xnor.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionXnor->setIcon(icon8);
+        actionWire = new QAction(CircuitWindow);
+        actionWire->setObjectName(QString::fromUtf8("actionWire"));
+        actionWire->setCheckable(true);
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/src/wire.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionWire->setIcon(icon9);
+        actionHighLevel = new QAction(CircuitWindow);
+        actionHighLevel->setObjectName(QString::fromUtf8("actionHighLevel"));
+        actionHighLevel->setCheckable(true);
+        QIcon icon10;
+        icon10.addFile(QString::fromUtf8(":/src/logical-gate/component_hightlevel.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionHighLevel->setIcon(icon10);
         centralwidget = new QWidget(CircuitWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayout = new QHBoxLayout(centralwidget);
@@ -141,6 +155,8 @@ public:
         menu->addAction(actionReturn);
         menu->addAction(actionExit);
         toolBarComponent->addAction(actionSelect);
+        toolBarComponent->addAction(actionWire);
+        toolBarComponent->addSeparator();
 
         retranslateUi(CircuitWindow);
 
@@ -214,6 +230,20 @@ public:
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(shortcut)
         actionXnor->setShortcut(QCoreApplication::translate("CircuitWindow", "Shift+A", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionWire->setText(QCoreApplication::translate("CircuitWindow", "\345\257\274\347\272\277", nullptr));
+#if QT_CONFIG(tooltip)
+        actionWire->setToolTip(QCoreApplication::translate("CircuitWindow", "\346\267\273\345\212\240\345\257\274\347\272\277", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(shortcut)
+        actionWire->setShortcut(QCoreApplication::translate("CircuitWindow", "W", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionHighLevel->setText(QCoreApplication::translate("CircuitWindow", "\351\253\230\347\224\265\345\271\263", nullptr));
+#if QT_CONFIG(tooltip)
+        actionHighLevel->setToolTip(QCoreApplication::translate("CircuitWindow", "\346\267\273\345\212\240\351\253\230\347\224\265\345\271\263\350\276\223\345\205\245", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(shortcut)
+        actionHighLevel->setShortcut(QCoreApplication::translate("CircuitWindow", "H", nullptr));
 #endif // QT_CONFIG(shortcut)
         menu->setTitle(QCoreApplication::translate("CircuitWindow", "\345\274\200\345\247\213", nullptr));
         toolBarComponent->setWindowTitle(QCoreApplication::translate("CircuitWindow", "toolBar", nullptr));

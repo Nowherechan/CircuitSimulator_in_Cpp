@@ -25,6 +25,8 @@ public:
     friend std::istream& operator>>(std::istream&, Matrix&);
     void insert_num(int row, int col, double num);
     double get_num(int row, int col);
+    int get_rows_num() const;
+    int get_cols_num() const;
     void add_Row(); // add one row
     void add_Col(); // add one column
 

@@ -19,6 +19,7 @@ SOURCES += \
     andlogicgate.cpp \
     andornotlogicgate.cpp \
     baselogicgate.cpp \
+    highlevel.cpp \
     main.cpp \
     nandlogicgate.cpp \
     nonlogicgate.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     andlogicgate.h \
     andornotlogicgate.h \
     baselogicgate.h \
+    highlevel.h \
     nandlogicgate.h \
     nonlogicgate.h \
     norlogicgate.h \

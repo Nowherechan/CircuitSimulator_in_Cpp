@@ -50,12 +50,19 @@ OBJECTS_DIR   = release
 
 ####### Files
 
-SOURCES       = ..\CircuitSimulator_in_Cpp\animation_btn.cpp \
+SOURCES       = ..\CircuitSimulator_in_Cpp\analog-gate\baseelement.cpp \
+		..\CircuitSimulator_in_Cpp\analog-gate\currentsource.cpp \
+		..\CircuitSimulator_in_Cpp\analog-gate\resistance.cpp \
+		..\CircuitSimulator_in_Cpp\analog-gate\switchclose.cpp \
+		..\CircuitSimulator_in_Cpp\analog-gate\switchopen.cpp \
+		..\CircuitSimulator_in_Cpp\analog-gate\voltagesource.cpp \
+		..\CircuitSimulator_in_Cpp\animation_btn.cpp \
 		..\CircuitSimulator_in_Cpp\circuitmap.cpp \
 		..\CircuitSimulator_in_Cpp\circuitwindow.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\andlogicgate.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\andornotlogicgate.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\baselogicgate.cpp \
+		..\CircuitSimulator_in_Cpp\logical-gate\highlevel.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\nandlogicgate.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\nonlogicgate.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\norlogicgate.cpp \
@@ -64,18 +71,26 @@ SOURCES       = ..\CircuitSimulator_in_Cpp\animation_btn.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\xorlogicgate.cpp \
 		..\CircuitSimulator_in_Cpp\main.cpp \
 		..\CircuitSimulator_in_Cpp\qgraphicsview_map.cpp \
-		..\CircuitSimulator_in_Cpp\startwindow.cpp release\qrc_src.cpp \
+		..\CircuitSimulator_in_Cpp\startwindow.cpp \
+		..\CircuitSimulator_in_Cpp\wire.cpp release\qrc_src.cpp \
 		release\moc_animation_btn.cpp \
 		release\moc_circuitmap.cpp \
 		release\moc_circuitwindow.cpp \
 		release\moc_qgraphicsview_map.cpp \
 		release\moc_startwindow.cpp
-OBJECTS       = release/animation_btn.o \
+OBJECTS       = release/baseelement.o \
+		release/currentsource.o \
+		release/resistance.o \
+		release/switchclose.o \
+		release/switchopen.o \
+		release/voltagesource.o \
+		release/animation_btn.o \
 		release/circuitmap.o \
 		release/circuitwindow.o \
 		release/andlogicgate.o \
 		release/andornotlogicgate.o \
 		release/baselogicgate.o \
+		release/highlevel.o \
 		release/nandlogicgate.o \
 		release/nonlogicgate.o \
 		release/norlogicgate.o \
@@ -85,6 +100,7 @@ OBJECTS       = release/animation_btn.o \
 		release/main.o \
 		release/qgraphicsview_map.o \
 		release/startwindow.o \
+		release/wire.o \
 		release/qrc_src.o \
 		release/moc_animation_btn.o \
 		release/moc_circuitmap.o \
@@ -92,12 +108,19 @@ OBJECTS       = release/animation_btn.o \
 		release/moc_qgraphicsview_map.o \
 		release/moc_startwindow.o
 
-DIST          =  ..\CircuitSimulator_in_Cpp\animation_btn.h \
+DIST          =  ..\CircuitSimulator_in_Cpp\analog-gate\baseelement.h \
+		..\CircuitSimulator_in_Cpp\analog-gate\currentsource.h \
+		..\CircuitSimulator_in_Cpp\analog-gate\resistance.h \
+		..\CircuitSimulator_in_Cpp\analog-gate\switchclose.h \
+		..\CircuitSimulator_in_Cpp\analog-gate\switchopen.h \
+		..\CircuitSimulator_in_Cpp\analog-gate\voltagesource.h \
+		..\CircuitSimulator_in_Cpp\animation_btn.h \
 		..\CircuitSimulator_in_Cpp\circuitmap.h \
 		..\CircuitSimulator_in_Cpp\circuitwindow.h \
 		..\CircuitSimulator_in_Cpp\logical-gate\andlogicgate.h \
 		..\CircuitSimulator_in_Cpp\logical-gate\andornotlogicgate.h \
 		..\CircuitSimulator_in_Cpp\logical-gate\baselogicgate.h \
+		..\CircuitSimulator_in_Cpp\logical-gate\highlevel.h \
 		..\CircuitSimulator_in_Cpp\logical-gate\nandlogicgate.h \
 		..\CircuitSimulator_in_Cpp\logical-gate\nonlogicgate.h \
 		..\CircuitSimulator_in_Cpp\logical-gate\norlogicgate.h \
@@ -105,12 +128,20 @@ DIST          =  ..\CircuitSimulator_in_Cpp\animation_btn.h \
 		..\CircuitSimulator_in_Cpp\logical-gate\xnorlogicgate.h \
 		..\CircuitSimulator_in_Cpp\logical-gate\xorlogicgate.h \
 		..\CircuitSimulator_in_Cpp\qgraphicsview_map.h \
-		..\CircuitSimulator_in_Cpp\startwindow.h ..\CircuitSimulator_in_Cpp\animation_btn.cpp \
+		..\CircuitSimulator_in_Cpp\startwindow.h \
+		..\CircuitSimulator_in_Cpp\wire.h ..\CircuitSimulator_in_Cpp\analog-gate\baseelement.cpp \
+		..\CircuitSimulator_in_Cpp\analog-gate\currentsource.cpp \
+		..\CircuitSimulator_in_Cpp\analog-gate\resistance.cpp \
+		..\CircuitSimulator_in_Cpp\analog-gate\switchclose.cpp \
+		..\CircuitSimulator_in_Cpp\analog-gate\switchopen.cpp \
+		..\CircuitSimulator_in_Cpp\analog-gate\voltagesource.cpp \
+		..\CircuitSimulator_in_Cpp\animation_btn.cpp \
 		..\CircuitSimulator_in_Cpp\circuitmap.cpp \
 		..\CircuitSimulator_in_Cpp\circuitwindow.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\andlogicgate.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\andornotlogicgate.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\baselogicgate.cpp \
+		..\CircuitSimulator_in_Cpp\logical-gate\highlevel.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\nandlogicgate.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\nonlogicgate.cpp \
 		..\CircuitSimulator_in_Cpp\logical-gate\norlogicgate.cpp \
@@ -119,7 +150,8 @@ DIST          =  ..\CircuitSimulator_in_Cpp\animation_btn.h \
 		..\CircuitSimulator_in_Cpp\logical-gate\xorlogicgate.cpp \
 		..\CircuitSimulator_in_Cpp\main.cpp \
 		..\CircuitSimulator_in_Cpp\qgraphicsview_map.cpp \
-		..\CircuitSimulator_in_Cpp\startwindow.cpp
+		..\CircuitSimulator_in_Cpp\startwindow.cpp \
+		..\CircuitSimulator_in_Cpp\wire.cpp
 QMAKE_TARGET  = CircuitSimulator_in_Cpp
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = CircuitSimulator_in_Cpp.exe
@@ -139,10 +171,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) CircuitSimulator_in_Cpp.zip $(SOURCES) $(DIST) ..\CircuitSimulator_in_Cpp\CircuitSimulator_in_Cpp.pro D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\spec_pre.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\qdevice.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\device_config.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\sanitize.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\gcc-base.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\g++-base.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\angle.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\windows-vulkan.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\g++-win32.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\windows-desktop.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\qconfig.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_zlib_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\qt_functions.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\qt_config.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\win32-g++\qmake.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\exclusive_builds.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\toolchain.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\default_pre.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\win32\default_pre.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\resolve_config.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\exclusive_builds_post.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\default_post.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\build_pass.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\qml_debug.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\precompile_header.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\warn_on.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\qt.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\resources_functions.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\resources.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\moc.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\win32\opengl.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\uic.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\qmake_use.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\file_copies.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\win32\windows.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\testcase_targets.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\exceptions.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\yacc.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\lex.prf ..\CircuitSimulator_in_Cpp\CircuitSimulator_in_Cpp.pro ..\CircuitSimulator_in_Cpp\src.qrc D:\Qt\5.14.2\5.14.2\mingw73_64\lib\Qt5Multimedia.prl D:\Qt\5.14.2\5.14.2\mingw73_64\lib\Qt5Widgets.prl D:\Qt\5.14.2\5.14.2\mingw73_64\lib\Qt5Gui.prl D:\Qt\5.14.2\5.14.2\mingw73_64\lib\Qt5Network.prl D:\Qt\5.14.2\5.14.2\mingw73_64\lib\Qt5Core.prl D:\Qt\5.14.2\5.14.2\mingw73_64\lib\qtmain.prl CircuitSimulator_in_Cpp_zh_CN.ts CircuitSimulator_in_Cpp_zh_CN.ts  ..\CircuitSimulator_in_Cpp\src.qrc D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\data\dummy.cpp ..\CircuitSimulator_in_Cpp\animation_btn.h ..\CircuitSimulator_in_Cpp\circuitmap.h ..\CircuitSimulator_in_Cpp\circuitwindow.h ..\CircuitSimulator_in_Cpp\logical-gate\andlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\andornotlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\baselogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\nandlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\nonlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\norlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\orlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\xnorlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\xorlogicgate.h ..\CircuitSimulator_in_Cpp\qgraphicsview_map.h ..\CircuitSimulator_in_Cpp\startwindow.h  ..\CircuitSimulator_in_Cpp\animation_btn.cpp ..\CircuitSimulator_in_Cpp\circuitmap.cpp ..\CircuitSimulator_in_Cpp\circuitwindow.cpp ..\CircuitSimulator_in_Cpp\logical-gate\andlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\andornotlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\baselogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\nandlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\nonlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\norlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\orlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\xnorlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\xorlogicgate.cpp ..\CircuitSimulator_in_Cpp\main.cpp ..\CircuitSimulator_in_Cpp\qgraphicsview_map.cpp ..\CircuitSimulator_in_Cpp\startwindow.cpp ..\CircuitSimulator_in_Cpp\circuitmap.ui ..\CircuitSimulator_in_Cpp\circuitwindow.ui ..\CircuitSimulator_in_Cpp\qgraphicsview_map.ui ..\CircuitSimulator_in_Cpp\startwindow.ui    
+	$(ZIP) CircuitSimulator_in_Cpp.zip $(SOURCES) $(DIST) ..\CircuitSimulator_in_Cpp\CircuitSimulator_in_Cpp.pro D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\spec_pre.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\qdevice.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\device_config.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\sanitize.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\gcc-base.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\g++-base.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\angle.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\windows-vulkan.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\g++-win32.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\common\windows-desktop.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\qconfig.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\modules\qt_lib_zlib_private.pri D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\qt_functions.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\qt_config.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\win32-g++\qmake.conf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\exclusive_builds.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\toolchain.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\default_pre.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\win32\default_pre.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\resolve_config.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\exclusive_builds_post.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\default_post.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\build_pass.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\qml_debug.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\precompile_header.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\warn_on.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\qt.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\resources_functions.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\resources.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\moc.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\win32\opengl.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\uic.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\qmake_use.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\file_copies.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\win32\windows.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\testcase_targets.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\exceptions.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\yacc.prf D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\lex.prf ..\CircuitSimulator_in_Cpp\CircuitSimulator_in_Cpp.pro ..\CircuitSimulator_in_Cpp\src.qrc D:\Qt\5.14.2\5.14.2\mingw73_64\lib\Qt5Multimedia.prl D:\Qt\5.14.2\5.14.2\mingw73_64\lib\Qt5Widgets.prl D:\Qt\5.14.2\5.14.2\mingw73_64\lib\Qt5Gui.prl D:\Qt\5.14.2\5.14.2\mingw73_64\lib\Qt5Network.prl D:\Qt\5.14.2\5.14.2\mingw73_64\lib\Qt5Core.prl D:\Qt\5.14.2\5.14.2\mingw73_64\lib\qtmain.prl CircuitSimulator_in_Cpp_zh_CN.ts CircuitSimulator_in_Cpp_zh_CN.ts  ..\CircuitSimulator_in_Cpp\src.qrc D:\Qt\5.14.2\5.14.2\mingw73_64\mkspecs\features\data\dummy.cpp ..\CircuitSimulator_in_Cpp\analog-gate\baseelement.h ..\CircuitSimulator_in_Cpp\analog-gate\currentsource.h ..\CircuitSimulator_in_Cpp\analog-gate\resistance.h ..\CircuitSimulator_in_Cpp\analog-gate\switchclose.h ..\CircuitSimulator_in_Cpp\analog-gate\switchopen.h ..\CircuitSimulator_in_Cpp\analog-gate\voltagesource.h ..\CircuitSimulator_in_Cpp\animation_btn.h ..\CircuitSimulator_in_Cpp\circuitmap.h ..\CircuitSimulator_in_Cpp\circuitwindow.h ..\CircuitSimulator_in_Cpp\logical-gate\andlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\andornotlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\baselogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\highlevel.h ..\CircuitSimulator_in_Cpp\logical-gate\nandlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\nonlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\norlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\orlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\xnorlogicgate.h ..\CircuitSimulator_in_Cpp\logical-gate\xorlogicgate.h ..\CircuitSimulator_in_Cpp\qgraphicsview_map.h ..\CircuitSimulator_in_Cpp\startwindow.h ..\CircuitSimulator_in_Cpp\wire.h  ..\CircuitSimulator_in_Cpp\analog-gate\baseelement.cpp ..\CircuitSimulator_in_Cpp\analog-gate\currentsource.cpp ..\CircuitSimulator_in_Cpp\analog-gate\resistance.cpp ..\CircuitSimulator_in_Cpp\analog-gate\switchclose.cpp ..\CircuitSimulator_in_Cpp\analog-gate\switchopen.cpp ..\CircuitSimulator_in_Cpp\analog-gate\voltagesource.cpp ..\CircuitSimulator_in_Cpp\animation_btn.cpp ..\CircuitSimulator_in_Cpp\circuitmap.cpp ..\CircuitSimulator_in_Cpp\circuitwindow.cpp ..\CircuitSimulator_in_Cpp\logical-gate\andlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\andornotlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\baselogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\highlevel.cpp ..\CircuitSimulator_in_Cpp\logical-gate\nandlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\nonlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\norlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\orlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\xnorlogicgate.cpp ..\CircuitSimulator_in_Cpp\logical-gate\xorlogicgate.cpp ..\CircuitSimulator_in_Cpp\main.cpp ..\CircuitSimulator_in_Cpp\qgraphicsview_map.cpp ..\CircuitSimulator_in_Cpp\startwindow.cpp ..\CircuitSimulator_in_Cpp\wire.cpp ..\CircuitSimulator_in_Cpp\circuitmap.ui ..\CircuitSimulator_in_Cpp\circuitwindow.ui ..\CircuitSimulator_in_Cpp\qgraphicsview_map.ui ..\CircuitSimulator_in_Cpp\startwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\animation_btn.o release\circuitmap.o release\circuitwindow.o release\andlogicgate.o release\andornotlogicgate.o release\baselogicgate.o release\nandlogicgate.o release\nonlogicgate.o release\norlogicgate.o release\orlogicgate.o release\xnorlogicgate.o release\xorlogicgate.o release\main.o release\qgraphicsview_map.o release\startwindow.o release\qrc_src.o release\moc_animation_btn.o release\moc_circuitmap.o release\moc_circuitwindow.o release\moc_qgraphicsview_map.o release\moc_startwindow.o
+	-$(DEL_FILE) release\baseelement.o release\currentsource.o release\resistance.o release\switchclose.o release\switchopen.o release\voltagesource.o release\animation_btn.o release\circuitmap.o release\circuitwindow.o release\andlogicgate.o release\andornotlogicgate.o release\baselogicgate.o release\highlevel.o release\nandlogicgate.o release\nonlogicgate.o release\norlogicgate.o release\orlogicgate.o release\xnorlogicgate.o release\xorlogicgate.o release\main.o release\qgraphicsview_map.o release\startwindow.o release\wire.o release\qrc_src.o release\moc_animation_btn.o release\moc_circuitmap.o release\moc_circuitwindow.o release\moc_qgraphicsview_map.o release\moc_startwindow.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -167,12 +199,14 @@ release/qrc_src.cpp: ../CircuitSimulator_in_Cpp/src.qrc \
 		../CircuitSimulator_in_Cpp/src/default_png.png \
 		../CircuitSimulator_in_Cpp/src/click.wav \
 		../CircuitSimulator_in_Cpp/src/btn_basic.png \
+		../CircuitSimulator_in_Cpp/src/wire.png \
 		../CircuitSimulator_in_Cpp/src/bg_circuit.png \
 		../CircuitSimulator_in_Cpp/src/bg_basic.png \
 		../CircuitSimulator_in_Cpp/src/mouse.png \
 		../CircuitSimulator_in_Cpp/src/title.png \
 		../CircuitSimulator_in_Cpp/src/logical-gate/component_nand.png \
 		../CircuitSimulator_in_Cpp/src/logical-gate/component_non.png \
+		../CircuitSimulator_in_Cpp/src/logical-gate/component_hightlevel.png \
 		../CircuitSimulator_in_Cpp/src/logical-gate/component_nor.png \
 		../CircuitSimulator_in_Cpp/src/logical-gate/component_and.png \
 		../CircuitSimulator_in_Cpp/src/logical-gate/component_xnor.png \
@@ -411,16 +445,24 @@ release/moc_circuitmap.cpp: ../CircuitSimulator_in_Cpp/circuitmap.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qicon.h \
-		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
-		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
+		../CircuitSimulator_in_Cpp/wire.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		../CircuitSimulator_in_Cpp/logical-gate/highlevel.h \
+		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
-		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
 		../CircuitSimulator_in_Cpp/logical-gate/orlogicgate.h \
 		../CircuitSimulator_in_Cpp/logical-gate/nonlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/nandlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/norlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andornotlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xorlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xnorlogicgate.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QWidget \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPixmap \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
@@ -1006,16 +1048,24 @@ ui_circuitwindow.h: ../CircuitSimulator_in_Cpp/circuitwindow.ui \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qicon.h \
-		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
-		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
+		../CircuitSimulator_in_Cpp/wire.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		../CircuitSimulator_in_Cpp/logical-gate/highlevel.h \
+		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
-		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
 		../CircuitSimulator_in_Cpp/logical-gate/orlogicgate.h \
 		../CircuitSimulator_in_Cpp/logical-gate/nonlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/nandlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/norlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andornotlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xorlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xnorlogicgate.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QWidget \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPixmap \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
@@ -1149,6 +1199,611 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 
 ####### Compile
+
+release/baseelement.o: ../CircuitSimulator_in_Cpp/analog-gate/baseelement.cpp ../CircuitSimulator_in_Cpp/analog-gate/baseelement.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlogging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qflags.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmutex.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtgui-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrect.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmargins.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsize.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpoint.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qscopedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpaintdevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qcolor.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgb.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiterator.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhashfunctions.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstring.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qchar.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringview.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpair.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvector.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearraylist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qregexp.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringmatcher.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgba64.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qshareddata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhash.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcoreevent.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmetatype.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvarlengtharray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainerfwd.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qimage.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixelformat.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtransform.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qmatrix.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpolygon.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qregion.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdatastream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiodevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qline.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainterpath.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qbrush.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfont.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontmetrics.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvariant.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdebug.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlocale.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qset.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\baseelement.o ..\CircuitSimulator_in_Cpp\analog-gate\baseelement.cpp
+
+release/currentsource.o: ../CircuitSimulator_in_Cpp/analog-gate/currentsource.cpp ../CircuitSimulator_in_Cpp/analog-gate/currentsource.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlogging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qflags.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmutex.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtgui-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstring.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qchar.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringview.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiterator.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhashfunctions.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpair.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvector.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpoint.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearraylist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qregexp.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringmatcher.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcoreevent.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qscopedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmetatype.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvarlengtharray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainerfwd.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvariant.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdebug.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhash.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiodevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlocale.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qshareddata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qset.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrect.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmargins.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsize.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainterpath.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qmatrix.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpolygon.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qregion.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdatastream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qline.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpaintdevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qcolor.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgb.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgba64.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qimage.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixelformat.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtransform.h \
+		../CircuitSimulator_in_Cpp/analog-gate/baseelement.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qbrush.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfont.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontmetrics.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\currentsource.o ..\CircuitSimulator_in_Cpp\analog-gate\currentsource.cpp
+
+release/resistance.o: ../CircuitSimulator_in_Cpp/analog-gate/resistance.cpp ../CircuitSimulator_in_Cpp/analog-gate/resistance.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlogging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qflags.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmutex.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtgui-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstring.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qchar.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringview.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiterator.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhashfunctions.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpair.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvector.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpoint.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearraylist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qregexp.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringmatcher.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcoreevent.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qscopedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmetatype.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvarlengtharray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainerfwd.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvariant.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdebug.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhash.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiodevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlocale.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qshareddata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qset.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrect.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmargins.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsize.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainterpath.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qmatrix.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpolygon.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qregion.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdatastream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qline.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpaintdevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qcolor.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgb.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgba64.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qimage.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixelformat.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtransform.h \
+		../CircuitSimulator_in_Cpp/analog-gate/baseelement.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qbrush.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfont.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontmetrics.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\resistance.o ..\CircuitSimulator_in_Cpp\analog-gate\resistance.cpp
+
+release/switchclose.o: ../CircuitSimulator_in_Cpp/analog-gate/switchclose.cpp ../CircuitSimulator_in_Cpp/analog-gate/switchclose.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlogging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qflags.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmutex.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtgui-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstring.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qchar.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringview.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiterator.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhashfunctions.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpair.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvector.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpoint.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearraylist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qregexp.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringmatcher.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcoreevent.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qscopedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmetatype.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvarlengtharray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainerfwd.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvariant.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdebug.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhash.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiodevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlocale.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qshareddata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qset.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrect.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmargins.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsize.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainterpath.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qmatrix.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpolygon.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qregion.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdatastream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qline.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpaintdevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qcolor.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgb.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgba64.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qimage.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixelformat.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtransform.h \
+		../CircuitSimulator_in_Cpp/analog-gate/baseelement.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qbrush.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfont.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontmetrics.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\switchclose.o ..\CircuitSimulator_in_Cpp\analog-gate\switchclose.cpp
+
+release/switchopen.o: ../CircuitSimulator_in_Cpp/analog-gate/switchopen.cpp ../CircuitSimulator_in_Cpp/analog-gate/switchopen.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlogging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qflags.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmutex.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtgui-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstring.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qchar.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringview.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiterator.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhashfunctions.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpair.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvector.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpoint.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearraylist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qregexp.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringmatcher.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcoreevent.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qscopedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmetatype.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvarlengtharray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainerfwd.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvariant.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdebug.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhash.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiodevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlocale.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qshareddata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qset.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrect.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmargins.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsize.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainterpath.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qmatrix.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpolygon.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qregion.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdatastream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qline.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpaintdevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qcolor.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgb.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgba64.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qimage.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixelformat.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtransform.h \
+		../CircuitSimulator_in_Cpp/analog-gate/baseelement.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qbrush.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfont.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontmetrics.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\switchopen.o ..\CircuitSimulator_in_Cpp\analog-gate\switchopen.cpp
+
+release/voltagesource.o: ../CircuitSimulator_in_Cpp/analog-gate/voltagesource.cpp ../CircuitSimulator_in_Cpp/analog-gate/voltagesource.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlogging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qflags.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmutex.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtgui-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstring.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qchar.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringview.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiterator.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhashfunctions.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpair.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvector.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpoint.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearraylist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qregexp.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringmatcher.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcoreevent.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qscopedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmetatype.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvarlengtharray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainerfwd.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvariant.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdebug.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhash.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiodevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlocale.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qshareddata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qset.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrect.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmargins.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsize.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainterpath.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qmatrix.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpolygon.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qregion.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdatastream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qline.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpaintdevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qcolor.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgb.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgba64.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qimage.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixelformat.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtransform.h \
+		../CircuitSimulator_in_Cpp/analog-gate/baseelement.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qbrush.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfont.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontmetrics.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\voltagesource.o ..\CircuitSimulator_in_Cpp\analog-gate\voltagesource.cpp
 
 release/animation_btn.o: ../CircuitSimulator_in_Cpp/animation_btn.cpp ../CircuitSimulator_in_Cpp/animation_btn.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
@@ -1375,16 +2030,24 @@ release/circuitmap.o: ../CircuitSimulator_in_Cpp/circuitmap.cpp ../CircuitSimula
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qicon.h \
-		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
-		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
+		../CircuitSimulator_in_Cpp/wire.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		../CircuitSimulator_in_Cpp/logical-gate/highlevel.h \
+		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
-		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
 		../CircuitSimulator_in_Cpp/logical-gate/orlogicgate.h \
 		../CircuitSimulator_in_Cpp/logical-gate/nonlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/nandlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/norlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andornotlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xorlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xnorlogicgate.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QWidget \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPixmap \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
@@ -1563,16 +2226,24 @@ release/circuitwindow.o: ../CircuitSimulator_in_Cpp/circuitwindow.cpp ../Circuit
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtoolbar.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QWidget \
 		../CircuitSimulator_in_Cpp/circuitmap.h \
-		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
-		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
+		../CircuitSimulator_in_Cpp/wire.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		../CircuitSimulator_in_Cpp/logical-gate/highlevel.h \
+		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
-		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
 		../CircuitSimulator_in_Cpp/logical-gate/orlogicgate.h \
 		../CircuitSimulator_in_Cpp/logical-gate/nonlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/nandlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/norlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andornotlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xorlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xnorlogicgate.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPixmap \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
@@ -1881,10 +2552,142 @@ release/baselogicgate.o: ../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.c
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlocale.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qset.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h \
+		../CircuitSimulator_in_Cpp/circuitmap.h \
+		../CircuitSimulator_in_Cpp/circuitwindow.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qwidget.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpalette.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qsizepolicy.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qcursor.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qkeysequence.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qevent.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qurl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qurlquery.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qfile.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qfiledevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qicon.h \
+		../CircuitSimulator_in_Cpp/wire.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
+		../CircuitSimulator_in_Cpp/logical-gate/highlevel.h \
 		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
 		../CircuitSimulator_in_Cpp/logical-gate/orlogicgate.h \
-		../CircuitSimulator_in_Cpp/logical-gate/nonlogicgate.h
+		../CircuitSimulator_in_Cpp/logical-gate/nonlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/nandlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/norlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andornotlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xorlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xnorlogicgate.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QWidget \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPixmap \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QKeyEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\baselogicgate.o ..\CircuitSimulator_in_Cpp\logical-gate\baselogicgate.cpp
+
+release/highlevel.o: ../CircuitSimulator_in_Cpp/logical-gate/highlevel.cpp ../CircuitSimulator_in_Cpp/logical-gate/highlevel.h \
+		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlogging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qflags.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmutex.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtgui-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrect.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmargins.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsize.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpoint.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qscopedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpaintdevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qcolor.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgb.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiterator.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhashfunctions.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstring.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qchar.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringview.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpair.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvector.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearraylist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qregexp.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringmatcher.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgba64.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qshareddata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhash.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcoreevent.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmetatype.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvarlengtharray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainerfwd.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qimage.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixelformat.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtransform.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qmatrix.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpolygon.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qregion.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdatastream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiodevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qline.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainterpath.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qbrush.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfont.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontmetrics.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvariant.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdebug.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlocale.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qset.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\highlevel.o ..\CircuitSimulator_in_Cpp\logical-gate\highlevel.cpp
 
 release/nandlogicgate.o: ../CircuitSimulator_in_Cpp/logical-gate/nandlogicgate.cpp ../CircuitSimulator_in_Cpp/logical-gate/nandlogicgate.h \
 		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
@@ -2891,6 +3694,139 @@ release/startwindow.o: ../CircuitSimulator_in_Cpp/startwindow.cpp ../CircuitSimu
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtimer.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\startwindow.o ..\CircuitSimulator_in_Cpp\startwindow.cpp
+
+release/wire.o: ../CircuitSimulator_in_Cpp/wire.cpp ../CircuitSimulator_in_Cpp/wire.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobal.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qconfig.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlogging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qflags.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmutex.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtgui-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstring.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qchar.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringview.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiterator.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhashfunctions.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpair.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvector.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qpoint.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qbytearraylist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringlist.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qregexp.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qstringmatcher.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcoreevent.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qscopedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmetatype.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvarlengtharray.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontainerfwd.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qobject_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qvariant.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdebug.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qhash.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qiodevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qlocale.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qshareddata.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qset.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qrect.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qmargins.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qsize.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainterpath.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qmatrix.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpolygon.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qregion.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qdatastream.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qline.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixmap.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpaintdevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qcolor.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgb.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qrgba64.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qimage.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpixelformat.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtransform.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpainter.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qbrush.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontinfo.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfont.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qfontmetrics.h \
+		../CircuitSimulator_in_Cpp/circuitmap.h \
+		../CircuitSimulator_in_Cpp/circuitwindow.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qwidget.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qpalette.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qsizepolicy.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qcursor.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qkeysequence.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qevent.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qurl.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qurlquery.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qfile.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qfiledevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qicon.h \
+		../CircuitSimulator_in_Cpp/logical-gate/highlevel.h \
+		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/orlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/nonlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/nandlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/norlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andornotlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xorlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xnorlogicgate.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QWidget \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPixmap \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\wire.o ..\CircuitSimulator_in_Cpp\wire.cpp
 
 release/qrc_src.o: release/qrc_src.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\qrc_src.o release\qrc_src.cpp

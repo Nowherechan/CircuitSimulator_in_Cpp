@@ -16,12 +16,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    analog-gate/baseelement.cpp \
+    analog-gate/currentsource.cpp \
+    analog-gate/resistance.cpp \
+    analog-gate/switchclose.cpp \
+    analog-gate/switchopen.cpp \
+    analog-gate/voltagesource.cpp \
     animation_btn.cpp \
     circuitmap.cpp \
     circuitwindow.cpp \
     logical-gate/andlogicgate.cpp \
     logical-gate/andornotlogicgate.cpp \
     logical-gate/baselogicgate.cpp \
+    logical-gate/highlevel.cpp \
     logical-gate/nandlogicgate.cpp \
     logical-gate/nonlogicgate.cpp \
     logical-gate/norlogicgate.cpp \
@@ -30,15 +37,23 @@ SOURCES += \
     logical-gate/xorlogicgate.cpp \
     main.cpp \
     qgraphicsview_map.cpp \
-    startwindow.cpp
+    startwindow.cpp \
+    wire.cpp
 
 HEADERS += \
+    analog-gate/baseelement.h \
+    analog-gate/currentsource.h \
+    analog-gate/resistance.h \
+    analog-gate/switchclose.h \
+    analog-gate/switchopen.h \
+    analog-gate/voltagesource.h \
     animation_btn.h \
     circuitmap.h \
     circuitwindow.h \
     logical-gate/andlogicgate.h \
     logical-gate/andornotlogicgate.h \
     logical-gate/baselogicgate.h \
+    logical-gate/highlevel.h \
     logical-gate/nandlogicgate.h \
     logical-gate/nonlogicgate.h \
     logical-gate/norlogicgate.h \
@@ -46,7 +61,8 @@ HEADERS += \
     logical-gate/xnorlogicgate.h \
     logical-gate/xorlogicgate.h \
     qgraphicsview_map.h \
-    startwindow.h
+    startwindow.h \
+    wire.h
 
 FORMS += \
     circuitmap.ui \

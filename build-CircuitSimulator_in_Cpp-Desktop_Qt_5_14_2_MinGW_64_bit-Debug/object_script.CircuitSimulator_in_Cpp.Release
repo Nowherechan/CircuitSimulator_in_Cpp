@@ -1,9 +1,16 @@
+release/baseelement.o
+release/currentsource.o
+release/resistance.o
+release/switchclose.o
+release/switchopen.o
+release/voltagesource.o
 release/animation_btn.o
 release/circuitmap.o
 release/circuitwindow.o
 release/andlogicgate.o
 release/andornotlogicgate.o
 release/baselogicgate.o
+release/highlevel.o
 release/nandlogicgate.o
 release/nonlogicgate.o
 release/norlogicgate.o
@@ -13,6 +20,7 @@ release/xorlogicgate.o
 release/main.o
 release/qgraphicsview_map.o
 release/startwindow.o
+release/wire.o
 release/qrc_src.o
 release/moc_animation_btn.o
 release/moc_circuitmap.o

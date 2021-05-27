@@ -7,13 +7,15 @@
   * bug:(when one bug was fixed, marked it with '~')
   *     null
   * TODO:(when one was completed, marked it with '~')
-  *     1.Finish the show-all and clear-all button.
+  * ~   1.Finish the show-all and clear-all button.
   *     2.Complete the actions of components, like put-on , delete and move.
   *     3.Matrix of the can-put points.
-  *     4.Function select().
+  * ~   4.Function select().
   */
 #include "circuitmap.h"
 #include "ui_circuitmap.h"
+#include "wire.h"
+#include "logical-gate/highlevel.h"
 #include "logical-gate/andlogicgate.h"
 #include "logical-gate/orlogicgate.h"
 #include "logical-gate/nonlogicgate.h"
@@ -30,16 +32,252 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <cmath>
+#include <QMouseEvent>
 
-//电路背景图参数
-const int MAP_WIDTH = 1600;
-const int MAP_HEIGHT = 900;
-const QColor DOTS_COLOR = QColor("#B0B0B0");
-const QString BG_COLOR_STRING = "#A0A0A0";
-const QString BTN_COLOR_STRING = "#80C0E0";
-const QColor MAP_COLOR = QColor("#FFFFFF");
-const QColor LINE_COLOR = QColor("#101010");
-const int INITIAL_ZOOM = 50;
+CircuitMap::CircuitMap(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::CircuitMap)
+{
+    ui->setupUi(this);
+
+    //设置滑动条与数值框
+    zoom = INITIAL_ZOOM;
+    ui->slider_Zoom->setRange(10, 100);
+    ui->slider_Zoom->setSingleStep(10);
+    ui->slider_Zoom->setTickInterval(30);
+    ui->slider_Zoom->setTickPosition(QSlider::TicksAbove);
+    ui->slider_Zoom->setValue(INITIAL_ZOOM);
+    ui->spinBox_Zoom->setRange(10, 100);
+    ui->spinBox_Zoom->setSingleStep(10);
+    ui->spinBox_Zoom->setValue(INITIAL_ZOOM);
+    connect(ui->slider_Zoom, &QSlider::valueChanged, ui->spinBox_Zoom, [=](){
+        int v = ui->slider_Zoom->value();
+        v = (v + 5) / 10 * 10;
+        ui->spinBox_Zoom->setValue(v);
+        ui->slider_Zoom->setValue(v);
+        zoomCircuit(v);
+    });
+    connect(ui->spinBox_Zoom, &QSpinBox::textChanged, ui->slider_Zoom, [=](){
+        int v = ui->spinBox_Zoom->value();
+        ui->slider_Zoom->setValue(v);
+        zoomCircuit(v);
+    });
+
+    //创建画图区域
+    ui->map_Circuit->setStyleSheet("padding:0px;border:0px;background:" + BG_COLOR_STRING); //去除边缘并设置底色
+    QPixmap pix_Map = draw_Dots_Map();
+    ui->map_Circuit->setMap(pix_Map);
+    scene = new QGraphicsScene(ui->map_Circuit);
+    scene->setSceneRect(-MAP_WIDTH/8, -MAP_HEIGHT/8, MAP_WIDTH*5/4, MAP_HEIGHT*5/4);
+    ui->map_Circuit->setScene(scene);
+    //ui->map_Circuit->setCacheMode(QGraphicsView::CacheBackground);                        //缓存背景加速渲染，但导致边缘有重影
+    //ui->map_Circuit->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);            //改变渲染方式
+
+    //显示全部按钮
+    ui->btn_All->setStyleSheet("padding:10px;border:2px;background:" + BTN_COLOR_STRING);
+    connect(ui->btn_All, &QPushButton::clicked, [=](){
+        ui->spinBox_Zoom->setValue(10);
+    });
+
+    //清除元件按钮
+    ui->btn_Clear->setStyleSheet("padding:10px;border:2px;background:" + BTN_COLOR_STRING);
+    connect(ui->btn_Clear, &QPushButton::clicked, [=](){
+        QList<QGraphicsItem *> itemList = scene->items();
+        for(auto i = 0; i < itemList.size(); i++) {
+            scene->removeItem(itemList[i]);
+            delete itemList[i];
+        }
+    });
+
+    //鼠标按下
+    connect(ui->map_Circuit, &QGraphicsView_Map::mousePressed, [=](QMouseEvent event){
+        select(mod);                                    //阻止新生成的元件移动
+        int mouseX = event.x();
+        int mouseY = event.y();
+        QPoint mouse(mouseX, mouseY);
+        QPointF p = ui->map_Circuit->mapToScene(mouse);
+        dealPress(p);
+    });
+
+    //鼠标移动
+    connect(ui->map_Circuit, &QGraphicsView_Map::mouseMoved, [=](QMouseEvent event){
+        int mouseX = event.x();
+        int mouseY = event.y();
+        QPoint mouse(mouseX, mouseY);
+        QPointF p = ui->map_Circuit->mapToScene(mouse);
+        dealMove(p);
+    });
+
+    //鼠标松开
+    connect(ui->map_Circuit, &QGraphicsView_Map::mouseReleased, [=](QMouseEvent event){
+        w = nullptr;                                    //安全性
+        int mouseX = event.x();
+        int mouseY = event.y();
+        QPoint mouse(mouseX, mouseY);
+        QPointF p = ui->map_Circuit->mapToScene(mouse);
+        dealRelease(p);
+    });
+}
+
+void CircuitMap::dealPress(QPointF p)
+{
+    switch (mod) {
+    case CircuitWindow::Select :
+        break;
+
+    case CircuitWindow::Wire :
+        w = addWire(p, p);
+        break;
+
+    case CircuitWindow::HighLevel :
+        w = addHighLevel(p);
+        break;
+
+    case CircuitWindow::And :
+        w = addGateAnd(p);
+        break;
+
+    case CircuitWindow::Or :
+        w = addGateOr(p);
+        break;
+
+    case CircuitWindow::Non :
+        w = addGateNon(p);
+        break;
+
+    case CircuitWindow::Nand :
+        w = addGateNand(p);
+        break;
+
+    case CircuitWindow::Nor :
+        w = addGateNor(p);
+        break;
+
+    case CircuitWindow::AndOrNot :
+        w = addGateAndOrNor(p);
+        break;
+
+    case CircuitWindow::Xor :
+        w = addGateXor(p);
+        break;
+
+    case CircuitWindow::Xnor :
+        w = addGateXnor(p);
+        break;
+
+    default :
+        break;
+    }
+}
+
+//inline QLineF setWire(Wire* w, QPointF p)
+//{
+//    w->setIntP2(p);
+//    l.setP2(p);
+//    return l;
+//}
+
+void CircuitMap::dealMove(QPointF p)
+{
+    switch (mod) {
+    case CircuitWindow::Select :
+        break;
+
+    case CircuitWindow::Wire :
+        ((Wire*)w)->setIntP2(p);
+        break;
+
+    case CircuitWindow::HighLevel :
+        ((highLevel*)w)->setIntPos(p);
+        break;
+
+    case CircuitWindow::And :
+        ((andLogicGate*)w)->setIntPos(p);
+        break;
+
+    case CircuitWindow::Or :
+        ((orLogicGate*)w)->setIntPos(p);
+        break;
+
+    case CircuitWindow::Non :
+        ((nonLogicGate*)w)->setIntPos(p);
+        break;
+
+    case CircuitWindow::Nand :
+        ((nandLogicGate*)w)->setIntPos(p);
+        break;
+
+    case CircuitWindow::Nor :
+        ((norLogicGate*)w)->setIntPos(p);
+        break;
+
+    case CircuitWindow::AndOrNot :
+        ((andOrNotLogicGate*)w)->setIntPos(p);
+        break;
+
+    case CircuitWindow::Xor :
+        ((xorLogicGate*)w)->setIntPos(p);
+        break;
+
+    case CircuitWindow::Xnor :
+        ((xnorLogicGate*)w)->setIntPos(p);
+        break;
+
+    default :
+        break;
+    }
+}
+
+void CircuitMap::dealRelease(QPointF )
+{
+//    switch (mod) {
+//    case CircuitWindow::Select :
+//        break;
+
+//    case CircuitWindow::Wire :
+//        //addWire(QPoint(100, 100), QPoint(200, 200));
+//        break;
+
+//    case CircuitWindow::HighLevel :
+//        //addHighLevel();
+//        break;
+
+//    case CircuitWindow::And :
+//        //addGateAnd();
+//        break;
+
+//    case CircuitWindow::Or :
+//        //addGateOr();
+//        break;
+
+//    case CircuitWindow::Non :
+//        //addGateNon();
+//        break;
+
+//    case CircuitWindow::Nand :
+//        //addGateNand();
+//        break;
+
+//    case CircuitWindow::Nor :
+//        //addGateNor();
+//        break;
+
+//    case CircuitWindow::AndOrNot :
+//        //addGateAndOrNor();
+//        break;
+
+//    case CircuitWindow::Xor :
+//        //addGateXor();
+//        break;
+
+//    case CircuitWindow::Xnor :
+//        //addGateXnor();
+//        break;
+
+//    default :
+//        break;
+//    }
+}
 
 //画可放元件的点阵图
 QPixmap CircuitMap::draw_Dots_Map()
@@ -51,10 +289,11 @@ QPixmap CircuitMap::draw_Dots_Map()
     //QPainter设置
     QPainter painter(&pix);
     QPen pen(DOTS_COLOR);
-    pen.setWidth(1);
+    pen.setWidth(2);
     painter.setPen(pen);
     QPen pen_bigger(DOTS_COLOR);
-    pen_bigger.setWidth(3);
+    pen_bigger.setWidth(4);
+    //painter.setRenderHint(QPainter::HighQualityAntialiasing);//抗锯齿能力
 
     //绘制点阵
     for(int i = 0; i <= MAP_WIDTH; i += 10)
@@ -92,166 +331,165 @@ void CircuitMap::zoomCircuit(int value)
     zoom = value;
 }
 
-CircuitMap::CircuitMap(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::CircuitMap)
+//添加元件图片方法
+Wire* CircuitMap::addWire(QPointF A, QPointF B)
 {
-    ui->setupUi(this);
-
-    //设置滑动条与数值框
-    zoom = INITIAL_ZOOM;
-    ui->slider_Zoom->setRange(10, 100);
-    ui->slider_Zoom->setSingleStep(10);
-    ui->slider_Zoom->setTickInterval(30);
-    ui->slider_Zoom->setTickPosition(QSlider::TicksAbove);
-    ui->slider_Zoom->setValue(INITIAL_ZOOM);
-    ui->spinBox_Zoom->setRange(10, 100);
-    ui->spinBox_Zoom->setSingleStep(10);
-    ui->spinBox_Zoom->setValue(INITIAL_ZOOM);
-    connect(ui->slider_Zoom, &QSlider::valueChanged, ui->spinBox_Zoom, [=](){
-        int v = ui->slider_Zoom->value();
-        v = (v + 5) / 10 * 10;
-        ui->spinBox_Zoom->setValue(v);
-        ui->slider_Zoom->setValue(v);
-        zoomCircuit(v);
-    });
-    connect(ui->spinBox_Zoom, &QSpinBox::textChanged, ui->slider_Zoom, [=](){
-        int v = ui->spinBox_Zoom->value();
-        ui->slider_Zoom->setValue(v);
-        zoomCircuit(v);
-    });
-
-    //创建画图区域
-    ui->map_Circuit->setStyleSheet("padding:0px;border:0px;background:" + BG_COLOR_STRING); //去除边缘并设置底色
-    QPixmap pix_Map = draw_Dots_Map();
-    ui->map_Circuit->setMap(pix_Map);
-    scene = new QGraphicsScene(ui->map_Circuit);
-    scene->setSceneRect(-MAP_WIDTH*5/8, -MAP_HEIGHT*5/8, MAP_WIDTH*5/4, MAP_HEIGHT*5/4);
-    ui->map_Circuit->setScene(scene);
-    //ui->map_Circuit->setCacheMode(QGraphicsView::CacheBackground);                        //缓存背景加速渲染，但导致边缘有重影
-    //ui->map_Circuit->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);            //改变渲染方式
-
-    //显示全部按钮
-    ui->btn_All->setStyleSheet("padding:10px;border:2px;background:" + BTN_COLOR_STRING);
-    connect(ui->btn_All, &QPushButton::clicked, [=](){
-        ui->spinBox_Zoom->setValue(10);
-    });
-
-    //清除元件按钮
-    ui->btn_Clear->setStyleSheet("padding:10px;border:2px;background:" + BTN_COLOR_STRING);
-    connect(ui->btn_Clear, &QPushButton::clicked, [=](){
-        //功能待填充
-    });
+    Wire *w = new Wire();
+    w->setIntP1(A);
+    w->setIntP2(B);
+    scene->addItem(w);
+    w->setFocus();
+    return w;
 }
 
-//添加元件图片方法
-andLogicGate* CircuitMap::addGateAnd()
+highLevel* CircuitMap::addHighLevel(QPointF p)
+{
+    highLevel *h = new highLevel();
+    h->setIntPos(p);
+    scene->addItem(h);
+    h->setFocus();
+    return h;
+}
+
+andLogicGate* CircuitMap::addGateAnd(QPointF p)
 {
     andLogicGate *g = new andLogicGate();
+    g->setIntPos(p);
     scene->addItem(g);
+    g->setFocus();
     return g;
 }
 
-orLogicGate* CircuitMap::addGateOr()
+orLogicGate* CircuitMap::addGateOr(QPointF p)
 {
     orLogicGate *g = new orLogicGate();
+    g->setIntPos(p);
     scene->addItem(g);
+    g->setFocus();
     return g;
 }
 
-nonLogicGate* CircuitMap::addGateNon()
+nonLogicGate* CircuitMap::addGateNon(QPointF p)
 {
     nonLogicGate *g = new nonLogicGate();
+    g->setIntPos(p);
     scene->addItem(g);
+    g->setFocus();
     return g;
 }
 
-nandLogicGate* CircuitMap::addGateNand()
+nandLogicGate* CircuitMap::addGateNand(QPointF p)
 {
     nandLogicGate *g = new nandLogicGate();
+    g->setIntPos(p);
     scene->addItem(g);
+    g->setFocus();
     return g;
 }
 
-norLogicGate* CircuitMap::addGateNor()
+norLogicGate* CircuitMap::addGateNor(QPointF p)
 {
     norLogicGate *g = new norLogicGate();
+    g->setIntPos(p);
     scene->addItem(g);
+    g->setFocus();
     return g;
 }
 
-andOrNotLogicGate* CircuitMap::addGateAndOrNor()
+andOrNotLogicGate* CircuitMap::addGateAndOrNor(QPointF p)
 {
     andOrNotLogicGate *g = new andOrNotLogicGate();
+    g->setIntPos(p);
     scene->addItem(g);
+    g->setFocus();
     return g;
 }
 
-xorLogicGate* CircuitMap::addGateXor()
+xorLogicGate* CircuitMap::addGateXor(QPointF p)
 {
     xorLogicGate *g = new xorLogicGate();
+    g->setIntPos(p);
     scene->addItem(g);
+    g->setFocus();
     return g;
 }
 
-xnorLogicGate* CircuitMap::addGateXnor()
+xnorLogicGate* CircuitMap::addGateXnor(QPointF p)
 {
     xnorLogicGate *g = new xnorLogicGate();
+    g->setIntPos(p);
     scene->addItem(g);
+    g->setFocus();
     return g;
 }
 
 //当前选项
 void CircuitMap::select(CircuitWindow::component_Selected c)
 {
-    //功能待填充
-    switch (c) {
-    case CircuitWindow::Select:
-        //待填充
-        break;
+//    //测试函数
+//    switch (c) {
+//    case CircuitWindow::Select :
+//        //
+//        break;
 
-    case CircuitWindow::And :
-        //待填充
-        addGateAnd();
-        break;
+//    case CircuitWindow::Wire :
+//        //addWire(QPoint(100, 100), QPoint(200, 200));
+//        break;
 
-    case CircuitWindow::Or :
-        //待填充
-        addGateOr();
-        break;
+//    case CircuitWindow::HighLevel :
+//        //addHighLevel();
+//        break;
 
-    case CircuitWindow::Non :
-        //待填充
-        addGateNon();
-        break;
+//    case CircuitWindow::And :
+//        //addGateAnd();
+//        break;
 
-    case CircuitWindow::Nand :
-        //待填充
-        addGateNand();
-        break;
+//    case CircuitWindow::Or :
+//        //addGateOr();
+//        break;
 
-    case CircuitWindow::Nor :
-        //待填充
-        addGateNor();
-        break;
+//    case CircuitWindow::Non :
+//        //addGateNon();
+//        break;
 
-    case CircuitWindow::AndOrNot :
-        //待填充
-        addGateAndOrNor();
-        break;
+//    case CircuitWindow::Nand :
+//        //addGateNand();
+//        break;
 
-    case CircuitWindow::Xor :
-        //待填充
-        addGateXor();
-        break;
+//    case CircuitWindow::Nor :
+//        //addGateNor();
+//        break;
 
-    case CircuitWindow::Xnor :
-        //待填充
-        addGateXnor();
-        break;
+//    case CircuitWindow::AndOrNot :
+//        //addGateAndOrNor();
+//        break;
 
-    default :
-        break;
+//    case CircuitWindow::Xor :
+//        //addGateXor();
+//        break;
+
+//    case CircuitWindow::Xnor :
+//        //addGateXnor();
+//        break;
+
+//    default :
+//        break;
+//    }
+
+    mod = c;
+    if(mod == CircuitWindow::Select)
+    {
+        QList<QGraphicsItem *> itemList = scene->items();
+        for(auto i = 0; i < itemList.size(); i++) {
+            itemList[i]->setFlag(QGraphicsItem::ItemIsMovable);
+        }
+    }
+    else
+    {
+        QList<QGraphicsItem *> itemList = scene->items();
+        for(auto i = 0; i < itemList.size(); i++) {
+            itemList[i]->setFlag(QGraphicsItem::ItemIsMovable, false);
+        }
     }
 }
 
@@ -274,3 +512,41 @@ void CircuitMap::paintEvent(QPaintEvent *)
     }
     painter.drawPixmap(0, 0, this->width(), this->height(), pix_Background);
 }
+
+//void CircuitMap::mousePressEvent(QMouseEvent *event)
+//{
+//    QWidget::mousePressEvent(event);
+
+//    if(mod == CircuitWindow::Wire)
+//    {
+//        connect(ui->map_Circuit, &QGraphicsView_Map::mousePressed, [=](QPoint p1){
+//            w = addWire(p1, p1);
+//            w->setFlag(QGraphicsItem::ItemIsMovable, false);
+//        });
+//        connect(ui->map_Circuit, &QGraphicsView_Map::mouseMoved, [=](QPoint p2){
+//            if(nullptr != w)
+//            {
+//                QLineF l = ((Wire*)w)->line();
+//                l.setP2(p2);
+//                ((Wire *)w)->setLine(l);
+//            }
+//        });
+//    }
+//}
+
+//void CircuitMap::mouseMoveEvent(QMouseEvent *event)
+//{
+//    QWidget::mouseMoveEvent(event);
+//}
+
+//void CircuitMap::mouseReleaseEvent(QMouseEvent *event)
+//{
+//    QWidget::mouseReleaseEvent(event);
+//    ui->map_Circuit->disconnect();
+//    w = nullptr;
+
+//    if(mod != CircuitWindow::Wire && mod != CircuitWindow::Select)
+//    {
+
+//    }
+//}

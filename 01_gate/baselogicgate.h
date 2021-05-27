@@ -1,26 +1,35 @@
 #ifndef BASELOGICGATE_H
 #define BASELOGICGATE_H
 #include <QPainter>
-#include<QGraphicsItem>
+#include <QGraphicsItem>
 
 class baselogicgate:public QGraphicsItem,public QPainter
 {
 public:
-    baselogicgate();
-    //输入函数
-    int input();
-    //输出函数
-    int output();
-////////////////////////////////得到图像
-   // void getPaint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    ////////得到用户选择的元件的编号
-    //int getPaintNum(int paintNum){return paintNum;}
+    baselogicgate(int iniN = 2);   //iniN代表输入的引脚数
+
+    //获得引脚数
+    int getN();
+    //设置引脚数 —— 由子类重载
+    void setN(int newN);
+    //获得引脚坐标
+    QVector< QPair<int, int> > getInputPin();   //getInputPin是得到引脚坐标的函数 ，pair是坐标对
+    QVector< QPair<int, int> > getOutputPin();
+    //进行运算，更新状态并返回输出 —— 由子类重载
+    volatile QVector<bool> flash(QVector<bool> input);
+
 protected:
     const int lineWidth = 15;
     const int width = 70;
     const int height = 100;
-    ////////用户点击工具栏中的门元件，返回一个数值，再通过getPaint函数中的switch来决定打印哪一个图像
-    //int paintNum;
+    int n;                                                          //引脚数
+    QVector< QPair<int, int> > inputPinPosition, outputPinPosition; //引脚坐标数组
+    QVector<bool> nowInput, lastInput, nowOutput, lastOutput;       //输入输出状态
+    const QColor BLACK = QColor(0, 0, 0);
+    const QColor GRAY = QColor(100, 100, 100);
+    const QColor GREEN = QColor(0, 200, 0);
+    void fillPosition();                                            //填充引脚坐标信息
+
 };
 
 #endif // BASELOGICGATE_H

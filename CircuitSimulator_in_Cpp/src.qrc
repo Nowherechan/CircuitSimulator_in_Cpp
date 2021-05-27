@@ -15,5 +15,7 @@
         <file>src/logical-gate/component_nor.png</file>
         <file>src/logical-gate/component_xnor.png</file>
         <file>src/logical-gate/component_xor.png</file>
+        <file>src/wire.png</file>
+        <file>src/logical-gate/component_hightlevel.png</file>
     </qresource>
 </RCC>
