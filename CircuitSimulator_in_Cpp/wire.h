@@ -10,8 +10,8 @@ public:
     Wire();
     int getValue();
     void setValue(bool statue);
-    //void setP1(QPoint point_1);
-    //void setP2(QPoint point_2);
+    void setIntP1(QPointF p);
+    void setIntP2(QPointF p);
     //void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
     //void setPointA(QPoint p);
     //void setPointB(QPoint p);

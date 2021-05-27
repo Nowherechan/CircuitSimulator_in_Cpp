@@ -44,15 +44,18 @@ public:
 protected:
     QPixmap draw_Dots_Map();
     Wire* addWire(QPointF A, QPointF B);
-    highLevel* addHighLevel();
-    andLogicGate* addGateAnd();
-    orLogicGate* addGateOr();
-    nonLogicGate* addGateNon();
-    nandLogicGate* addGateNand();
-    norLogicGate* addGateNor();
-    andOrNotLogicGate* addGateAndOrNor();
-    xorLogicGate* addGateXor();
-    xnorLogicGate* addGateXnor();
+    highLevel* addHighLevel(QPointF p);
+    andLogicGate* addGateAnd(QPointF p);
+    orLogicGate* addGateOr(QPointF p);
+    nonLogicGate* addGateNon(QPointF p);
+    nandLogicGate* addGateNand(QPointF p);
+    norLogicGate* addGateNor(QPointF p);
+    andOrNotLogicGate* addGateAndOrNor(QPointF p);
+    xorLogicGate* addGateXor(QPointF p);
+    xnorLogicGate* addGateXnor(QPointF p);
+    void dealPress(QPointF p);
+    void dealMove(QPointF p);
+    void dealRelease(QPointF p);
 //    void mousePressEvent(QMouseEvent *event) override;
 //    void mouseMoveEvent(QMouseEvent *event) override;
 //    void mouseReleaseEvent(QMouseEvent *event) override;
@@ -63,7 +66,7 @@ private:
     int zoom;
     QPixmap map;
     QGraphicsScene * scene;
-    //QGraphicsItem * w;
+    QGraphicsItem * w;
 };
 
 #endif // CIRCUITMAP_H
