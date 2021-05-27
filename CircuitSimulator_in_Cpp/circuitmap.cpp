@@ -147,14 +147,23 @@ CircuitMap::CircuitMap(QWidget *parent) :
         int mouseY = event.y();
         QPoint mouse(mouseX, mouseY);
         QPointF p = ui->map_Circuit->mapToScene(mouse);
-        andLogicGate * a = addGateAnd();
-        a->setIntPos(p);
-        qDebug() << a->pos();
     });
 
     //鼠标移动
+    connect(ui->map_Circuit, &QGraphicsView_Map::mouseMoved, [=](QMouseEvent event){
+        int mouseX = event.x();
+        int mouseY = event.y();
+        QPoint mouse(mouseX, mouseY);
+        QPointF p = ui->map_Circuit->mapToScene(mouse);
+    });
 
     //鼠标松开
+    connect(ui->map_Circuit, &QGraphicsView_Map::mouseReleased, [=](QMouseEvent event){
+        int mouseX = event.x();
+        int mouseY = event.y();
+        QPoint mouse(mouseX, mouseY);
+        QPointF p = ui->map_Circuit->mapToScene(mouse);
+    });
 }
 
 //添加元件图片方法

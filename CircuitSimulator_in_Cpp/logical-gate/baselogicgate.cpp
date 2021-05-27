@@ -93,7 +93,7 @@ void baselogicgate::setIntPos(QPointF p)
     afterX = beforeX + 10;
     beforeY = (int)nowY / 10 * 10;
     afterY = beforeY + 10;
-    qDebug() << beforeX << " " << afterX << " " << beforeY << " " << afterY;
+    //qDebug() << beforeX << " " << afterX << " " << beforeY << " " << afterY;
     dx = nowX - beforeX;
     dy = nowY - beforeY;
     if(dx <= 5)
@@ -104,7 +104,7 @@ void baselogicgate::setIntPos(QPointF p)
         nowY = beforeY;
     else
         nowY = afterY;
-    qDebug() << nowX << "" << nowY;
+    //qDebug() << nowX << "" << nowY;
     QPointF p2 = QPointF(nowX, nowY);
     setPos(p2);
 }
