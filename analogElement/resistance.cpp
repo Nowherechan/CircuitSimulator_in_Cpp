@@ -17,9 +17,9 @@ void resistance::fillPosition()
     inputPinPosition.clear();
     outputPinPosition.clear();
     QPair<int, int> temp;
-    temp = {baseX, baseY+20};
+    temp = {baseX, baseY+50};
     inputPinPosition.push_back(temp);
-    temp = {baseX+100, baseY + 20};
+    temp = {baseX+100, baseY + 50};
     inputPinPosition.push_back(temp);
 }
 
@@ -45,19 +45,19 @@ void resistance::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
 
     //画主体
     painter->drawRect(QRect(baseX+30,
-                            baseY+10,
+                            baseY+40,
                             40,
                             20));
     //画输入导线
     painter->drawLine(baseX,
-                      baseY+20,
+                      baseY+50,
                       baseX+30,
-                      baseY+20
+                      baseY+50
                       );
     //画输出导线
     painter->drawLine(baseX+70,
-                      baseY+20,
+                      baseY+50,
                       baseX+100,
-                      baseY+20
+                      baseY+50
                       );
 }

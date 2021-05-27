@@ -19,17 +19,17 @@ Widget::Widget(QWidget *parent)
     scene->addItem(item);
 
 
-    voltageSource*item1 = new  voltageSource;
-    scene->addItem(item1);
+//    voltageSource*item1 = new  voltageSource;
+//    scene->addItem(item1);
 
-    switchClose*item2 = new  switchClose;
-    scene->addItem(item2);
+//    switchClose*item2 = new  switchClose;
+//    scene->addItem(item2);
 
-    switchOpen*item3 = new  switchOpen;
-    scene->addItem(item3);
+//    switchOpen*item3 = new  switchOpen;
+//    scene->addItem(item3);
 
-    currentSource*item4 = new  currentSource;
-    scene->addItem(item4);
+//    currentSource*item4 = new  currentSource;
+//    scene->addItem(item4);
 
 }
 
