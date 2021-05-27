@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
-  "Analog_Electronic_tech"
+  "Analog_Electronic_tech.exe"
+  "Analog_Electronic_tech.exe.manifest"
   "Analog_Electronic_tech.pdb"
-  "CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o"
-  "CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o"
-  "CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o"
-  "CMakeFiles/Analog_Electronic_tech.dir/main.cpp.o"
+  "CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.obj"
+  "CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.obj"
+  "CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.obj"
+  "CMakeFiles/Analog_Electronic_tech.dir/main.cpp.obj"
+  "libAnalog_Electronic_tech.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

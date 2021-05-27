@@ -1,4 +1,18 @@
-/home/z/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.7142.21/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech
+"D:\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -DCMAKE_C_COMPILER=C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/g++.exe -G "CodeBlocks - MinGW Makefiles" D:\CppBigAssignment\CircuitSimulator_in_Cpp\Analog_Electronic_tech
+-- The C compiler identification is GNU 8.1.0
+-- The CXX compiler identification is GNU 8.1.0
+-- Check for working C compiler: C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/gcc.exe
+-- Check for working C compiler: C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/gcc.exe - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/g++.exe
+-- Check for working CXX compiler: C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/g++.exe - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug
+-- Build files have been written to: D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug

@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.cpp" "/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.o"
-  "/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.cpp" "/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.o"
-  "/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Matrix.cpp" "/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.o"
-  "/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/main.cpp" "/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/Analog_Electronic_tech.dir/main.cpp.o"
+  "D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.cpp" "D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/Analog_Electronic_tech.dir/Circuit.cpp.obj"
+  "D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.cpp" "D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/Analog_Electronic_tech.dir/Element.cpp.obj"
+  "D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Matrix.cpp" "D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/Analog_Electronic_tech.dir/Matrix.cpp.obj"
+  "D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/main.cpp" "D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/Analog_Electronic_tech.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
