@@ -2,6 +2,7 @@
 #define QGRAPHICSVIEW_MAP_H
 
 #include <QGraphicsView>
+#include <QMouseEvent>
 
 namespace Ui {
 class QGraphicsView_Map;
@@ -27,8 +28,9 @@ private:
     QPixmap map;
 
 signals:
-    void mousePressed(QPoint p);
-    void mouseMoved(QPoint p);
+    void mousePressed(QMouseEvent eventPressed);
+    void mouseMoved(QMouseEvent eventMoved);
+    void mouseReleased(QMouseEvent eventReleased);
 };
 
 #endif // QGRAPHICSVIEW_MAP_H

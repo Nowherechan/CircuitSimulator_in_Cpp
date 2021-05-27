@@ -53,9 +53,9 @@ protected:
     andOrNotLogicGate* addGateAndOrNor();
     xorLogicGate* addGateXor();
     xnorLogicGate* addGateXnor();
-    void mousePressEvent(QMouseEvent *event) override;
-    void mouseMoveEvent(QMouseEvent *event) override;
-    void mouseReleaseEvent(QMouseEvent *event) override;
+//    void mousePressEvent(QMouseEvent *event) override;
+//    void mouseMoveEvent(QMouseEvent *event) override;
+//    void mouseReleaseEvent(QMouseEvent *event) override;
 
 private:
     CircuitWindow::component_Selected mod;
@@ -63,7 +63,7 @@ private:
     int zoom;
     QPixmap map;
     QGraphicsScene * scene;
-    QGraphicsItem * w;
+    //QGraphicsItem * w;
 };
 
 #endif // CIRCUITMAP_H

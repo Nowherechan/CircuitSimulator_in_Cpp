@@ -13,6 +13,7 @@
 #include "circuitmap.h"
 #include <QPainter>
 #include <QKeyEvent>
+#include <QDebug>
 
 baselogicgate::baselogicgate(int iniN)
 {
@@ -71,4 +72,39 @@ void baselogicgate::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     dy = nowY - beforeY;
     dx <= 5 ? setPos(beforeX, y()) : setPos(afterX, y());
     dy <= 5 ? setPos(x(), beforeY) : setPos(x(), afterY);
+}
+
+void baselogicgate::setIntPos(QPointF p)
+{
+    qreal nowX = p.x();
+    qreal nowY = p.y();
+    //防出界
+    if(nowX < 10)
+        nowX = 10;
+    if(nowX > CircuitMap::MAP_WIDTH - width - lineWidth*2 - 10)
+        nowX = CircuitMap::MAP_WIDTH - width - lineWidth*2 - 10;
+    if(nowY < 10)
+        nowY = 10;
+    if(nowY > CircuitMap::MAP_HEIGHT - height - 10)
+        nowY = CircuitMap::MAP_HEIGHT - height - 10;
+    //设整点
+    int beforeX, afterX, beforeY, afterY, dx, dy;
+    beforeX = (int)nowX / 10 * 10;
+    afterX = beforeX + 10;
+    beforeY = (int)nowY / 10 * 10;
+    afterY = beforeY + 10;
+    qDebug() << beforeX << " " << afterX << " " << beforeY << " " << afterY;
+    dx = nowX - beforeX;
+    dy = nowY - beforeY;
+    if(dx <= 5)
+        nowX = beforeX;
+    else
+        nowX = afterX;
+    if(dy <= 5)
+        nowY = beforeY;
+    else
+        nowY = afterY;
+    qDebug() << nowX << "" << nowY;
+    QPointF p2 = QPointF(nowX, nowY);
+    setPos(p2);
 }

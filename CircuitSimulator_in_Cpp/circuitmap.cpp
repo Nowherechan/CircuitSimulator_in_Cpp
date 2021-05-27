@@ -140,6 +140,21 @@ CircuitMap::CircuitMap(QWidget *parent) :
             delete itemList[i];
         }
     });
+
+    //鼠标按下
+    connect(ui->map_Circuit, &QGraphicsView_Map::mousePressed, [=](QMouseEvent event){
+        int mouseX = event.x();
+        int mouseY = event.y();
+        QPoint mouse(mouseX, mouseY);
+        QPointF p = ui->map_Circuit->mapToScene(mouse);
+        andLogicGate * a = addGateAnd();
+        a->setIntPos(p);
+        qDebug() << a->pos();
+    });
+
+    //鼠标移动
+
+    //鼠标松开
 }
 
 //添加元件图片方法
@@ -315,40 +330,40 @@ void CircuitMap::paintEvent(QPaintEvent *)
     painter.drawPixmap(0, 0, this->width(), this->height(), pix_Background);
 }
 
-void CircuitMap::mousePressEvent(QMouseEvent *event)
-{
-    QWidget::mousePressEvent(event);
+//void CircuitMap::mousePressEvent(QMouseEvent *event)
+//{
+//    QWidget::mousePressEvent(event);
 
-    if(mod == CircuitWindow::Wire)
-    {
-        connect(ui->map_Circuit, &QGraphicsView_Map::mousePressed, [=](QPoint p1){
-            w = addWire(p1, p1);
-            w->setFlag(QGraphicsItem::ItemIsMovable, false);
-        });
-        connect(ui->map_Circuit, &QGraphicsView_Map::mouseMoved, [=](QPoint p2){
-            if(nullptr != w)
-            {
-                QLineF l = ((Wire*)w)->line();
-                l.setP2(p2);
-                ((Wire *)w)->setLine(l);
-            }
-        });
-    }
-}
+//    if(mod == CircuitWindow::Wire)
+//    {
+//        connect(ui->map_Circuit, &QGraphicsView_Map::mousePressed, [=](QPoint p1){
+//            w = addWire(p1, p1);
+//            w->setFlag(QGraphicsItem::ItemIsMovable, false);
+//        });
+//        connect(ui->map_Circuit, &QGraphicsView_Map::mouseMoved, [=](QPoint p2){
+//            if(nullptr != w)
+//            {
+//                QLineF l = ((Wire*)w)->line();
+//                l.setP2(p2);
+//                ((Wire *)w)->setLine(l);
+//            }
+//        });
+//    }
+//}
 
-void CircuitMap::mouseMoveEvent(QMouseEvent *event)
-{
-    QWidget::mouseMoveEvent(event);
-}
+//void CircuitMap::mouseMoveEvent(QMouseEvent *event)
+//{
+//    QWidget::mouseMoveEvent(event);
+//}
 
-void CircuitMap::mouseReleaseEvent(QMouseEvent *event)
-{
-    QWidget::mouseReleaseEvent(event);
-    ui->map_Circuit->disconnect();
-    w = nullptr;
+//void CircuitMap::mouseReleaseEvent(QMouseEvent *event)
+//{
+//    QWidget::mouseReleaseEvent(event);
+//    ui->map_Circuit->disconnect();
+//    w = nullptr;
 
-    if(mod != CircuitWindow::Wire && mod != CircuitWindow::Select)
-    {
+//    if(mod != CircuitWindow::Wire && mod != CircuitWindow::Select)
+//    {
 
-    }
-}
+//    }
+//}
