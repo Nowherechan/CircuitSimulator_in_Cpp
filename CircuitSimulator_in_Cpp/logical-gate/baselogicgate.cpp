@@ -20,6 +20,11 @@ baselogicgate::baselogicgate(int iniN)
     n = iniN;
 }
 
+int baselogicgate::type() const
+{
+    return baselogicgate::UserType + 1;
+}
+
 int baselogicgate::getN()
 {
     return n;

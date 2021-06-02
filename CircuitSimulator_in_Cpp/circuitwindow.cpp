@@ -7,8 +7,7 @@
   * bug:(when one bug was fixed, marked it with '~')
   *     null
   * TODO:(when one was completed, marked it with '~')
-  *     1.Add components' button
-  *     2.Connect oscillograph.(QtChart or QWT or QCustomerPlot)
+  * ~   1.Add components' button
   */
 #include "circuitwindow.h"
 #include "ui_circuitwindow.h"
@@ -49,6 +48,13 @@ CircuitWindow::CircuitWindow(QWidget *parent, circuit_Mod mod) :
         emit select(Select);
         ui->actionSelect->setChecked(true);
         ui->Map->select(Select);
+    });
+
+    ui->actionRun->setChecked(false);
+    connect(ui->actionRun, &QAction::triggered, [=](){
+        emit select(Run);
+        ui->actionRun->setChecked(true);
+        ui->Map->select(Run);
     });
 
     ui->actionWire->setChecked(false);

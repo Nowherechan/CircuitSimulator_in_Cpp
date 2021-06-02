@@ -62,6 +62,19 @@ Wire::Wire()
     value = false;
     setFocus();
     setFlags(QGraphicsItem::ItemIsFocusable|QGraphicsItem::ItemIsMovable);
+    calculateSize();
+}
+
+int Wire::type() const
+{
+    return UserType + 2;
+}
+
+void Wire::calculateSize()
+{
+    QLineF l = this->line();
+    width = std::abs(l.p1().x() - l.p2().x());
+    height = std::abs(l.p1().y() - l.p2().y());
 }
 
 int Wire::getValue()
@@ -75,6 +88,69 @@ void Wire::setValue(bool statue)
         setPen(*penGreen);
     else
         setPen(*penGray);
+}
+
+void Wire::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    QGraphicsLineItem::mouseMoveEvent(event);
+
+    //元件防止移出界面
+    QLineF l = this->line(), nextL;
+    int x = std::min(l.p1().x(), l.p2().x());
+    int y = std::min(l.p1().y(), l.p2().y());
+    bool x_P1LessThanP2 = l.p1().x() < l.p2().x();
+    bool y_P1LessThanP2 = l.p1().y() < l.p2().y();
+    int p1_x, p1_y, p2_x, p2_y;
+    if(x < 10)
+        x = 10;
+    if(x > CircuitMap::MAP_WIDTH - width - 10)
+        x = CircuitMap::MAP_WIDTH - width - 10;
+    if(y < 10)
+        y = 10;
+    if(y > CircuitMap::MAP_HEIGHT - height - 10)
+        y = CircuitMap::MAP_HEIGHT - height - 10;
+    if(x_P1LessThanP2)
+    {
+        p1_x = x;
+        p2_x = x + width;
+    }
+    else
+    {
+        p2_x = x;
+        p1_x = x + width;
+    }
+    if(y_P1LessThanP2)
+    {
+        p1_y = y;
+        p2_y = y + height;
+    }
+    else
+    {
+        p2_y = y;
+        p1_y = y + height;
+    }
+    nextL.setP1(QPoint(p1_x, p1_y));
+    nextL.setP2(QPoint(p2_x, p2_y));
+    setLine(nextL);
+}
+
+void Wire::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    QGraphicsLineItem::mouseReleaseEvent(event);
+
+    //元件置于整点
+    int nowX, nowY;
+    nowX = x();
+    nowY = y();
+    int beforeX, afterX, beforeY, afterY, dx, dy;
+    beforeX = nowX / 10 * 10;
+    afterX = beforeX + 10;
+    beforeY = nowY / 10 * 10;
+    afterY = beforeY + 10;
+    dx = nowX - beforeX;
+    dy = nowY - beforeY;
+    dx <= 5 ? setPos(beforeX, y()) : setPos(afterX, y());
+    dy <= 5 ? setPos(x(), beforeY) : setPos(x(), afterY);
 }
 
 void Wire::setIntP1(QPointF p)
@@ -112,6 +188,7 @@ void Wire::setIntP1(QPointF p)
     QLineF l = line();
     l.setP1(p2);
     setLine(l);
+    calculateSize();
 }
 
 void Wire::setIntP2(QPointF p)
@@ -149,6 +226,7 @@ void Wire::setIntP2(QPointF p)
     QLineF l = line();
     l.setP2(p2);
     setLine(l);
+    calculateSize();
 }
 
 //QRectF Wire::boundingRect() const

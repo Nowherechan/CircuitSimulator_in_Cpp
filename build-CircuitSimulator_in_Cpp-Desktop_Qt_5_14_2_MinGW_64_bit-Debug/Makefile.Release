@@ -203,6 +203,7 @@ release/qrc_src.cpp: ../CircuitSimulator_in_Cpp/src.qrc \
 		../CircuitSimulator_in_Cpp/src/bg_circuit.png \
 		../CircuitSimulator_in_Cpp/src/bg_basic.png \
 		../CircuitSimulator_in_Cpp/src/mouse.png \
+		../CircuitSimulator_in_Cpp/src/run.png \
 		../CircuitSimulator_in_Cpp/src/title.png \
 		../CircuitSimulator_in_Cpp/src/logical-gate/component_nand.png \
 		../CircuitSimulator_in_Cpp/src/logical-gate/component_non.png \
@@ -696,6 +697,7 @@ release/moc_qgraphicsview_map.cpp: ../CircuitSimulator_in_Cpp/qgraphicsview_map.
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QMouseEvent \
 		release/moc_predefs.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/bin/moc.exe
 	D:\Qt\5.14.2\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include E:/#program/Qt/CircuitSimulator_in_Cpp/build-CircuitSimulator_in_Cpp-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/Qt/5.14.2/5.14.2/mingw73_64/mkspecs/win32-g++ -IE:/#program/Qt/CircuitSimulator_in_Cpp/CircuitSimulator_in_Cpp -ID:/Qt/5.14.2/5.14.2/mingw73_64/include -ID:/Qt/5.14.2/5.14.2/mingw73_64/include/QtMultimedia -ID:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets -ID:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui -ID:/Qt/5.14.2/5.14.2/mingw73_64/include/QtANGLE -ID:/Qt/5.14.2/5.14.2/mingw73_64/include/QtNetwork -ID:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore -I. -ID:/Qt/5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/Qt/5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/Qt/5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/Qt/5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/Qt/5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CircuitSimulator_in_Cpp\qgraphicsview_map.h -o release\moc_qgraphicsview_map.cpp
@@ -934,7 +936,8 @@ ui_circuitmap.h: ../CircuitSimulator_in_Cpp/circuitmap.ui \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/qfiledevice.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
-		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QMouseEvent
 	D:\Qt\5.14.2\5.14.2\mingw73_64\bin\uic.exe ..\CircuitSimulator_in_Cpp\circuitmap.ui -o ui_circuitmap.h
 
 ui_circuitwindow.h: ../CircuitSimulator_in_Cpp/circuitwindow.ui \
@@ -2087,6 +2090,7 @@ release/circuitmap.o: ../CircuitSimulator_in_Cpp/circuitmap.cpp ../CircuitSimula
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsview.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qscrollarea.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QMouseEvent \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/QDebug \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGridLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\circuitmap.o ..\CircuitSimulator_in_Cpp\circuitmap.cpp
@@ -2585,7 +2589,8 @@ release/baselogicgate.o: ../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.c
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPixmap \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
-		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QKeyEvent
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QKeyEvent \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\baselogicgate.o ..\CircuitSimulator_in_Cpp\logical-gate\baselogicgate.cpp
 
 release/highlevel.o: ../CircuitSimulator_in_Cpp/logical-gate/highlevel.cpp ../CircuitSimulator_in_Cpp/logical-gate/highlevel.h \
@@ -3526,6 +3531,7 @@ release/qgraphicsview_map.o: ../CircuitSimulator_in_Cpp/qgraphicsview_map.cpp ..
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QMouseEvent \
 		ui_qgraphicsview_map.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/QVariant \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QApplication \
@@ -3535,7 +3541,32 @@ release/qgraphicsview_map.o: ../CircuitSimulator_in_Cpp/qgraphicsview_map.cpp ..
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
-		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QFrame
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QFrame \
+		../CircuitSimulator_in_Cpp/circuitmap.h \
+		../CircuitSimulator_in_Cpp/circuitwindow.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/qicon.h \
+		../CircuitSimulator_in_Cpp/wire.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPainter \
+		../CircuitSimulator_in_Cpp/logical-gate/highlevel.h \
+		../CircuitSimulator_in_Cpp/logical-gate/baselogicgate.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
+		../CircuitSimulator_in_Cpp/logical-gate/andlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/orlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/nonlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/nandlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/norlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/andornotlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xorlogicgate.h \
+		../CircuitSimulator_in_Cpp/logical-gate/xnorlogicgate.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QWidget \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPixmap \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\qgraphicsview_map.o ..\CircuitSimulator_in_Cpp\qgraphicsview_map.cpp
 
 release/startwindow.o: ../CircuitSimulator_in_Cpp/startwindow.cpp ../CircuitSimulator_in_Cpp/startwindow.h \
@@ -3825,7 +3856,8 @@ release/wire.o: ../CircuitSimulator_in_Cpp/wire.cpp ../CircuitSimulator_in_Cpp/w
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QWidget \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtGui/QPixmap \
 		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
-		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		D:/Qt/5.14.2/5.14.2/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\wire.o ..\CircuitSimulator_in_Cpp\wire.cpp
 
 release/qrc_src.o: release/qrc_src.cpp 

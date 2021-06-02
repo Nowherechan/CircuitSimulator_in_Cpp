@@ -17,10 +17,12 @@ public:
     //void setPointB(QPoint p);
     //QPoint getPointA();
     //QPoint getPointB();
+    int type() const override;
 
 protected:
-    //void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
-    //void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
+    void calculateSize();
 
 private:
     //QPoint pointA, pointB;
@@ -32,6 +34,7 @@ private:
     QPen * penGray;
     QPen * penGreen;
     bool value;
+    int width, height;
 
 signals:
 
