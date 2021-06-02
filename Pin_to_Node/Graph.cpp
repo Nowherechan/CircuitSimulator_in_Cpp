@@ -69,3 +69,8 @@ void Graph::build_m(int x_num, int y_num)
 {
     *m = Matrix(x_num, y_num);
 }
+
+void  Graph::add_wire(Wire in)
+{
+    w_list.push_back(in);
+}

@@ -26,6 +26,7 @@ public:
     void match_nodes();                                // 給每個 Wire 匹配一個 node
     void power_pins();
     void build_m(int x_num, int y_num);                // 新建矩陣（或者點陣）
+    void add_wire(Wire in);
 };
 
 
