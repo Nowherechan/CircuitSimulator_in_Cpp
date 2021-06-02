@@ -27,6 +27,8 @@ public:
     void power_pins();
     void build_m(int x_num, int y_num);                // 新建矩陣（或者點陣）
     void add_wire(Wire in);
+    void sync_it();                                // 添加完線，創建好矩陣之後就做這個
+    Matrix * get_m();
 };
 
 

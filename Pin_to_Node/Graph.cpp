@@ -70,7 +70,18 @@ void Graph::build_m(int x_num, int y_num)
     *m = Matrix(y_num, x_num);
 }
 
-void  Graph::add_wire(Wire in)
+void Graph::add_wire(Wire in)
 {
     w_list.push_back(in);
+}
+
+void Graph::sync_it()
+{
+    match_nodes();
+    power_pins();
+}
+
+Matrix * Graph::get_m()
+{
+    return m;
 }
