@@ -50,8 +50,6 @@ void Circuit::dfs_gen_Nodes(Element e)
         }
     }
 
-    Amount_of_Nodes++;
-
 }
 
 void Circuit::generate_Nodes()                               // Must have been sorted !
@@ -63,7 +61,10 @@ void Circuit::generate_Nodes()                               // Must have been s
 
     for (int i = 0; List[i].get_Type() == 0; i++ ) {
         if (List[i].get_Node_Num1() != -1) continue;
-        else dfs_gen_Nodes(List[i]);
+        else {
+            dfs_gen_Nodes(List[i]);
+            Amount_of_Nodes++;
+        }
     }
 
 }

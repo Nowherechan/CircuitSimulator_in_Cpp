@@ -1,3 +1,3 @@
-/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/Analog_Electronic_tech.dir
+D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/Analog_Electronic_tech.dir
+D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/CMakeFiles/rebuild_cache.dir

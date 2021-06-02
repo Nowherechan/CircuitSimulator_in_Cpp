@@ -8,105 +8,103 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug"/>
+				<Option working_dir="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Analog_Electronic_tech">
-				<Option output="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Analog_Electronic_tech" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug"/>
+				<Option output="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Analog_Electronic_tech.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include-fixed"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 Analog_Electronic_tech"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 Analog_Electronic_tech"/>
+					<CompileFile command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Analog_Electronic_tech/fast">
-				<Option output="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Analog_Electronic_tech" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug"/>
+				<Option output="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Analog_Electronic_tech.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include-fixed"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 Analog_Electronic_tech/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 Analog_Electronic_tech/fast"/>
+					<CompileFile command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/gcc/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.cpp">
+		<Unit filename="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.cpp">
 			<Option target="Analog_Electronic_tech"/>
 		</Unit>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.h">
+		<Unit filename="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Circuit.h">
 			<Option target="Analog_Electronic_tech"/>
 		</Unit>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.cpp">
+		<Unit filename="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.cpp">
 			<Option target="Analog_Electronic_tech"/>
 		</Unit>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.h">
+		<Unit filename="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Element.h">
 			<Option target="Analog_Electronic_tech"/>
 		</Unit>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Matrix.cpp">
+		<Unit filename="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Matrix.cpp">
 			<Option target="Analog_Electronic_tech"/>
 		</Unit>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Matrix.h">
+		<Unit filename="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/Matrix.h">
 			<Option target="Analog_Electronic_tech"/>
 		</Unit>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/main.cpp">
+		<Unit filename="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/main.cpp">
 			<Option target="Analog_Electronic_tech"/>
 		</Unit>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/pch.h">
+		<Unit filename="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/pch.h">
 			<Option target="Analog_Electronic_tech"/>
 		</Unit>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Analog_Electronic_tech/CMakeLists.txt">
+		<Unit filename="D:/CppBigAssignment/CircuitSimulator_in_Cpp/Analog_Electronic_tech/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
