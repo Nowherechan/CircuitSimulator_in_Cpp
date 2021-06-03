@@ -18,6 +18,9 @@ release/orlogicgate.o
 release/xnorlogicgate.o
 release/xorlogicgate.o
 release/main.o
+release/G_Wire.o
+release/Graph.o
+release/Matrix.o
 release/qgraphicsview_map.o
 release/startwindow.o
 release/wire.o

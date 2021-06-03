@@ -36,6 +36,9 @@ SOURCES += \
     logical-gate/xnorlogicgate.cpp \
     logical-gate/xorlogicgate.cpp \
     main.cpp \
+    pin-to-node/G_Wire.cpp \
+    pin-to-node/Graph.cpp \
+    pin-to-node/Matrix.cpp \
     qgraphicsview_map.cpp \
     startwindow.cpp \
     wire.cpp
@@ -60,6 +63,10 @@ HEADERS += \
     logical-gate/orlogicgate.h \
     logical-gate/xnorlogicgate.h \
     logical-gate/xorlogicgate.h \
+    pin-to-node/G_Wire.h \
+    pin-to-node/Graph.h \
+    pin-to-node/Matrix.h \
+    pin-to-node/pch.h \
     qgraphicsview_map.h \
     startwindow.h \
     wire.h

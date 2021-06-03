@@ -16,6 +16,7 @@
 #include <QPixmap>
 #include <QGraphicsScene>
 #include <QTimer>
+#include "pin-to-node/Graph.h"
 
 namespace Ui {
 class CircuitMap;
@@ -71,6 +72,7 @@ private:
     QGraphicsItem * w;
     bool renew = false;
     QTimer * timer;
+    Graph * g;
 };
 
 #endif // CIRCUITMAP_H

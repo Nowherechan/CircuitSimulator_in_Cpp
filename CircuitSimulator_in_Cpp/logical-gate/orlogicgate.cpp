@@ -93,6 +93,8 @@ orLogicGate::orLogicGate(int iniN)
         nowInput.push_back(false);
     }
     nowOutput.push_back(false);
+
+    kind = 0x020;
 }
 
 QRectF orLogicGate::boundingRect() const

@@ -43,6 +43,8 @@ xorLogicGate::xorLogicGate()
         nowInput.push_back(false);
     }
     nowOutput.push_back(false);
+
+    kind = 0x060;
 }
 
 QRectF xorLogicGate::boundingRect() const

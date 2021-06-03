@@ -48,6 +48,8 @@ andOrNotLogicGate::andOrNotLogicGate()
         nowInput.push_back(false);
     }
     nowOutput.push_back(true);
+
+    kind = 0x080;
 }
 
 QRectF andOrNotLogicGate::boundingRect() const

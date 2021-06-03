@@ -94,6 +94,8 @@ nandLogicGate::nandLogicGate(int iniN)
         nowInput.push_back(false);
     }
     nowOutput.push_back(true);
+
+    kind = 0x040;
 }
 
 QRectF nandLogicGate::boundingRect() const

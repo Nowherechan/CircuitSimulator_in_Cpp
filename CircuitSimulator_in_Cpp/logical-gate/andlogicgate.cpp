@@ -11,6 +11,7 @@
   */
 #include "andlogicgate.h"
 #include "baselogicgate.h"
+#include <QDebug>
 
 //设置引脚数 —— 注意安全性
 void andLogicGate::setN(int newN)
@@ -92,6 +93,12 @@ andLogicGate::andLogicGate(int iniN)
         nowInput.push_back(false);
     }
     nowOutput.push_back(false);
+
+//    for(int i = 0; i < iniN; i++)
+//    {
+//        qDebug() << inputPinPosition[i].first << inputPinPosition[i].second;
+//    }
+    kind = 0x010;
 }
 
 QRectF andLogicGate::boundingRect() const

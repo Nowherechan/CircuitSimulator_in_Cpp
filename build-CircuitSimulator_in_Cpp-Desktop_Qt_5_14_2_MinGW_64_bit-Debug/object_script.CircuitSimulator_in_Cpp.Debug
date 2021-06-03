@@ -18,6 +18,9 @@ debug/orlogicgate.o
 debug/xnorlogicgate.o
 debug/xorlogicgate.o
 debug/main.o
+debug/G_Wire.o
+debug/Graph.o
+debug/Matrix.o
 debug/qgraphicsview_map.o
 debug/startwindow.o
 debug/wire.o

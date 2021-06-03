@@ -18,11 +18,17 @@
 baselogicgate::baselogicgate(int iniN)
 {
     n = iniN;
+    kind = 0x000;
 }
 
 int baselogicgate::type() const
 {
     return baselogicgate::UserType + 1;
+}
+
+int baselogicgate::getKind()
+{
+    return kind;
 }
 
 int baselogicgate::getN()

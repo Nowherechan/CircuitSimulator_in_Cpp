@@ -37,6 +37,7 @@ private:
     int width, height;
 
 signals:
+    void remove();
 
 };
 

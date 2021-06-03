@@ -38,6 +38,8 @@ nonLogicGate::nonLogicGate()
     nowOutput.clear();
     nowInput.push_back(false);
     nowOutput.push_back(true);
+
+    kind = 0x030;
 }
 
 QRectF nonLogicGate::boundingRect() const

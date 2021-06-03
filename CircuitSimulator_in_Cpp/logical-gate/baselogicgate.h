@@ -21,12 +21,14 @@ public:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
     int type() const override;
+    int getKind();
 
 protected:
     const int lineWidth = 15;
     const int width = 70;
     const int height = 100;
     int n;                                                          //引脚数
+    int kind;
     QVector< QPair<int, int> > inputPinPosition, outputPinPosition; //引脚坐标数组
     QVector<bool> nowInput, lastInput, nowOutput, lastOutput;       //输入输出状态
     const QColor BLACK = QColor(0, 0, 0);
@@ -35,5 +37,19 @@ protected:
     void fillPosition();                                            //填充引脚坐标信息
 
 };
+
+/**
+  * kind分配
+  * base        0x000
+  * highlevel   0x001
+  * and         0x010
+  * or          0x020
+  * non         0x030
+  * nand        0x040
+  * nor         0x050
+  * xor         0x060
+  * xnor        0x070
+  * andornot    0x080
+  */
 
 #endif // BASELOGICGATE_H

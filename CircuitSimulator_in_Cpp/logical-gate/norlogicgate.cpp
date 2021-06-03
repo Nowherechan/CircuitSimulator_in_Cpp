@@ -92,6 +92,8 @@ norLogicGate::norLogicGate(int iniN)
         nowInput.push_back(false);
     }
     nowOutput.push_back(true);
+
+    kind = 0x050;
 }
 
 QRectF norLogicGate::boundingRect() const

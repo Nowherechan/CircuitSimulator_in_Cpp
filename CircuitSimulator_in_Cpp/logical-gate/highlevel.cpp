@@ -21,6 +21,8 @@ highLevel::highLevel()
     nowInput.clear();
     nowOutput.clear();
     nowOutput.push_back(true);
+
+    kind = 0x001;
 }
 
 QVector<bool> highLevel::flash(QVector<bool>)

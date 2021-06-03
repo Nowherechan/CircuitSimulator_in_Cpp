@@ -43,6 +43,8 @@ xnorLogicGate::xnorLogicGate()
         nowInput.push_back(false);
     }
     nowOutput.push_back(true);
+
+    kind = 0x070;
 }
 
 QRectF xnorLogicGate::boundingRect() const

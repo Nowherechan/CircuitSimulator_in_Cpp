@@ -11,8 +11,8 @@
   * ~   2.Complete the actions of components, like put-on , delete and move.
   * ~   3.Matrix of the can-put points.
   * ~   4.Function select().
-  *     5.connect QTimer.
-  *     6.include class Graph.
+  * ~   5.connect QTimer.
+  * ~   6.include class Graph.
   *     7.add wire into Graph.
   */
 #include "circuitmap.h"
@@ -122,27 +122,107 @@ CircuitMap::CircuitMap(QWidget *parent) :
         dealRelease(p);
     });
 
+    //Graph设置
+    g = new Graph();
+    g->build_m(MAP_WIDTH/10, MAP_HEIGHT/10);
+
     //定时器设置
     timer = new QTimer(this);
     timer->setInterval(time);
     renew = false;
     connect(timer, &QTimer::timeout, [=](){
         QList<QGraphicsItem *> itemList = scene->items();
+        QVector< QPair<int, int> > inPut, outPut, sumOutPut;            //单元件输入输出、多元件输出引脚坐标
+        QVector<bool> inPutVoltage, sumOutPutVolatge;                   //单元件输入电平、多元件输出电平
+        baselogicgate* tempGate = nullptr;                              //当前指向的元件
+        sumOutPut.clear();
+        sumOutPutVolatge.clear();
         for(auto i = 0; i < itemList.size(); i++) {
-//            if(itemList[i]->type() == baselogicgate::UserType + 2)
-//                continue;
-//            int n = ((baselogicgate*)itemList[i])->getN();
-            //读outputpin
+            if(itemList[i]->type() == QGraphicsItem::UserType + 2)      //跳过导线
+                continue;
+            tempGate = ((baselogicgate*)itemList[i]);
+            int kind = tempGate->getKind();
+            int n = tempGate->getN();
+            outPut = tempGate->getInputPin();
+            //填充sumOutPut
+            sumOutPut.append(tempGate->getOutputPin());
+            //读inputpin电平
+            inPut.clear();
+            inPutVoltage.clear();
+            for(int j = 0; j < n; j++)
+            {
+                QPair<int, int> tempPoint = outPut[j];
+                bool tempVoltage = g->get_level(tempPoint.first/10, tempPoint.second/10);
+                inPutVoltage.append(tempVoltage);
+            }
             //flash
+            if(0x010 == kind)
+            {
+                QVector<bool> outPutVoltage(((andLogicGate*) tempGate)->flash(inPutVoltage));
+                sumOutPutVolatge.append(outPutVoltage);
+            }
+            else if(0x020 == kind)
+            {
+                QVector<bool> outPutVoltage(((orLogicGate*) tempGate)->flash(inPutVoltage));
+                sumOutPutVolatge.append(outPutVoltage);
+            }
+            else if(0x030 == kind)
+            {
+                QVector<bool> outPutVoltage(((nonLogicGate*) tempGate)->flash(inPutVoltage));
+                sumOutPutVolatge.append(outPutVoltage);
+            }
+            else if(0x040 == kind)
+            {
+                QVector<bool> outPutVoltage(((nandLogicGate*) tempGate)->flash(inPutVoltage));
+                sumOutPutVolatge.append(outPutVoltage);
+            }
+            else if(0x050 == kind)
+            {
+                QVector<bool> outPutVoltage(((norLogicGate*) tempGate)->flash(inPutVoltage));
+                sumOutPutVolatge.append(outPutVoltage);
+            }
+            else if(0x060 == kind)
+            {
+                QVector<bool> outPutVoltage(((xorLogicGate*) tempGate)->flash(inPutVoltage));
+                sumOutPutVolatge.append(outPutVoltage);
+            }
+            else if(0x070 == kind)
+            {
+                QVector<bool> outPutVoltage(((xnorLogicGate*) tempGate)->flash(inPutVoltage));
+                sumOutPutVolatge.append(outPutVoltage);
+            }
+            else if(0x080 == kind)
+            {
+                QVector<bool> outPutVoltage(((andOrNotLogicGate*) tempGate)->flash(inPutVoltage));
+                sumOutPutVolatge.append(outPutVoltage);
+            }
+            else {}
         }
-        //更新导线
+        //更新graph
+        for(int i = 0; i < sumOutPutVolatge.size(); i++)
+            g->change_level(sumOutPut[i].first/10, sumOutPut[i].second/10, sumOutPutVolatge[i]);
+        g->sync_it();
+        //更新wire颜色
+        for(auto i = 0; i < itemList.size(); i++) {
+            if(itemList[i]->type() != QGraphicsItem::UserType + 2)      //跳过非导线
+                continue;
+            Wire* tempWire = ((Wire*)itemList[i]);
+            QLineF l = tempWire->line();
+            QPointF p1 = l.p1();
+            QPointF p2 = l.p2();
+            bool p1_level = g->get_level(p1.x()/10, p1.y()/10);
+            bool p2_level = g->get_level(p2.x()/10, p2.y()/10);
+            tempWire->setValue(p1_level || p2_level);
+        }
     });
 }
 
 void CircuitMap::dealPress(QPointF p)
 {
+    //select时删除元件
     switch (mod) {
     case CircuitWindow::Select :
+        //qDebug() << "select";
         break;
 
     case CircuitWindow::Run :
@@ -256,6 +336,7 @@ void CircuitMap::dealMove(QPointF p)
 
 void CircuitMap::dealRelease(QPointF )
 {
+    //向graph添加元件
 //    switch (mod) {
 //    case CircuitWindow::Select :
 //        break;
