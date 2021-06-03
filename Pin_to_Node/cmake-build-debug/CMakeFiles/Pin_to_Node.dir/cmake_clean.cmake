@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Pin_to_Node.dir/Graph.cpp.o"
-  "CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.o"
   "CMakeFiles/Pin_to_Node.dir/Wire.cpp.o"
   "CMakeFiles/Pin_to_Node.dir/main.cpp.o"
   "Pin_to_Node"

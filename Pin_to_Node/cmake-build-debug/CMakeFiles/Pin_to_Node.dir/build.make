@@ -89,22 +89,9 @@ CMakeFiles/Pin_to_Node.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pin_to_Node.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/main.cpp -o CMakeFiles/Pin_to_Node.dir/main.cpp.s
 
-CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.o: CMakeFiles/Pin_to_Node.dir/flags.make
-CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.o: ../Pin_to_Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.o -c /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/Pin_to_Node.cpp
-
-CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/Pin_to_Node.cpp > CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.i
-
-CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/Pin_to_Node.cpp -o CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.s
-
 CMakeFiles/Pin_to_Node.dir/Graph.cpp.o: CMakeFiles/Pin_to_Node.dir/flags.make
 CMakeFiles/Pin_to_Node.dir/Graph.cpp.o: ../Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Pin_to_Node.dir/Graph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Pin_to_Node.dir/Graph.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pin_to_Node.dir/Graph.cpp.o -c /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/Graph.cpp
 
 CMakeFiles/Pin_to_Node.dir/Graph.cpp.i: cmake_force
@@ -117,7 +104,7 @@ CMakeFiles/Pin_to_Node.dir/Graph.cpp.s: cmake_force
 
 CMakeFiles/Pin_to_Node.dir/Wire.cpp.o: CMakeFiles/Pin_to_Node.dir/flags.make
 CMakeFiles/Pin_to_Node.dir/Wire.cpp.o: ../Wire.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Pin_to_Node.dir/Wire.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Pin_to_Node.dir/Wire.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pin_to_Node.dir/Wire.cpp.o -c /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/Wire.cpp
 
 CMakeFiles/Pin_to_Node.dir/Wire.cpp.i: cmake_force
@@ -131,7 +118,6 @@ CMakeFiles/Pin_to_Node.dir/Wire.cpp.s: cmake_force
 # Object files for target Pin_to_Node
 Pin_to_Node_OBJECTS = \
 "CMakeFiles/Pin_to_Node.dir/main.cpp.o" \
-"CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.o" \
 "CMakeFiles/Pin_to_Node.dir/Graph.cpp.o" \
 "CMakeFiles/Pin_to_Node.dir/Wire.cpp.o"
 
@@ -139,12 +125,11 @@ Pin_to_Node_OBJECTS = \
 Pin_to_Node_EXTERNAL_OBJECTS =
 
 Pin_to_Node: CMakeFiles/Pin_to_Node.dir/main.cpp.o
-Pin_to_Node: CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.o
 Pin_to_Node: CMakeFiles/Pin_to_Node.dir/Graph.cpp.o
 Pin_to_Node: CMakeFiles/Pin_to_Node.dir/Wire.cpp.o
 Pin_to_Node: CMakeFiles/Pin_to_Node.dir/build.make
 Pin_to_Node: CMakeFiles/Pin_to_Node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Pin_to_Node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Pin_to_Node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Pin_to_Node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

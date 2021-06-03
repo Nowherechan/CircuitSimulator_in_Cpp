@@ -13,7 +13,7 @@ bool equal_pins(Pin a, Pin b)
     return a.x == b.x && a.y == b.y;
 }
 
-void Graph::dfs(Wire in)
+void Graph::dfs(G_Wire in)
 {
     in.change_node_num(node_amount);
     for (int i = 0; i < w_list.size(); i++) {
@@ -70,7 +70,7 @@ void Graph::build_m(int x_num, int y_num)
     *m = Matrix(y_num, x_num);
 }
 
-void Graph::add_wire(Wire in)
+void Graph::add_wire(G_Wire in)
 {
     w_list.push_back(in);
 }
@@ -84,4 +84,14 @@ void Graph::sync_it()
 Matrix * Graph::get_m()
 {
     return m;
+}
+
+void Graph::change_level(int x, int y, int in)
+{
+    m->insert_num(y, x, in);
+}
+
+bool Graph::get_level(int x, int y)
+{
+    return m->get_num(y, x);
 }

@@ -2,22 +2,22 @@
 // Created by z on 6/2/21.
 //
 
-#ifndef PIN_TO_NODE_WIRE_H
-#define PIN_TO_NODE_WIRE_H
+#ifndef PIN_TO_NODE_G_WIRE_H
+#define PIN_TO_NODE_G_WIRE_H
 
 typedef struct {    // 端點 Pin, 有坐標x, y
     int x;
     int y;
 }Pin;
 
-class Wire {        // 初始導線電平爲 0 ，即低電平
+class G_Wire {        // 初始導線電平爲 0 ，即低電平
 private:
     Pin pin1;
     Pin pin2;
     bool status;
     int node_num;
 public:
-    Wire(int pin1_x, int pin1_y, int pin2_x, int pin2_y);
+    G_Wire(int pin1_x, int pin1_y, int pin2_x, int pin2_y);
     Pin get_pin1();
     Pin get_pin2();
     int get_node_num() const;
@@ -27,4 +27,4 @@ public:
 };
 
 
-#endif //PIN_TO_NODE_WIRE_H
+#endif //PIN_TO_NODE_G_WIRE_H

@@ -88,12 +88,6 @@
 		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/Graph.h">
 			<Option target="Pin_to_Node"/>
 		</Unit>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/Pin_to_Node.cpp">
-			<Option target="Pin_to_Node"/>
-		</Unit>
-		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/Pin_to_Node.h">
-			<Option target="Pin_to_Node"/>
-		</Unit>
 		<Unit filename="/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/Wire.cpp">
 			<Option target="Pin_to_Node"/>
 		</Unit>

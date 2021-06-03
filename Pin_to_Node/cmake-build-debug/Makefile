@@ -169,33 +169,6 @@ Graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
 
-Pin_to_Node.o: Pin_to_Node.cpp.o
-
-.PHONY : Pin_to_Node.o
-
-# target to build an object file
-Pin_to_Node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.o
-.PHONY : Pin_to_Node.cpp.o
-
-Pin_to_Node.i: Pin_to_Node.cpp.i
-
-.PHONY : Pin_to_Node.i
-
-# target to preprocess a source file
-Pin_to_Node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.i
-.PHONY : Pin_to_Node.cpp.i
-
-Pin_to_Node.s: Pin_to_Node.cpp.s
-
-.PHONY : Pin_to_Node.s
-
-# target to generate assembly for a file
-Pin_to_Node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Pin_to_Node.cpp.s
-.PHONY : Pin_to_Node.cpp.s
-
 Wire.o: Wire.cpp.o
 
 .PHONY : Wire.o
@@ -262,9 +235,6 @@ help:
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"
-	@echo "... Pin_to_Node.o"
-	@echo "... Pin_to_Node.i"
-	@echo "... Pin_to_Node.s"
 	@echo "... Wire.o"
 	@echo "... Wire.i"
 	@echo "... Wire.s"
