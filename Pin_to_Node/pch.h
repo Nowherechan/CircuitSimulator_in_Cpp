@@ -6,6 +6,4 @@
 #include <cstdlib>
 #include <algorithm>
 
-#include "G_Wire.h"
-#include "Matrix.h"
-#include "Graph.h"
+

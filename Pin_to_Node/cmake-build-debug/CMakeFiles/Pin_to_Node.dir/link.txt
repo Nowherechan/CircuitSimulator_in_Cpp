@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/Pin_to_Node.dir/main.cpp.o CMakeFiles/Pin_to_Node.dir/Graph.cpp.o CMakeFiles/Pin_to_Node.dir/Wire.cpp.o -o Pin_to_Node 
+/usr/bin/c++ -g CMakeFiles/Pin_to_Node.dir/main.cpp.o CMakeFiles/Pin_to_Node.dir/Graph.cpp.o CMakeFiles/Pin_to_Node.dir/G_Wire.cpp.o CMakeFiles/Pin_to_Node.dir/Matrix.cpp.o -o Pin_to_Node 

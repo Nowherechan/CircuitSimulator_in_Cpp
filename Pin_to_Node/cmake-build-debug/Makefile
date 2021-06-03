@@ -142,6 +142,33 @@ Pin_to_Node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/build
 .PHONY : Pin_to_Node/fast
 
+G_Wire.o: G_Wire.cpp.o
+
+.PHONY : G_Wire.o
+
+# target to build an object file
+G_Wire.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/G_Wire.cpp.o
+.PHONY : G_Wire.cpp.o
+
+G_Wire.i: G_Wire.cpp.i
+
+.PHONY : G_Wire.i
+
+# target to preprocess a source file
+G_Wire.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/G_Wire.cpp.i
+.PHONY : G_Wire.cpp.i
+
+G_Wire.s: G_Wire.cpp.s
+
+.PHONY : G_Wire.s
+
+# target to generate assembly for a file
+G_Wire.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/G_Wire.cpp.s
+.PHONY : G_Wire.cpp.s
+
 Graph.o: Graph.cpp.o
 
 .PHONY : Graph.o
@@ -169,32 +196,32 @@ Graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
 
-Wire.o: Wire.cpp.o
+Matrix.o: Matrix.cpp.o
 
-.PHONY : Wire.o
+.PHONY : Matrix.o
 
 # target to build an object file
-Wire.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Wire.cpp.o
-.PHONY : Wire.cpp.o
+Matrix.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Matrix.cpp.o
+.PHONY : Matrix.cpp.o
 
-Wire.i: Wire.cpp.i
+Matrix.i: Matrix.cpp.i
 
-.PHONY : Wire.i
+.PHONY : Matrix.i
 
 # target to preprocess a source file
-Wire.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Wire.cpp.i
-.PHONY : Wire.cpp.i
+Matrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Matrix.cpp.i
+.PHONY : Matrix.cpp.i
 
-Wire.s: Wire.cpp.s
+Matrix.s: Matrix.cpp.s
 
-.PHONY : Wire.s
+.PHONY : Matrix.s
 
 # target to generate assembly for a file
-Wire.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Wire.cpp.s
-.PHONY : Wire.cpp.s
+Matrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/Matrix.cpp.s
+.PHONY : Matrix.cpp.s
 
 main.o: main.cpp.o
 
@@ -232,12 +259,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Pin_to_Node"
+	@echo "... G_Wire.o"
+	@echo "... G_Wire.i"
+	@echo "... G_Wire.s"
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"
-	@echo "... Wire.o"
-	@echo "... Wire.i"
-	@echo "... Wire.s"
+	@echo "... Matrix.o"
+	@echo "... Matrix.i"
+	@echo "... Matrix.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

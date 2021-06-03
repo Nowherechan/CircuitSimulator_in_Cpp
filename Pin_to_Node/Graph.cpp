@@ -6,6 +6,10 @@
 #include "pch.h"
 using std::sort;
 
+bool cmp_node(G_Wire a, G_Wire b) {
+    return a.get_node_num() < b.get_node_num();
+};
+
 Graph::Graph() { node_amount = 0; }
 
 bool equal_pins(Pin a, Pin b)
@@ -13,7 +17,7 @@ bool equal_pins(Pin a, Pin b)
     return a.x == b.x && a.y == b.y;
 }
 
-void Graph::dfs(G_Wire in)
+void Graph::dfs(G_Wire &in)
 {
     in.change_node_num(node_amount);
     for (int i = 0; i < w_list.size(); i++) {
@@ -42,6 +46,11 @@ void Graph::match_nodes()
 
 void Graph::power_pins()
 {
+    for (int i = 0; i < w_list.size(); i++) {
+        if (m->get_num(w_list[i].get_pin1().y, w_list[i].get_pin1().x) != 0
+        ||  m->get_num(w_list[i].get_pin2().y, w_list[i].get_pin2().x) != 0)
+            w_list[i].change_status(1);
+    }
     int cnt1 = 0, cnt0 = 0;                                 // cnt0爲node較小側
     for (int i = 0; i < node_amount; i++) {
         cnt0 = cnt1;
@@ -67,10 +76,10 @@ void Graph::power_pins()
 
 void Graph::build_m(int x_num, int y_num)
 {
-    *m = Matrix(y_num, x_num);
+    m = new Matrix(y_num, x_num);
 }
 
-void Graph::add_wire(G_Wire in)
+void Graph::add_wire(G_Wire &in)
 {
     w_list.push_back(in);
 }
@@ -93,5 +102,5 @@ void Graph::change_level(int x, int y, int in)
 
 bool Graph::get_level(int x, int y)
 {
-    return m->get_num(y, x);
+    return (bool)m->get_num(y, x);
 }

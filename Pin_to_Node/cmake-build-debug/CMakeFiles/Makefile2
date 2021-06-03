@@ -93,12 +93,12 @@ clean: CMakeFiles/Pin_to_Node.dir/clean
 CMakeFiles/Pin_to_Node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pin_to_Node.dir/build.make CMakeFiles/Pin_to_Node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target Pin_to_Node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target Pin_to_Node"
 .PHONY : CMakeFiles/Pin_to_Node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Pin_to_Node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Pin_to_Node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/z/CPP_DOC/CPP_BIG_ASSIGNMENT/CircuitSimulator_in_Cpp/Pin_to_Node/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Pin_to_Node.dir/rule
