@@ -15,6 +15,7 @@
 #include <QWidget>
 #include <QPixmap>
 #include <QGraphicsScene>
+#include <QTimer>
 
 namespace Ui {
 class CircuitMap;
@@ -28,12 +29,13 @@ public:
     //电路背景图参数
     static const int MAP_WIDTH = 1600;
     static const int MAP_HEIGHT = 900;
-    const QColor DOTS_COLOR = QColor("#B0B0B0");
+    const QColor DOTS_COLOR = QColor("#E0E0E0");
     const QString BG_COLOR_STRING = "#A0A0A0";
     const QString BTN_COLOR_STRING = "#80C0E0";
     const QColor MAP_COLOR = QColor("#FFFFFF");
     const QColor LINE_COLOR = QColor("#101010");
     static const int INITIAL_ZOOM = 50;
+    static const int time = 100;                    //刷新时间间隔
 
     explicit CircuitMap(QWidget *parent = nullptr);
     void zoomCircuit(int value);
@@ -67,6 +69,8 @@ private:
     QPixmap map;
     QGraphicsScene * scene;
     QGraphicsItem * w;
+    bool renew = false;
+    QTimer * timer;
 };
 
 #endif // CIRCUITMAP_H

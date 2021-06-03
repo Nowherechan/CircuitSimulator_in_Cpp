@@ -8,9 +8,12 @@
   *     null
   * TODO:(when one was completed, marked it with '~')
   * ~   1.Finish the show-all and clear-all button.
-  *     2.Complete the actions of components, like put-on , delete and move.
-  *     3.Matrix of the can-put points.
+  * ~   2.Complete the actions of components, like put-on , delete and move.
+  * ~   3.Matrix of the can-put points.
   * ~   4.Function select().
+  *     5.connect QTimer.
+  *     6.include class Graph.
+  *     7.add wire into Graph.
   */
 #include "circuitmap.h"
 #include "ui_circuitmap.h"
@@ -33,6 +36,7 @@
 #include <QPushButton>
 #include <cmath>
 #include <QMouseEvent>
+#include <QVector>
 
 CircuitMap::CircuitMap(QWidget *parent) :
     QWidget(parent),
@@ -117,12 +121,31 @@ CircuitMap::CircuitMap(QWidget *parent) :
         QPointF p = ui->map_Circuit->mapToScene(mouse);
         dealRelease(p);
     });
+
+    //定时器设置
+    timer = new QTimer(this);
+    timer->setInterval(time);
+    renew = false;
+    connect(timer, &QTimer::timeout, [=](){
+        QList<QGraphicsItem *> itemList = scene->items();
+        for(auto i = 0; i < itemList.size(); i++) {
+//            if(itemList[i]->type() == baselogicgate::UserType + 2)
+//                continue;
+//            int n = ((baselogicgate*)itemList[i])->getN();
+            //读outputpin
+            //flash
+        }
+        //更新导线
+    });
 }
 
 void CircuitMap::dealPress(QPointF p)
 {
     switch (mod) {
     case CircuitWindow::Select :
+        break;
+
+    case CircuitWindow::Run :
         break;
 
     case CircuitWindow::Wire :
@@ -181,6 +204,9 @@ void CircuitMap::dealMove(QPointF p)
 {
     switch (mod) {
     case CircuitWindow::Select :
+        break;
+
+    case CircuitWindow::Run :
         break;
 
     case CircuitWindow::Wire :
@@ -476,6 +502,7 @@ void CircuitMap::select(CircuitWindow::component_Selected c)
 //        break;
 //    }
 
+    //设置元件是否可移动
     mod = c;
     if(mod == CircuitWindow::Select)
     {
@@ -491,6 +518,19 @@ void CircuitMap::select(CircuitWindow::component_Selected c)
             itemList[i]->setFlag(QGraphicsItem::ItemIsMovable, false);
         }
     }
+
+    //设置是否刷新状态
+    if(mod == CircuitWindow::Run && !renew)
+    {
+        renew = true;
+        timer->start();
+    }
+    else if(mod != CircuitWindow::Run && renew)
+    {
+        renew = false;
+        timer->stop();
+    }
+    else {}
 }
 
 CircuitMap::~CircuitMap()

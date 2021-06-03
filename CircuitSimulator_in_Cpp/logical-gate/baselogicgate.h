@@ -20,6 +20,7 @@ public:
     void setIntPos(QPointF p);
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
+    int type() const override;
 
 protected:
     const int lineWidth = 15;

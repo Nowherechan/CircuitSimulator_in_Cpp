@@ -5,7 +5,7 @@
   * function:
   *     a graphic's view with functions extended.
   * bug:(when one bug was fixed, marked it with '~')
-  *     1. After zooming the dots become a mess.
+  *     null
   * TODO:(when one was completed, marked it with '~')
   *     null
   */

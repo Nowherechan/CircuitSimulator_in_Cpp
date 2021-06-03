@@ -17,5 +17,6 @@
         <file>src/logical-gate/component_xor.png</file>
         <file>src/wire.png</file>
         <file>src/logical-gate/component_hightlevel.png</file>
+        <file>src/run.png</file>
     </qresource>
 </RCC>

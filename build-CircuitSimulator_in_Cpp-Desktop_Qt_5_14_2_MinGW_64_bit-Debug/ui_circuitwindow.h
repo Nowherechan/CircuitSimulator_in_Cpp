@@ -39,6 +39,7 @@ public:
     QAction *actionXnor;
     QAction *actionWire;
     QAction *actionHighLevel;
+    QAction *actionRun;
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout;
     CircuitMap *Map;
@@ -123,6 +124,12 @@ public:
         QIcon icon10;
         icon10.addFile(QString::fromUtf8(":/src/logical-gate/component_hightlevel.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionHighLevel->setIcon(icon10);
+        actionRun = new QAction(CircuitWindow);
+        actionRun->setObjectName(QString::fromUtf8("actionRun"));
+        actionRun->setCheckable(true);
+        QIcon icon11;
+        icon11.addFile(QString::fromUtf8(":/src/run.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionRun->setIcon(icon11);
         centralwidget = new QWidget(CircuitWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayout = new QHBoxLayout(centralwidget);
@@ -155,6 +162,7 @@ public:
         menu->addAction(actionReturn);
         menu->addAction(actionExit);
         toolBarComponent->addAction(actionSelect);
+        toolBarComponent->addAction(actionRun);
         toolBarComponent->addAction(actionWire);
         toolBarComponent->addSeparator();
 
@@ -244,6 +252,13 @@ public:
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(shortcut)
         actionHighLevel->setShortcut(QCoreApplication::translate("CircuitWindow", "H", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionRun->setText(QCoreApplication::translate("CircuitWindow", "\350\277\220\350\241\214", nullptr));
+#if QT_CONFIG(tooltip)
+        actionRun->setToolTip(QCoreApplication::translate("CircuitWindow", "\350\277\220\350\241\214\344\273\277\347\234\237", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(shortcut)
+        actionRun->setShortcut(QCoreApplication::translate("CircuitWindow", "R", nullptr));
 #endif // QT_CONFIG(shortcut)
         menu->setTitle(QCoreApplication::translate("CircuitWindow", "\345\274\200\345\247\213", nullptr));
         toolBarComponent->setWindowTitle(QCoreApplication::translate("CircuitWindow", "toolBar", nullptr));
