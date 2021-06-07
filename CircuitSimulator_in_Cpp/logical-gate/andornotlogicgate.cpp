@@ -48,6 +48,7 @@ andOrNotLogicGate::andOrNotLogicGate()
         nowInput.push_back(false);
     }
     nowOutput.push_back(true);
+    setN(4);
 
     kind = 0x080;
 }

@@ -38,6 +38,7 @@ nonLogicGate::nonLogicGate()
     nowOutput.clear();
     nowInput.push_back(false);
     nowOutput.push_back(true);
+    setN(1);
 
     kind = 0x030;
 }

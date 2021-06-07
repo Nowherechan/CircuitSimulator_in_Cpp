@@ -21,6 +21,7 @@ highLevel::highLevel()
     nowInput.clear();
     nowOutput.clear();
     nowOutput.push_back(true);
+    setN(0);
 
     kind = 0x001;
 }
@@ -38,8 +39,8 @@ void highLevel::fillPosition()
     outputPinPosition.clear();
     QPair<int, int> temp;
     temp = {baseX + 100, baseY + 30};
-    inputPinPosition.push_back(temp);
-    }
+    outputPinPosition.push_back(temp);
+}
 
 QRectF highLevel::boundingRect() const
 {

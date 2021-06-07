@@ -5,7 +5,19 @@
   * function:
   *     a map of circuit.
   * bug:(when one bug was fixed, marked it with '~')
-  *     null
+  * ~   1.segfault when put hightlevel, nonlogicgat and andornotlogicgate.
+  *         reason: the number of input pins is fault.
+  *         final solution: add setN().
+  * ~   2.all of the pins turn green when flash.
+  *         reason: get position of pins of wrong widget.
+  *         final solution: manually change positions.
+  * ~   3.highlevel doesn't work.
+  *         reason: forget to add the process function into if-else segment.
+  *         final solution: add it.
+  * ~   4.the green color doesn't change until select the "select" button.
+  *         reason: scene doesn't update.
+  *         final solution: add an update function into connection of timer.
+  *     5.the high level doesn't disappear when highlevel is moved.
   * TODO:(when one was completed, marked it with '~')
   * ~   1.Finish the show-all and clear-all button.
   * ~   2.Complete the actions of components, like put-on , delete and move.
@@ -131,10 +143,13 @@ CircuitMap::CircuitMap(QWidget *parent) :
     timer->setInterval(time);
     renew = false;
     connect(timer, &QTimer::timeout, [=](){
+        //qDebug() << "timeout";
         QList<QGraphicsItem *> itemList = scene->items();
         QVector< QPair<int, int> > inPut, outPut, sumOutPut;            //单元件输入输出、多元件输出引脚坐标
         QVector<bool> inPutVoltage, sumOutPutVolatge;                   //单元件输入电平、多元件输出电平
         baselogicgate* tempGate = nullptr;                              //当前指向的元件
+        inPut.clear();
+        outPut.clear();
         sumOutPut.clear();
         sumOutPutVolatge.clear();
         for(auto i = 0; i < itemList.size(); i++) {
@@ -143,20 +158,33 @@ CircuitMap::CircuitMap(QWidget *parent) :
             tempGate = ((baselogicgate*)itemList[i]);
             int kind = tempGate->getKind();
             int n = tempGate->getN();
-            outPut = tempGate->getInputPin();
+            inPut = tempGate->getInputPin();
             //填充sumOutPut
-            sumOutPut.append(tempGate->getOutputPin());
+            outPut = tempGate->getOutputPin();
+            for(int i = 0; i < outPut.size(); i++)
+            {
+                outPut[i].first = outPut[i].first + tempGate->x();
+                outPut[i].second = outPut[i].second + tempGate->y();
+            }
+            sumOutPut.append(outPut);
             //读inputpin电平
-            inPut.clear();
             inPutVoltage.clear();
             for(int j = 0; j < n; j++)
             {
-                QPair<int, int> tempPoint = outPut[j];
+                QPair<int, int> tempPoint;
+                tempPoint = inPut[j];
+                tempPoint.first = tempPoint.first + tempGate->x();
+                tempPoint.second = tempPoint.second + tempGate->y();
                 bool tempVoltage = g->get_level(tempPoint.first/10, tempPoint.second/10);
                 inPutVoltage.append(tempVoltage);
             }
             //flash
-            if(0x010 == kind)
+            if(0x001 == kind)
+            {
+                QVector<bool> outPutVoltage(((highLevel*) tempGate)->flash(inPutVoltage));
+                sumOutPutVolatge.append(outPutVoltage);
+            }
+            else if(0x010 == kind)
             {
                 QVector<bool> outPutVoltage(((andLogicGate*) tempGate)->flash(inPutVoltage));
                 sumOutPutVolatge.append(outPutVoltage);
@@ -214,6 +242,7 @@ CircuitMap::CircuitMap(QWidget *parent) :
             bool p2_level = g->get_level(p2.x()/10, p2.y()/10);
             tempWire->setValue(p1_level || p2_level);
         }
+        scene->update();
     });
 }
 

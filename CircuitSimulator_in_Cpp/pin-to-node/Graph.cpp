@@ -104,3 +104,14 @@ bool Graph::get_level(int x, int y)
 {
     return (bool)m->get_num(y, x);
 }
+
+void Graph::del_wire(G_Wire &in)
+{
+    for (unsigned int i = 0; i < w_list.size(); i++) {
+        if (w_list[i].get_pin1().x == in.get_pin1().x
+         && w_list[i].get_pin1().y == in.get_pin1().y
+         && w_list[i].get_pin2().x == in.get_pin2().x
+         && w_list[i].get_pin2().y == in.get_pin2().y)
+            w_list.erase(w_list.begin() + i);
+    }
+}
