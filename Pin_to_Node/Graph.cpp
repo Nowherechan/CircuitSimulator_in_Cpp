@@ -20,13 +20,13 @@ bool equal_pins(Pin a, Pin b)
 void Graph::dfs(G_Wire &in)
 {
     in.change_node_num(node_amount);
-    for (int i = 0; i < w_list.size(); i++) {
+    for (unsigned int i = 0; i < w_list.size(); i++) {
         if (w_list[i].get_node_num() != -1) continue;
         else {
             if (      equal_pins(in.get_pin1(), w_list[i].get_pin1() )
-                   || equal_pins(in.get_pin2(), w_list[i].get_pin2() )
-                   || equal_pins(in.get_pin1(), w_list[i].get_pin2() )
-                   || equal_pins(in.get_pin2(), w_list[i].get_pin1() ) )
+                      || equal_pins(in.get_pin2(), w_list[i].get_pin2() )
+                      || equal_pins(in.get_pin1(), w_list[i].get_pin2() )
+                      || equal_pins(in.get_pin2(), w_list[i].get_pin1() ) )
                 dfs(w_list[i]);
         }
     }
@@ -34,7 +34,11 @@ void Graph::dfs(G_Wire &in)
 
 void Graph::match_nodes()
 {
-    for (int i = 0; i < w_list.size(); i++) {
+    for (unsigned int i = 0; i < w_list.size(); i++) {
+        w_list[i].change_node_num(-1);
+    }
+    node_amount = 0;
+    for (unsigned int i = 0; i < w_list.size(); i++) {
         if (w_list[i].get_node_num() != -1) continue;
         else {
             dfs(w_list[i]);
@@ -46,12 +50,15 @@ void Graph::match_nodes()
 
 void Graph::power_pins()
 {
-    for (int i = 0; i < w_list.size(); i++) {
+    for (unsigned int i = 0; i < w_list.size(); i++) {
+        w_list[i].change_status(0);
+    }
+    for (unsigned int i = 0; i < w_list.size(); i++) {
         if (m->get_num(w_list[i].get_pin1().y, w_list[i].get_pin1().x) != 0
-        ||  m->get_num(w_list[i].get_pin2().y, w_list[i].get_pin2().x) != 0)
+            ||  m->get_num(w_list[i].get_pin2().y, w_list[i].get_pin2().x) != 0)
             w_list[i].change_status(1);
     }
-    int cnt1 = 0, cnt0 = 0;                                 // cnt0爲node較小側
+    unsigned int cnt1 = 0, cnt0 = 0;                                                // cnt0爲node較小側
     for (int i = 0; i < node_amount; i++) {
         cnt0 = cnt1;
         int temp = 0;
@@ -60,14 +67,14 @@ void Graph::power_pins()
             temp += w_list[cnt1].get_status();
         }
         if (temp) {
-            for (int j = cnt0; j < cnt1; j++) {
+            for (unsigned int j = cnt0; j < cnt1; j++) {
                 w_list[j].change_status(1);
             }
         }
     }
 
-    for (int i = 0; i < w_list.size(); i++) {
-        if (w_list[i].get_status()) {                      // 縱坐標對應於矩陣“行號”
+    for (unsigned int i = 0; i < w_list.size(); i++) {
+        if (w_list[i].get_status()) {                                               // 縱坐標對應於矩陣“行號”
             m->insert_num(w_list[i].get_pin1().y, w_list[i].get_pin1().x, 1);
             m->insert_num(w_list[i].get_pin2().y, w_list[i].get_pin2().x, 1);
         }
@@ -107,11 +114,16 @@ bool Graph::get_level(int x, int y)
 
 void Graph::del_wire(G_Wire &in)
 {
-    for (int i = 0; i < w_list.size(); i++) {
+    for (unsigned int i = 0; i < w_list.size(); i++) {
         if (w_list[i].get_pin1().x == in.get_pin1().x
-         && w_list[i].get_pin1().y == in.get_pin1().y
-         && w_list[i].get_pin2().x == in.get_pin2().x
-         && w_list[i].get_pin2().y == in.get_pin2().y)
+            && w_list[i].get_pin1().y == in.get_pin1().y
+            && w_list[i].get_pin2().x == in.get_pin2().x
+            && w_list[i].get_pin2().y == in.get_pin2().y)
             w_list.erase(w_list.begin() + i);
     }
+}
+
+void Graph::refresh_graph()
+{
+    build_m(m->get_cols_num(), m->get_rows_num());
 }
