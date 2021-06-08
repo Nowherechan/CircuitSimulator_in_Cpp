@@ -135,6 +135,7 @@ void Wire::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
     nextL.setP1(QPoint(p1_x, p1_y));
     nextL.setP2(QPoint(p2_x, p2_y));
     setLine(nextL);
+    qDebug() << nextL;
 }
 
 void Wire::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -145,6 +146,7 @@ void Wire::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     int nowX, nowY;
     nowX = x();
     nowY = y();
+    //qDebug() << nowX << nowY << " before change";
     int beforeX, afterX, beforeY, afterY, dx, dy;
     beforeX = nowX / 10 * 10;
     afterX = beforeX + 10;
@@ -154,12 +156,16 @@ void Wire::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     dy = nowY - beforeY;
     dx <= 5 ? setPos(beforeX, y()) : setPos(afterX, y());
     dy <= 5 ? setPos(x(), beforeY) : setPos(x(), afterY);
+    //qDebug() << x() << y() << " after change";
     //g_w同步坐标
     delete g_w;
     QLineF l = line();
     QPointF p1 = l.p1();
+    p1 += mapToParent(pos());
     QPointF p2 = l.p2();
+    p2 += mapToParent(pos());
     g_w = new G_Wire((int)p1.x()/10, (int)p1.y()/10, (int)p2.x()/10, (int)p2.y()/10);
+    //qDebug() << (int)p1.x()/10 << (int)p1.y()/10 << (int)p2.x()/10 << (int)p2.y()/10;
 }
 
 void Wire::setIntP1(QPointF p)
@@ -299,39 +305,39 @@ Wire::~Wire()
 //    painter->drawLine(XA, YA, XB, YB);
 //}
 
-/*void Wire::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
-{
-    QGraphicsLineItem::mouseMoveEvent(event);
+//void Wire::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+//{
+//    QGraphicsLineItem::mouseMoveEvent(event);
 
-    QLineF thisLine = line();
-    int width = std::abs(thisLine.x1() - thisLine.x2());
-    int height = std::abs(thisLine.y1() - thisLine.y2());
+//    QLineF thisLine = line();
+//    int width = std::abs(thisLine.x1() - thisLine.x2());
+//    int height = std::abs(thisLine.y1() - thisLine.y2());
 
-    if(x() < 10)
-        setPos(10, y());
-    if(x() > CircuitMap::MAP_WIDTH - width - 10)
-        setPos(CircuitMap::MAP_WIDTH - width - 10, y());
-    if(y() < 10)
-        setPos(x(), 10);
-    if(y() > CircuitMap::MAP_HEIGHT - height - 10)
-        setPos(x(), CircuitMap::MAP_HEIGHT - height - 10);
-}
+//    if(x() < 10)
+//        setPos(10, y());
+//    if(x() > CircuitMap::MAP_WIDTH - width - 10)
+//        setPos(CircuitMap::MAP_WIDTH - width - 10, y());
+//    if(y() < 10)
+//        setPos(x(), 10);
+//    if(y() > CircuitMap::MAP_HEIGHT - height - 10)
+//        setPos(x(), CircuitMap::MAP_HEIGHT - height - 10);
+//}
 
-void Wire::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
-{
-    QGraphicsLineItem::mouseReleaseEvent(event);
+//void Wire::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+//{
+//    QGraphicsLineItem::mouseReleaseEvent(event);
 
-    //元件置于整点
-    int nowX, nowY;
-    nowX = x();
-    nowY = y();
-    int beforeX, afterX, beforeY, afterY, dx, dy;
-    beforeX = nowX / 10 * 10;
-    afterX = beforeX + 10;
-    beforeY = nowY / 10 * 10;
-    afterY = beforeY + 10;
-    dx = nowX - beforeX;
-    dy = nowY - beforeY;
-    dx <= 5 ? setPos(beforeX, y()) : setPos(afterX, y());
-    dy <= 5 ? setPos(x(), beforeY) : setPos(x(), afterY);
-}*/
+//    //元件置于整点
+//    int nowX, nowY;
+//    nowX = x();
+//    nowY = y();
+//    int beforeX, afterX, beforeY, afterY, dx, dy;
+//    beforeX = nowX / 10 * 10;
+//    afterX = beforeX + 10;
+//    beforeY = nowY / 10 * 10;
+//    afterY = beforeY + 10;
+//    dx = nowX - beforeX;
+//    dy = nowY - beforeY;
+//    dx <= 5 ? setPos(beforeX, y()) : setPos(afterX, y());
+//    dy <= 5 ? setPos(x(), beforeY) : setPos(x(), afterY);
+//}

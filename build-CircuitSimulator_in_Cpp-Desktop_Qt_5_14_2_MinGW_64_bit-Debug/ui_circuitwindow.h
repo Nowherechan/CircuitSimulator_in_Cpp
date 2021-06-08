@@ -16,7 +16,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 #include "circuitmap.h"
@@ -45,7 +44,6 @@ public:
     CircuitMap *Map;
     QMenuBar *menubar;
     QMenu *menu;
-    QStatusBar *statusbar;
     QToolBar *toolBarComponent;
 
     void setupUi(QMainWindow *CircuitWindow)
@@ -146,9 +144,6 @@ public:
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
         CircuitWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(CircuitWindow);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        CircuitWindow->setStatusBar(statusbar);
         toolBarComponent = new QToolBar(CircuitWindow);
         toolBarComponent->setObjectName(QString::fromUtf8("toolBarComponent"));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
@@ -156,6 +151,9 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(toolBarComponent->sizePolicy().hasHeightForWidth());
         toolBarComponent->setSizePolicy(sizePolicy);
+        toolBarComponent->setMovable(false);
+        toolBarComponent->setAllowedAreas(Qt::LeftToolBarArea|Qt::RightToolBarArea|Qt::TopToolBarArea);
+        toolBarComponent->setFloatable(false);
         CircuitWindow->addToolBar(Qt::RightToolBarArea, toolBarComponent);
 
         menubar->addAction(menu->menuAction());

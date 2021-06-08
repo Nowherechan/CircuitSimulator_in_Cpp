@@ -180,7 +180,6 @@
    </widget>
    <addaction name="menu_Start"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionExit">
    <property name="text">
     <string>退出</string>

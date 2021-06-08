@@ -18,7 +18,6 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "animation_btn.h"
@@ -43,7 +42,6 @@ public:
     QSpacerItem *verticalSpacer_3;
     QMenuBar *menubar;
     QMenu *menu_Start;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *StartWindow)
     {
@@ -125,9 +123,6 @@ public:
         menu_Start = new QMenu(menubar);
         menu_Start->setObjectName(QString::fromUtf8("menu_Start"));
         StartWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(StartWindow);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        StartWindow->setStatusBar(statusbar);
 
         menubar->addAction(menu_Start->menuAction());
         menu_Start->addAction(actionExit);

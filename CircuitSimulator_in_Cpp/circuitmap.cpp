@@ -242,7 +242,10 @@ CircuitMap::CircuitMap(QWidget *parent) :
             QPointF p2 = l.p2();
             bool p1_level = g->get_level(p1.x()/10, p1.y()/10);
             bool p2_level = g->get_level(p2.x()/10, p2.y()/10);
-            qDebug() << p1_level << " " << p2_level;
+            qDebug() << p1;
+            qDebug() << p1_level;
+            qDebug() << p2;
+            qDebug() << p2_level;
             tempWire->setValue(p1_level || p2_level);
         }
         scene->update();
@@ -479,6 +482,7 @@ Wire* CircuitMap::addWire(QPointF A, QPointF B)
     w->setIntP2(B);
     scene->addItem(w);
     w->setFocus();
+    qDebug() << w->pos() << "Wire";
     return w;
 }
 
