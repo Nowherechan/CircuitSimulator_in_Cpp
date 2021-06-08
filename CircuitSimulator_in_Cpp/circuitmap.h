@@ -32,7 +32,7 @@ public:
     static const int MAP_HEIGHT = 900;
     const QColor DOTS_COLOR = QColor("#E0E0E0");
     const QString BG_COLOR_STRING = "#A0A0A0";
-    const QString BTN_COLOR_STRING = "#80C0E0";
+    const QString BTN_COLOR_STRING = "#D0E0FF";
     const QColor MAP_COLOR = QColor("#FFFFFF");
     const QColor LINE_COLOR = QColor("#101010");
     static const int INITIAL_ZOOM = 50;

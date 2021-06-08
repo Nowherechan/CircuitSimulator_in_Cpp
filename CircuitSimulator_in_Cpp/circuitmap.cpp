@@ -105,6 +105,10 @@ CircuitMap::CircuitMap(QWidget *parent) :
         }
     });
 
+    //Graph设置
+    g = new Graph();
+    g->build_m(MAP_WIDTH/10, MAP_HEIGHT/10);
+
     //鼠标按下
     connect(ui->map_Circuit, &QGraphicsView_Map::mousePressed, [=](QMouseEvent event){
         select(mod);                                    //阻止新生成的元件移动
@@ -133,10 +137,6 @@ CircuitMap::CircuitMap(QWidget *parent) :
         QPointF p = ui->map_Circuit->mapToScene(mouse);
         dealRelease(p);
     });
-
-    //Graph设置
-    g = new Graph();
-    g->build_m(MAP_WIDTH/10, MAP_HEIGHT/10);
 
     //定时器设置
     timer = new QTimer(this);
@@ -227,8 +227,10 @@ CircuitMap::CircuitMap(QWidget *parent) :
             else {}
         }
         //更新graph
+        g->refresh_graph();
         for(int i = 0; i < sumOutPutVolatge.size(); i++)
-            g->change_level(sumOutPut[i].first/10, sumOutPut[i].second/10, sumOutPutVolatge[i]);
+            if(sumOutPutVolatge[i])
+                g->change_level(sumOutPut[i].first/10, sumOutPut[i].second/10, sumOutPutVolatge[i]);
         g->sync_it();
         //更新wire颜色
         for(auto i = 0; i < itemList.size(); i++) {
@@ -240,6 +242,7 @@ CircuitMap::CircuitMap(QWidget *parent) :
             QPointF p2 = l.p2();
             bool p1_level = g->get_level(p1.x()/10, p1.y()/10);
             bool p2_level = g->get_level(p2.x()/10, p2.y()/10);
+            qDebug() << p1_level << " " << p2_level;
             tempWire->setValue(p1_level || p2_level);
         }
         scene->update();
@@ -259,6 +262,7 @@ void CircuitMap::dealPress(QPointF p)
 
     case CircuitWindow::Wire :
         w = addWire(p, p);
+        g->add_wire(*(((Wire*)w)->g_w));            //导线图加导线
         break;
 
     case CircuitWindow::HighLevel :

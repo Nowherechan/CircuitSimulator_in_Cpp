@@ -1,5 +1,6 @@
 #include "wire.h"
 #include "circuitmap.h"
+#include "pin-to-node/G_Wire.h"
 #include <QDebug>
 
 /*QPoint modify(QPoint point_1)
@@ -42,6 +43,8 @@ Wire::Wire()
     setPen(*penGray);
     penGreen = new QPen(GREEN);
     penGreen->setWidth(2);
+
+    g_w = new G_Wire(1, 1, 1, 1);
 
     //置于整点
     /*point_1 = modify(point_1);
@@ -151,6 +154,12 @@ void Wire::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     dy = nowY - beforeY;
     dx <= 5 ? setPos(beforeX, y()) : setPos(afterX, y());
     dy <= 5 ? setPos(x(), beforeY) : setPos(x(), afterY);
+    //g_w同步坐标
+    delete g_w;
+    QLineF l = line();
+    QPointF p1 = l.p1();
+    QPointF p2 = l.p2();
+    g_w = new G_Wire((int)p1.x()/10, (int)p1.y()/10, (int)p2.x()/10, (int)p2.y()/10);
 }
 
 void Wire::setIntP1(QPointF p)
@@ -183,7 +192,10 @@ void Wire::setIntP1(QPointF p)
         nowY = beforeY;
     else
         nowY = afterY;
-    //qDebug() << nowX << "" << nowY;
+    //g_w同步坐标
+    Pin pin2 = g_w->get_pin2();
+    delete g_w;
+    g_w = new G_Wire((int)nowX/10, (int)nowY/10, pin2.x, pin2.y);
     QPointF p2 = QPointF(nowX, nowY);
     QLineF l = line();
     l.setP1(p2);
@@ -221,12 +233,20 @@ void Wire::setIntP2(QPointF p)
         nowY = beforeY;
     else
         nowY = afterY;
-    //qDebug() << nowX << "" << nowY;
+    //g_w同步坐标
+    Pin pin1 = g_w->get_pin1();
+    delete g_w;
+    g_w = new G_Wire(pin1.x, pin1.y, (int)nowX/10, (int)nowY/10);
     QPointF p2 = QPointF(nowX, nowY);
     QLineF l = line();
     l.setP2(p2);
     setLine(l);
     calculateSize();
+}
+
+Wire::~Wire()
+{
+    delete g_w;
 }
 
 //QRectF Wire::boundingRect() const

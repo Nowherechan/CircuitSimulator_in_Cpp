@@ -39,9 +39,6 @@ public:
     QSpacerItem *horizontalSpacer;
     Animation_Btn *btn_Digital;
     QLabel *label_Digital;
-    QSpacerItem *horizontalSpacer_2;
-    QLabel *label_Analog;
-    Animation_Btn *btn_Analog;
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *verticalSpacer_3;
     QMenuBar *menubar;
@@ -110,25 +107,6 @@ public:
 
         horizontalLayout->addWidget(label_Digital);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
-
-        label_Analog = new QLabel(widget_Down);
-        label_Analog->setObjectName(QString::fromUtf8("label_Analog"));
-
-        horizontalLayout->addWidget(label_Analog);
-
-        btn_Analog = new Animation_Btn(widget_Down);
-        btn_Analog->setObjectName(QString::fromUtf8("btn_Analog"));
-        sizePolicy1.setHeightForWidth(btn_Analog->sizePolicy().hasHeightForWidth());
-        btn_Analog->setSizePolicy(sizePolicy1);
-        btn_Analog->setMinimumSize(QSize(200, 200));
-        btn_Analog->setMaximumSize(QSize(200, 200));
-        btn_Analog->setFont(font);
-
-        horizontalLayout->addWidget(btn_Analog);
-
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_3);
@@ -166,8 +144,6 @@ public:
         title_Pic->setText(QString());
         btn_Digital->setText(QString());
         label_Digital->setText(QCoreApplication::translate("StartWindow", "TextLabel", nullptr));
-        label_Analog->setText(QCoreApplication::translate("StartWindow", "TextLabel", nullptr));
-        btn_Analog->setText(QString());
         menu_Start->setTitle(QCoreApplication::translate("StartWindow", "\345\274\200\345\247\213", nullptr));
     } // retranslateUi
 

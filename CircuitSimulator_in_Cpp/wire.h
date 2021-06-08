@@ -3,6 +3,7 @@
 
 #include <QGraphicsLineItem>
 #include <QPainter>
+#include "pin-to-node/G_Wire.h"
 
 class Wire : public QGraphicsLineItem
 {
@@ -18,6 +19,8 @@ public:
     //QPoint getPointA();
     //QPoint getPointB();
     int type() const override;
+    G_Wire* g_w;
+    ~Wire();
 
 protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;

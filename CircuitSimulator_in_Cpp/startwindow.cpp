@@ -30,9 +30,11 @@ StartWindow::StartWindow(QWidget *parent)
     ui->setupUi(this);
 
     //图片路径
-    QString pix_Digital, pix_Analog, pix_Title;
+    QString pix_Digital, /*pix_Analog,*/ pix_Title;
     pix_Digital = ":/src/btn_basic.png";      //数电模式图标路径
+    /*
     pix_Analog = ":/src/btn_basic.png";       //模电模式图片路径
+    */
     pix_Title = ":/src/title.png";        //开始界面标题图片路径
 
     //加载标题图片
@@ -78,12 +80,12 @@ StartWindow::StartWindow(QWidget *parent)
         ui->btn_Digital->zoom2();
         clickSound->play();
         ui->btn_Digital->setDisabled(true);
-        ui->btn_Analog->setDisabled(true);
+        //ui->btn_Analog->setDisabled(true);
         //界面切换
         QTimer::singleShot(200, this, [=](){
             this->hide();
             ui->btn_Digital->setDisabled(false);
-            ui->btn_Analog->setDisabled(false);
+            //ui->btn_Analog->setDisabled(false);
             circuit_Window = new CircuitWindow(nullptr, CircuitWindow::Digital);
             circuit_Window->show();
             connect(circuit_Window, &CircuitWindow::turn_Back, [=](){
@@ -95,6 +97,7 @@ StartWindow::StartWindow(QWidget *parent)
         });
     });
 
+    /*
     //模电按钮设置
     ui->btn_Analog->changeNormalImg(pix_Analog);
     ui->label_Analog->setParent(ui->btn_Analog);
@@ -132,6 +135,7 @@ StartWindow::StartWindow(QWidget *parent)
             });
         });
     });
+    */
 }
 
 //绘制背景图片
@@ -152,4 +156,5 @@ void StartWindow::paintEvent(QPaintEvent *)
 StartWindow::~StartWindow()
 {
     delete ui;
+    delete circuit_Window;
 }
