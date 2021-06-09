@@ -30,3 +30,4 @@ release/moc_circuitmap.o
 release/moc_circuitwindow.o
 release/moc_qgraphicsview_map.o
 release/moc_startwindow.o
+release/moc_wire.o

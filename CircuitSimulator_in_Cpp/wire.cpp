@@ -36,7 +36,7 @@ void Wire::setP2(QPoint point_2)
     setLine(l);
 }*/
 
-Wire::Wire()
+Wire::Wire(QGraphicsItem *parent) : QGraphicsLineItem(parent)
 {
     penGray = new QPen(GRAY);
     penGray->setWidth(2);
@@ -135,7 +135,7 @@ void Wire::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
     nextL.setP1(QPoint(p1_x, p1_y));
     nextL.setP2(QPoint(p2_x, p2_y));
     setLine(nextL);
-    qDebug() << nextL;
+    //qDebug() << nextL << pos();
 }
 
 void Wire::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -158,18 +158,32 @@ void Wire::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     dy <= 5 ? setPos(x(), beforeY) : setPos(x(), afterY);
     //qDebug() << x() << y() << " after change";
     //g_w同步坐标
-    delete g_w;
+    //delete g_w;
     QLineF l = line();
     QPointF p1 = l.p1();
-    p1 += mapToParent(pos());
+    //qDebug() << p1;
+    //p1 += mapToParent(pos());
+    p1 = mapToParent(p1);
     QPointF p2 = l.p2();
-    p2 += mapToParent(pos());
-    g_w = new G_Wire((int)p1.x()/10, (int)p1.y()/10, (int)p2.x()/10, (int)p2.y()/10);
+    //qDebug() << p2;
+    //p2 += mapToParent(pos());
+    p2 = mapToParent(p2);
+    //qDebug() << pos() << p1 << p2;
+    //g_w = new G_Wire((int)p1.x()/10, (int)p1.y()/10, (int)p2.x()/10, (int)p2.y()/10);
+    //Pin pin1 = {(int)p1.x()/10, (int)p1.y()/10};
+    //Pin pin2 = {(int)p2.x()/10, (int)p2.y()/10};
+    //g_w->set_pin1(pin1);
+    //g_w->set_pin2(pin2);
+    cache_x_1 = (int)p1.x()/10;
+    cache_y_1 = (int)p1.y()/10;
+    cache_x_2 = (int)p2.x()/10;
+    cache_y_2 = (int)p2.y()/10;
     //qDebug() << (int)p1.x()/10 << (int)p1.y()/10 << (int)p2.x()/10 << (int)p2.y()/10;
 }
 
 void Wire::setIntP1(QPointF p)
 {
+    qDebug() << p << "setIntP1";
     qreal nowX = p.x();
     qreal nowY = p.y();
     //防出界
@@ -199,10 +213,17 @@ void Wire::setIntP1(QPointF p)
     else
         nowY = afterY;
     //g_w同步坐标
-    Pin pin2 = g_w->get_pin2();
-    delete g_w;
-    g_w = new G_Wire((int)nowX/10, (int)nowY/10, pin2.x, pin2.y);
+    //Pin pin1 = {(int)nowX/10, (int)nowY/10};
+    //Pin pin2 = g_w->get_pin2();
+    //g_w->set_pin1(pin1);
+    //emit resetG_Wire((int)nowX/10, (int)nowY/10, pin2.x, pin2.y);
+    cache_x_1 = (int)nowX/10;
+    cache_y_1 = (int)nowY/10;
+    //cache_x_2 = pin2.x;
+    //cache_y_2 = pin2.y;
+    //qDebug() << "setp1" << nowX << nowY << pin2.x << pin2.y;
     QPointF p2 = QPointF(nowX, nowY);
+    qDebug() << p2 << "setIntP1" << cache_x_1 << cache_y_1;
     QLineF l = line();
     l.setP1(p2);
     setLine(l);
@@ -240,14 +261,27 @@ void Wire::setIntP2(QPointF p)
     else
         nowY = afterY;
     //g_w同步坐标
-    Pin pin1 = g_w->get_pin1();
-    delete g_w;
-    g_w = new G_Wire(pin1.x, pin1.y, (int)nowX/10, (int)nowY/10);
+    //Pin pin1 = g_w->get_pin1();
+    //Pin pin2 = {(int)nowX/10, (int)nowY/10};
+    //g_w->set_pin2(pin2);
+    //emit resetG_Wire(pin1.x, pin1.y, (int)nowX/10, (int)nowY/10);
+    //cache_x_1 = pin1.x;
+    //cache_y_1 = pin1.y;
+    cache_x_2 = (int)nowX/10;
+    cache_y_2 = (int)nowY/10;
+    //qDebug() << "setp2" << nowX << nowY << pin1.x << pin1.y;
     QPointF p2 = QPointF(nowX, nowY);
     QLineF l = line();
     l.setP2(p2);
     setLine(l);
     calculateSize();
+}
+
+void Wire::reflash_G_Wire()
+{
+    delete g_w;
+    qDebug() << "reflash" << cache_x_1 << cache_y_1;
+    g_w = new G_Wire(cache_x_1, cache_y_1, cache_x_2, cache_y_2);
 }
 
 Wire::~Wire()

@@ -20,6 +20,8 @@ public:
     G_Wire(int pin1_x, int pin1_y, int pin2_x, int pin2_y);
     Pin get_pin1();
     Pin get_pin2();
+    //void set_pin1(Pin new_pin1);
+    //void set_pin2(Pin new_pin2);
     int get_node_num() const;
     bool get_status() const;
     void change_status(bool in);

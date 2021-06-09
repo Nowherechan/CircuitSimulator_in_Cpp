@@ -17,7 +17,7 @@
   * ~   4.the green color doesn't change until select the "select" button.
   *         reason: scene doesn't update.
   *         final solution: add an update function into connection of timer.
-  *     5.the high level doesn't disappear when highlevel is moved.
+  * ~   5.the high level doesn't disappear when highlevel is moved.
   * TODO:(when one was completed, marked it with '~')
   * ~   1.Finish the show-all and clear-all button.
   * ~   2.Complete the actions of components, like put-on , delete and move.
@@ -25,7 +25,7 @@
   * ~   4.Function select().
   * ~   5.connect QTimer.
   * ~   6.include class Graph.
-  *     7.add wire into Graph.
+  * ~   7.add wire into Graph.
   */
 #include "circuitmap.h"
 #include "ui_circuitmap.h"
@@ -100,6 +100,11 @@ CircuitMap::CircuitMap(QWidget *parent) :
     connect(ui->btn_Clear, &QPushButton::clicked, [=](){
         QList<QGraphicsItem *> itemList = scene->items();
         for(auto i = 0; i < itemList.size(); i++) {
+            if(itemList[i]->type() == QGraphicsItem::UserType + 2)
+            {
+                Wire* tempWire = ((Wire*)itemList[i]);
+                g->del_wire(*(((Wire*)tempWire)->g_w));
+            }
             scene->removeItem(itemList[i]);
             delete itemList[i];
         }
@@ -240,12 +245,12 @@ CircuitMap::CircuitMap(QWidget *parent) :
             QLineF l = tempWire->line();
             QPointF p1 = l.p1();
             QPointF p2 = l.p2();
-            bool p1_level = g->get_level(p1.x()/10, p1.y()/10);
-            bool p2_level = g->get_level(p2.x()/10, p2.y()/10);
-            qDebug() << p1;
-            qDebug() << p1_level;
-            qDebug() << p2;
-            qDebug() << p2_level;
+            bool p1_level = g->get_level((int)p1.x()/10, (int)p1.y()/10);
+            bool p2_level = g->get_level((int)p2.x()/10, (int)p2.y()/10);
+            qDebug() << p1 << p1_level << p2 << p2_level;
+            Pin test_p1 = tempWire->g_w->get_pin1();
+            Pin test_p2 = tempWire->g_w->get_pin2();
+            qDebug() << test_p1.x << test_p1.y << test_p2.x << test_p2.y;
             tempWire->setValue(p1_level || p2_level);
         }
         scene->update();
@@ -482,7 +487,12 @@ Wire* CircuitMap::addWire(QPointF A, QPointF B)
     w->setIntP2(B);
     scene->addItem(w);
     w->setFocus();
-    qDebug() << w->pos() << "Wire";
+    //qDebug() << w->pos() << "Wire";
+    /*connect(w, &Wire::resetG_Wire, this, [=](int x1, int y1, int x2, int y2){
+        g->del_wire(*(((Wire*)w)->g_w));
+        w->reflash_G_Wire(x1, y1, x2, y2);
+        g->add_wire(*(((Wire*)w)->g_w));
+    });*/
     return w;
 }
 
@@ -634,6 +644,21 @@ void CircuitMap::select(CircuitWindow::component_Selected c)
         QList<QGraphicsItem *> itemList = scene->items();
         for(auto i = 0; i < itemList.size(); i++) {
             itemList[i]->setFlag(QGraphicsItem::ItemIsMovable, false);
+        }
+    }
+
+    //导线位置更新
+    if(mod == CircuitWindow::Run)
+    {
+        QList<QGraphicsItem *> itemList = scene->items();
+        for(auto i = 0; i < itemList.size(); i++) {
+            if(itemList[i]->type() != QGraphicsItem::UserType + 2)      //跳过非导线
+                continue;
+            Wire* tempWire = ((Wire*)itemList[i]);
+            g->del_wire(*(((Wire*)tempWire)->g_w));
+            tempWire->reflash_G_Wire();
+            g->add_wire(*(((Wire*)tempWire)->g_w));
+            qDebug() << "select" << (mod == CircuitWindow::Run);
         }
     }
 
