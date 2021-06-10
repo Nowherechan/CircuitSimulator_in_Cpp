@@ -136,4 +136,3 @@ void andOrNotLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem 
                           outputPinPosition[i].second);
     }
 }
-

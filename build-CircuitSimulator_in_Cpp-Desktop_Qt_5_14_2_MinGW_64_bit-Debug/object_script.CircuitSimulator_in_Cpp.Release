@@ -1,9 +1,3 @@
-release/baseelement.o
-release/currentsource.o
-release/resistance.o
-release/switchclose.o
-release/switchopen.o
-release/voltagesource.o
 release/animation_btn.o
 release/circuitmap.o
 release/circuitwindow.o

@@ -169,4 +169,3 @@ void norLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QW
                           outputPinPosition[i].second);
     }
 }
-

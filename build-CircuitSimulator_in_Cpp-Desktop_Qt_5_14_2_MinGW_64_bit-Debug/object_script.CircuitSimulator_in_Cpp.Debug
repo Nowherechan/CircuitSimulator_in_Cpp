@@ -1,9 +1,3 @@
-debug/baseelement.o
-debug/currentsource.o
-debug/resistance.o
-debug/switchclose.o
-debug/switchopen.o
-debug/voltagesource.o
 debug/animation_btn.o
 debug/circuitmap.o
 debug/circuitwindow.o

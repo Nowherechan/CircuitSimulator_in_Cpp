@@ -16,12 +16,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    analog-gate/baseelement.cpp \
-    analog-gate/currentsource.cpp \
-    analog-gate/resistance.cpp \
-    analog-gate/switchclose.cpp \
-    analog-gate/switchopen.cpp \
-    analog-gate/voltagesource.cpp \
     animation_btn.cpp \
     circuitmap.cpp \
     circuitwindow.cpp \
@@ -44,12 +38,6 @@ SOURCES += \
     wire.cpp
 
 HEADERS += \
-    analog-gate/baseelement.h \
-    analog-gate/currentsource.h \
-    analog-gate/resistance.h \
-    analog-gate/switchclose.h \
-    analog-gate/switchopen.h \
-    analog-gate/voltagesource.h \
     animation_btn.h \
     circuitmap.h \
     circuitwindow.h \

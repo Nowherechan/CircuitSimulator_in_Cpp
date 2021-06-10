@@ -117,4 +117,3 @@ void xnorLogicGate::paint(QPainter *painter, const QStyleOptionGraphicsItem *, Q
                           outputPinPosition[i].second);
     }
 }
-
