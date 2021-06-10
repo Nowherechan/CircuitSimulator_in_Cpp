@@ -30,4 +30,3 @@ debug/moc_circuitmap.o
 debug/moc_circuitwindow.o
 debug/moc_qgraphicsview_map.o
 debug/moc_startwindow.o
-debug/moc_wire.o

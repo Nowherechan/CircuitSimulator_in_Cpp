@@ -38,11 +38,6 @@ void QGraphicsView_Map::drawBackground(QPainter *painter, const QRectF &)
 
 void QGraphicsView_Map::mousePressEvent(QMouseEvent *event)
 {
-//    qDebug() << event->x() << " " << event->y();
-//    QPoint p = event->pos();
-//    qDebug() << p;
-//    QPointF p2 = this->mapToScene(p);
-//    qDebug() << p2;
     QGraphicsView::mousePressEvent(event);
     emit mousePressed(*event);
 }

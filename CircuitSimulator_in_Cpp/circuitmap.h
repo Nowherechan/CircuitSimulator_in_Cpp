@@ -59,9 +59,6 @@ protected:
     void dealPress(QPointF p);
     void dealMove(QPointF p);
     void dealRelease(QPointF p);
-//    void mousePressEvent(QMouseEvent *event) override;
-//    void mouseMoveEvent(QMouseEvent *event) override;
-//    void mouseReleaseEvent(QMouseEvent *event) override;
 
 private:
     CircuitWindow::component_Selected mod;

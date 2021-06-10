@@ -147,9 +147,3 @@ void Animation_Btn::mouseReleaseEvent(QMouseEvent *e)
 
     return QPushButton::mouseReleaseEvent(e);
 }
-
-//void Animation_Btn::moveEvent(QMoveEvent *event)
-//{
-//    emit moved();
-//    return QPushButton::moveEvent(event);
-//}
