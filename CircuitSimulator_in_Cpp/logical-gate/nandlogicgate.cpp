@@ -5,7 +5,7 @@
   * function:
   *     an nand logic gate
   * bug:(when one bug was fixed, marked it with '~')
-  *     null
+  * ~   1.flash push wrong bool.
   * TODO:(when one was completed, marked it with '~')
   *     null
   */
@@ -118,7 +118,7 @@ QVector<bool> nandLogicGate::flash(QVector<bool> input)
     }
     temp1 = !temp;
     nowOutput.clear();
-    nowOutput.push_back(temp);
+    nowOutput.push_back(temp1);
     return nowOutput;
 }
 

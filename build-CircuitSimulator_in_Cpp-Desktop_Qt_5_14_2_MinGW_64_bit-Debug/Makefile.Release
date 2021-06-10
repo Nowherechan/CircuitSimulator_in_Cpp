@@ -188,6 +188,7 @@ release/qrc_src.cpp: ../CircuitSimulator_in_Cpp/src.qrc \
 		../CircuitSimulator_in_Cpp/src/default_png.png \
 		../CircuitSimulator_in_Cpp/src/click.wav \
 		../CircuitSimulator_in_Cpp/src/btn_basic.png \
+		../CircuitSimulator_in_Cpp/src/icon.png \
 		../CircuitSimulator_in_Cpp/src/wire.png \
 		../CircuitSimulator_in_Cpp/src/bg_circuit.png \
 		../CircuitSimulator_in_Cpp/src/bg_basic.png \

@@ -23,6 +23,19 @@ CircuitWindow::CircuitWindow(QWidget *parent, circuit_Mod mod) :
 {
     ui->setupUi(this);
     current_Mod = mod;
+    setWindowTitle("Circuit Simulator");
+
+    QString pix_Icon = ":/src/icon.png";
+
+    //加载图标
+    QPixmap pixmap_Icon;
+    bool ret_Icon = pixmap_Icon.load(pix_Icon);
+    if(!ret_Icon)
+    {
+        qDebug() << "图片加载失败";
+        return;
+    }
+    setWindowIcon(QIcon(pixmap_Icon));
 
     //退出按钮
     connect(ui->actionExit, &QAction::triggered, [=](){

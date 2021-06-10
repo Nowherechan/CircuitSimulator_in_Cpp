@@ -30,14 +30,26 @@ StartWindow::StartWindow(QWidget *parent)
     ui->setupUi(this);
 
     //图片路径
-    QString pix_Digital, /*pix_Analog,*/ pix_Title;
+    QString pix_Digital, /*pix_Analog,*/ pix_Title, pix_Icon;
     pix_Digital = ":/src/btn_basic.png";      //数电模式图标路径
     /*
     pix_Analog = ":/src/btn_basic.png";       //模电模式图片路径
     */
     pix_Title = ":/src/title.png";        //开始界面标题图片路径
+    pix_Icon = ":/src/icon.png";
+
+    //加载图标
+    QPixmap pixmap_Icon;
+    bool ret_Icon = pixmap_Icon.load(pix_Icon);
+    if(!ret_Icon)
+    {
+        qDebug() << "图片加载失败";
+        return;
+    }
+    setWindowIcon(QIcon(pixmap_Icon));
 
     //加载标题图片
+    setWindowTitle("Circuit Simulator");
     QPixmap pixmap_Title;
     bool ret = pixmap_Title.load(pix_Title);
     if(!ret)
